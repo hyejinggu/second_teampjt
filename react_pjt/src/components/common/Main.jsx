@@ -1,7 +1,9 @@
+import Slide from '../main/Slide';
+
 const Main = () => {
     return (
         <div>
-            <p>Main</p>
+            <Slide />
         </div>
     )
 }

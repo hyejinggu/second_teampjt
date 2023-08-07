@@ -1,8 +1,10 @@
-import '../common/css/header.css';
-import '../common/css/reset.css';
-import '../common/css/common.css';
+import '../../common/css/header.css';
+import '../../common/css/reset.css';
+import '../../common/css/common.css';
 
 const Header = () => {
+
+
     return (
         <div className="menu_list">
             <a href="./index.html">
