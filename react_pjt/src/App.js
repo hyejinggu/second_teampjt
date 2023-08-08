@@ -11,7 +11,7 @@ function App() {
   return (
     <div id="wrap">
 
-      <Header />
+      {/* <Header /> */}
       <Template>
       <Routes>
         <Route path="/products" element={<ProductList />} />
