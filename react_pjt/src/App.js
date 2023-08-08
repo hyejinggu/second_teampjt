@@ -22,7 +22,6 @@ function App() {
       <Main />
       <Footer />
     </div>
->>>>>>> main
   );
 }
 
