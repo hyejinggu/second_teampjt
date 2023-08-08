@@ -20,7 +20,7 @@ function App() {
       </Routes>
     </Template>
       <Main />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
