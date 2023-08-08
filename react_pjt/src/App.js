@@ -1,16 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Main from "./components/Main"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Template from "./template/Template";
+import ProductDetail from "./products/detail/ProductDetail";
+import { Routes, Route, useParams } from "react-router-dom";
+import Landing from "./landing/Landing";
+import ProductList from "./products/ProductList";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Main/>
-      <Footer/>
-    </div>
+    <Template>
+      <Routes>
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:slug" element={<ProductDetail />} />
+        <Route path="/" element={<Landing />} />
+      </Routes>
+    </Template>
   );
 }
 
