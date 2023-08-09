@@ -1,4 +1,6 @@
 import '../../css/common/header.css';
+import "../../css/common/reset.css";
+import "../../css/common/common.css";
 
 
 const Footer = () => {
@@ -16,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="ft_copy">
           <a href="#">
-            <img src={"/header/logo.png"} alt="로고" className="logo" />
+            <img src={"/images/header/logo.png"} alt="로고" className="logo" />
           </a>
           <p>&copy; 2023 웹사이트. All rights reserved.</p>
         </div>

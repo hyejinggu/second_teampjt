@@ -1,4 +1,5 @@
-/* ===== 베스트셀러 영역 시작 ===== */
+/* ===== 베스트셀러 영역 ===== */
+
 /* 베스트셀러 카테고리 목록 */
 .bestseller_wrap {
     margin-top: 50px;
@@ -62,4 +63,17 @@
     border: solid 2px #ffa900;
 }
 
-/* ===== 베스트 셀러 영역 끝 ===== */
+.sale_info {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.normal_pr {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.present_pr {
+    font-weight: bold;
+}
