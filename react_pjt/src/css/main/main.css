@@ -53,72 +53,6 @@ main {
   width: 70px;
 }
 
-/* 
-.slide_section .silde_wrap {
-  max-width: 1500px;
-  height: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.silde_wrap .silde_list {
-  white-space: nowrap;
-  font-size: 0;
-}
-
-.silde_wrap .silde_list > li {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  transition: all 0.5s;
-}
-
-.silde_wrap .silde_list > li > a {
-  display: block;
-  position: relative;
-} */
-
-/* .silde_wrap .silde_list > li > a img {
-  width: 100%;
-  height: 600px;
-  border-radius: 30px;
-}
-
-.silde_wrap .silde_list label {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 50px;
-  cursor: pointer;
-} */
-
-/* .silde_wrap .silde_list .left {
-  left: 30px;
-  background-image: url(../image/arrow_left.svg);
-  background-size: 70px;
-  background-repeat: no-repeat;
-}
-
-.silde_wrap .silde_list .right {
-  right: 30px;
-  background-image: url(../image/arrow_right.svg);
-  background-size: 70px;
-  background-repeat: no-repeat;
-} */
-/* 
-.slide_section [id="slide1"]:checked ~ .silde_wrap .silde_list > li {
-  transform: translateX(0%);
-}
-
-.slide_section [id="slide2"]:checked ~ .silde_wrap .silde_list > li {
-  transform: translateX(-100%);
-}
-
-.slide_section [id="slide3"]:checked ~ .silde_wrap .silde_list > li {
-  transform: translateX(-200%);
-} */
-
 /* ===== 상단 슬라이드 배너 영역 끝 ===== */
 
 /* ===== 베스트셀러 영역 시작 ===== */
@@ -250,8 +184,7 @@ main .user_review_wrap:hover .user_review1 img {
 /* 알림받기 배너 홍보 */
 .notice_banner {
   height: 400px;
-  background: url(https://shop-phinf.pstatic.net/20220630_96/1656562559901gCvqO_JPEG/C5A9B1E2BAAFC8AFsubtop_product.jpg)
-    0/100% no-repeat;
+  background: url(https://shop-phinf.pstatic.net/20220630_96/1656562559901gCvqO_JPEG/C5A9B1E2BAAFC8AFsubtop_product.jpg) 0/100% no-repeat;
   position: relative;
 }
 
@@ -338,7 +271,7 @@ main .promote:hover h2 {
   }
 }
 
-main .promote > div {
+main .promote>div {
   justify-self: center;
 }
 
@@ -374,3 +307,109 @@ main .video iframe {
 }
 
 /* ===== 동영상 영역 끝 ===== */
+
+
+/* ===== MainEvent =====*/
+.community_wrap {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 80px 0;
+}
+
+.community_wrap .community_event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.community_wrap .community_event .event_img {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.community_wrap .community_event .event_title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+
+.community_wrap .community_event span {
+  display: block;
+  text-align: justify;
+  word-break: break-all;
+  width: 65%;
+  padding: 0 calc((100% - 65%)/2);
+  font-size: 14px;
+}
+
+.community_wrap .community_event .event_account {
+  font-size: 14px;
+  white-space: nowrap;
+  width: 420px;
+  text-align: center;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.community_wrap .community_event ul:first-of-type {
+  border-top: 1px solid #c8c8c8;
+}
+
+.community_wrap .community_event ul {
+  margin: 10px calc((100% - 70%)/2);
+}
+
+.community_wrap .community_event ul>li {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.community_wrap .community_event ul>li img {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+}
+
+.community_wrap .community_event ul>li p {
+  /* margin: 0 calc((100% - 70%)/2); */
+  padding-bottom: 20px;
+  width: 100%;
+  display: inline-block;
+  float: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.community_wrap .community_event ul>li p span:first-of-type {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+.community_wrap .community_event ul>li p strong {
+  color: #000;
+}
+
+.community_wrap .community_event ul>li p span:nth-last-child(1) {
+  font-size: 12px;
+  color: gray;
+}
+
+/* ===== MainEvent =====*/
