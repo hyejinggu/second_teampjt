@@ -1,3 +1,6 @@
+import '../../css/common/header.css';
+
+
 const Footer = () => {
   return (
     <footer>

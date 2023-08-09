@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../css/main.css";
+import "../../css/main/main.css";
 
 const NoticeBanner = () => {
   const [count, setCount] = useState(5200);

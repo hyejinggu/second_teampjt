@@ -1,5 +1,5 @@
 
-import '../../css/Bestseller.css'
+import '../../css/main/bestseller.css';
 
 const products = [
     {

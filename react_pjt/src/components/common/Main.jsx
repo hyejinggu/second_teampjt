@@ -1,7 +1,7 @@
 import Bestseller from "../main/Bestseller";
 import Slide from "../main/Slide";
 import NoticeBanner from "../main/NoticeBanner";
-import "../../css/main.css";
+import "../../css/main/main.css";
 
 const Main = () => {
   return (
