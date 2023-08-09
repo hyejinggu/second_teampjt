@@ -1,6 +1,7 @@
 import Bestseller from "../main/Bestseller";
 import Slide from "../main/Slide";
 import NoticeBanner from "../main/NoticeBanner";
+import MainEvent from "../main/MainEvent";
 import "../../css/main/main.css";
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
       <Slide />
       <Bestseller />
       <NoticeBanner />
+      <MainEvent />
     </div>
   );
 };
