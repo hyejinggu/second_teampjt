@@ -1,17 +1,15 @@
-
 import React from "react";
-import "../../css/main/main.css";
 
 const MainEvent = () => {
 
 
     return (
         <div className="community_wrap">
-            <div class="community_event">
-                <a href="#" class="event_img">
+            <div className="community_event">
+                <a href="#" className="event_img">
                     <img src={"images/main/event_sample.PNG"} alt="" />
                 </a>
-                <p class="event_title">🐕ANF 6Free+ 심플팩 100원!🐕</p>
+                <p className="event_title">🐕ANF 6Free+ 심플팩 100원!🐕</p>
                 <span>반려동물을 이해해온 68년, 이해하니까 더 무해하게, ANF 멜로망스 김민석이
                     나레이션한 무해한 광고 영상 확인하고 ANF 식스프리 샘플팩 100원에 신청하세요!
                     이미지를 누르면 샘플키트 구매 페이지로 넘어갑니다.
