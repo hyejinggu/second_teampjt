@@ -1,9 +1,7 @@
-import ItemInfo from "./ItemInfo";
-import "../../css/subpage/subpage_itemlist.css";
-import PageNation from "./PageNation";
-import { useReducer } from "react";
+/* import ItemInfo from "./ItemInfo";
+import { useState, useReducer } from "react";
 
-const ItemList = () => {
+function ItemArray() {
   const arrayReducer = (state, action) => {
     switch (action.type) {
       case "low":
@@ -155,31 +153,15 @@ const ItemList = () => {
   };
 
   return (
-    <div className="container">
-      <div className="cate_wrap">
-        <h2 className="title">장난감</h2>
-      </div>
-
-      <div className="item sort">
-        <ul>
-          <li>인기순</li>
-          <li onClick={sortLowPr}>높은가격순</li>
-          <li onClick={sortHighPr}>낮은가격순</li>
-          <li>신상품순</li>
-        </ul>
-        <p>총 25개의 상품</p>
-      </div>
-
-      <div className="content_wrap">
-        <ItemInfo
-          iteminfo={iteminfo}
-          presentPr={presentPr}
-          normalPr={normalPr}
-        />
-      </div>
-      <PageNation />
+    <div>
+      <ItemInfo iteminfo={iteminfo} presentPr={presentPr} normalPr={normalPr} />
+      <ItemList
+        iteminfo={iteminfo}
+        sortLowPr={sortLowPr}
+        sortHighPr={sortHighPr}
+      />
     </div>
   );
-};
-
-export default ItemList;
+}
+export default ItemArray;
+ */
