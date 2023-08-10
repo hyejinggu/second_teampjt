@@ -18,6 +18,11 @@ const Main = () => {
       <Promote />
       <Video />
 
+      {/*       <Link to="/profile"></Link>
+      <Link to="/cart"></Link>
+      <Link to="/board"></Link>
+      <Link to="/itemlist"></Link>
+      <Link to="/lounge"></Link> */}
     </div>
   );
 };

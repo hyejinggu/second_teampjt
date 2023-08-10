@@ -1,4 +1,4 @@
-import "../../css/subpage/community_lounge";
+import "../../css/subpage/community_lounge.css";
 import PageNation from "../item/PageNation";
 
 export default function Lounge() {
