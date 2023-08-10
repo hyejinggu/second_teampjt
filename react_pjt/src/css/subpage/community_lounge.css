@@ -1,0 +1,76 @@
+/* 메인 시작 */
+
+* {
+  text-align: center;
+}
+
+/* ===== 상단 카테고리, 정렬 영역 시작 ===== */
+
+.title a {
+  margin: 0 30px;
+  padding: 3px;
+}
+
+.title a[href="#"] {
+  border-bottom: 5px solid #ffa900;
+}
+
+.title a:hover {
+  border-bottom: 5px solid #ffa900;
+}
+
+/* ===== 게시글 영역 시작 ===== */
+.content_wrap {
+  padding: 0 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr {
+  background-color: white;
+}
+
+table th:nth-child(1),
+table th:nth-child(5),
+table th:nth-child(6) {
+  width: 7%;
+}
+
+table th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+table td {
+  height: 230px;
+}
+
+table tbody td img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+table tbody td h4 {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+table tbody td p {
+  white-space: pre-line;
+  height: 95px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+table tbody tr:hover {
+  background-color: #f2f2f2;
+}
