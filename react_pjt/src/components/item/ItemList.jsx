@@ -7,9 +7,9 @@ const ItemList = () => {
   const arrayReducer = (state, action) => {
     switch (action.type) {
       case "low":
-        return [...state].sort((a, b) => a.normalPr - b.normalPr);
-      case "high":
         return [...state].sort((a, b) => b.normalPr - a.normalPr);
+      case "high":
+        return [...state].sort((a, b) => a.normalPr - b.normalPr);
       default:
         return state;
     }
@@ -171,11 +171,7 @@ const ItemList = () => {
       </div>
 
       <div className="content_wrap">
-        <ItemInfo
-          iteminfo={iteminfo}
-          presentPr={presentPr}
-          normalPr={normalPr}
-        />
+        <ItemInfo iteminfo={array} presentPr={presentPr} normalPr={normalPr} />
       </div>
       <PageNation />
     </div>
