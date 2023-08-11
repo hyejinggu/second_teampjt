@@ -12,7 +12,7 @@ const Join = () => {
     return (
         <main>
             <div className="img_container">
-                <img src={"/images/join/bg3"} alt="" />
+                <img src={"/images/join/bg5.jpg"} alt="" />
             </div>
 
             <div className="right_contents">
@@ -23,13 +23,13 @@ const Join = () => {
                     <li><NavLink to='/information/*'>Information</NavLink></li>
                 </ul>
 
+                <Routes>
+                    <Route path="/" element={<Profile />} />
+                    <Route path="/agree/*" element={<Agree />} />
+                    <Route path="/details/*" element={<Details />} />
+                    <Route path="/information/*" element={<Information />} />
+                </Routes>
             </div >
-            <Routes>
-                <Route path="/" element={<Profile />} />
-                <Route path="/agree/*" element={<Agree />} />
-                <Route path="/details/*" element={<Details />} />
-                <Route path="/information/*" element={<Information />} />
-            </Routes>
 
 
         </main>
