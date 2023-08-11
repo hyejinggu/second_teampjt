@@ -1,7 +1,7 @@
 // import "../../css/subpage/community_lounge.css";
 import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 export default function Lounge() {
   const arrayReducer = (state, action) => {
@@ -12,9 +12,37 @@ export default function Lounge() {
         );
       case "notice":
         return loungePostArray;
+      case "postTitle":
+        return inputValue === ""
+          ? state
+          : state.filter((it) =>
+              it.title.toLowerCase().includes(inputValue.toLowerCase())
+            );
+      case "postContent":
+        return inputValue === ""
+          ? state
+          : state.filter((it) =>
+              it.content.toLowerCase().includes(inputValue.toLowerCase())
+            );
+      case "postUserId":
+        return inputValue === ""
+          ? state
+          : state.filter((it) =>
+              it.userid.toLowerCase().includes(inputValue.toLowerCase())
+            );
       default:
         return loungePostArray;
     }
+  };
+
+  const [selectedValue, setSelectedValue] = useState("");
+  const handleSelectChange = (e) => {
+    const optionValue = e.target.value;
+    setSelectedValue(optionValue);
+  };
+  const [inputValue, setInputValue] = useState("");
+  const onChangeSearch = (e) => {
+    setInputValue(e.target.value);
   };
 
   const loungePostArray = [
@@ -66,7 +94,7 @@ export default function Lounge() {
         "https://bff-images.bemypet.kr/media/medias/all/273-KakaoTalk_20230617_061331272_01.jpg",
       title: "이 생명체는 누구일까요!",
       content:
-        "뭣좀하려고 컴퓨터앞에 앉아있음 꼭 밑에서 등돌리고 저러고 누워있는데 뒷모습 털쪘다요❤️ 너구린가 댕댕인가 착각들 정도",
+        "뭣 좀 하려고 컴퓨터 앞에 앉아있음 꼭 밑에서 등돌리고 저러고 누워있는데 뒷모습 털쪘다요❤️ 너구린가 댕댕인가 착각들 정도",
       userid: "eee",
       date: new Date().toLocaleDateString(),
       recommended: 21,
@@ -108,54 +136,59 @@ export default function Lounge() {
 
   const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
   return (
-    <div id="wrap">
-      <div className="container">
-        <div className="title">
-          <strong>
-            <a href="#">라운지</a>
-            <a href="">정보 공유&amp;리뷰</a>
-            <a href="">QnA</a>
-            <a href="">이벤트</a>
-          </strong>
-        </div>
-
-        <div className="post sort">
-          <ul>
-            <li onClick={() => dispatch({ type: "popular" })}>인기글</li>
-            <li onClick={() => dispatch({ type: "notice" })}>공지사항</li>
-            <li>최신순</li>
-            <li>오래된순</li>
-          </ul>
-          <p>총 50개의 글</p>
-        </div>
-
-        <div className="content_wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>번호</th>
-                <th>이미지</th>
-                <th>제목 및 내용</th>
-                <th>작성자</th>
-                <th>날짜</th>
-                <th>추천수</th>
-                <th>조회수</th>
-              </tr>
-            </thead>
-            <CommunityPost loungePostArray={array} />
-          </table>
-        </div>
+    <div id="wrap" className="lounge_container">
+      <div className="title">
+        <strong>
+          <a href="#">라운지</a>
+          <a href="">정보 공유&amp;리뷰</a>
+          <a href="">QnA</a>
+          <a href="">이벤트</a>
+        </strong>
       </div>
+
+      <div className="post sort">
+        <ul>
+          <li onClick={() => dispatch({ type: "popular" })}>인기글</li>
+          <li onClick={() => dispatch({ type: "notice" })}>공지사항</li>
+          <li>최신순</li>
+          <li>오래된순</li>
+        </ul>
+        <p>총 50개의 글</p>
+      </div>
+
+      <div className="content_wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>이미지</th>
+              <th>제목 및 내용</th>
+              <th>작성자</th>
+              <th>날짜</th>
+              <th>추천수</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <CommunityPost loungePostArray={array} />
+        </table>
+      </div>
+
       <div className="search_and_post">
-        <form action="get">
-          <select name="search_condition" id="search_condition">
-            <option value="post_title">제목</option>
-            <option value="post_content">내용</option>
-            <option value="post_userid">작성자</option>
-          </select>
-          <input type="text" placeholder="검색🔍" />
-          <span>✔</span>
-        </form>
+        <div className="search_bar">
+          <form>
+            <select
+              onChange={handleSelectChange}
+              name="search_condition"
+              id="search_condition"
+            >
+              <option value="postTitle">제목</option>
+              <option value="postContent">내용</option>
+              <option value="postUserId">작성자</option>
+            </select>
+            <input onChange={onChangeSearch} type="text" placeholder="검색" />
+          </form>
+          <span onClick={() => dispatch({ type: selectedValue })}>🔍</span>
+        </div>
         <button>글쓰기</button>
       </div>
       <PageNation />
