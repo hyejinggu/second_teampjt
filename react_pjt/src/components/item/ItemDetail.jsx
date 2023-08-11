@@ -3,7 +3,7 @@ import styles from "../../css/subpage/ItemDetail.module.css"
 
 const ItemDetail = () => {
     return (
-        <section id="pagetop">
+        <div className='detail_wrap'>
             <div className={styles.top_area}>
                 <section className={styles.img_area}>
                     <div className={styles.main_img}>
@@ -55,8 +55,8 @@ const ItemDetail = () => {
                     </div>
                 </section>
             </div>
-            <section id="section1" className={styles.section}>
-                <nav>
+            <section id="section1" className={styles.section1}>
+                <nav className={styles.nav}>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
@@ -102,8 +102,8 @@ const ItemDetail = () => {
                     </tr>
                 </table>
             </section>
-            <section id="section2" className={styles.section}>
-                <nav>
+            <section id="section2" className={styles.section2}>
+                <nav className={styles.nav}>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
@@ -185,8 +185,8 @@ const ItemDetail = () => {
                     </div>
                 </div>
             </section>
-            <section id="section3" className={styles.section}>
-                <nav>
+            <section id="section3" className={styles.section3}>
+                <nav className={styles.nav}>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
@@ -249,8 +249,8 @@ const ItemDetail = () => {
                     </div>
                 </div>
             </section>
-            <section id="section4" className={styles.section}>
-                <nav>
+            <section id="section4" className={styles.section4}>
+                <nav className={styles.nav}>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
@@ -263,7 +263,7 @@ const ItemDetail = () => {
                     <input type="button" value="상품 문의하기" />
                 </a>
             </section>
-        </section>
+        </div>
     );
 };
 
