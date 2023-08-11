@@ -19,7 +19,6 @@
   border-bottom: 5px solid #ffa900;
 }
 
-
 /* ===== 게시글 영역 시작 ===== */
 .content_wrap .content_wrap {
   padding: 0 20px;
@@ -76,7 +75,6 @@ table {
   background-color: #f2f2f2;
 }
 
-
 /* ===== 페이지 이동 ===== */
 
 .content_wrap .page_shift {
@@ -124,17 +122,25 @@ button {
   padding: 7px 10px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  border: 1px solid;
 }
 
 .search_and_post span {
-  vertical-align: middle;
   font-size: 1.3em;
-  padding: 10px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 5px;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
 }
 
 .search_and_post button {
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  background-color: #ffe344;
   margin-right: 20px;
-  padding: 7px 10px;
 }
