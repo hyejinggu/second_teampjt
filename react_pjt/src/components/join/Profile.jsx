@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../../css/join/join.css";
 
 const Proflie = () => {
@@ -7,9 +8,9 @@ const Proflie = () => {
         <figure>
           <ul>
             <li>
-              <a className="checking" href="./profile.html">
+              <NavLink to='/Profile'>
                 Proflie
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="./details.html">Details</a>
