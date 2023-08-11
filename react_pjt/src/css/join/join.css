@@ -1,4 +1,4 @@
- main {
+ .join {
      width: 100%;
      box-sizing: border-box;
      margin: 50px auto;
@@ -75,6 +75,7 @@
  .right_contents figure table {
      margin-bottom: 50px;
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
  }

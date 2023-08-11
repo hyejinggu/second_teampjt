@@ -10,7 +10,7 @@ import Profile from './Profile';
 const Join = () => {
 
     return (
-        <main>
+        <main className='join'>
             <div className="img_container">
                 <img src={"/images/join/bg5.jpg"} alt="" />
             </div>
@@ -24,10 +24,10 @@ const Join = () => {
                 </ul>
 
                 <Routes>
-                    <Route path="/join/profile" element={<Profile />} />
-                    <Route path="/join/details" element={<Details />} />
-                    <Route path="/join/agree" element={<Agree />} />
-                    <Route path="/join/information" element={<Information />} />
+                    <Route path="/profile/*" element={<Profile />} />
+                    <Route path="/details/*" element={<Details />} />
+                    <Route path="/agree/*" element={<Agree />} />
+                    <Route path="/information/*" element={<Information />} />
                 </Routes>
             </div >
 

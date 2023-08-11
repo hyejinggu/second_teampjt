@@ -55,7 +55,7 @@
 
 .cart table tbody tr {
     display: block;
-    /* border-bottom: 1px solid #c8c8c8; */
+    border-bottom: 1px solid #c8c8c8;
 }
 
 .cart table tbody tr:last-child {
@@ -143,6 +143,7 @@
     line-height: 30px;
     margin: 20px 0 0 0;
     font-weight: bold;
+    text-align: left;
 }
 
 .cart .total_price {
