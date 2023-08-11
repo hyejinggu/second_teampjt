@@ -1,5 +1,4 @@
 import "../../css/common/header.css";
-import "../../css/common/reset.css";
 import "../../css/common/common.css";
 import { Route, Routes, Link } from "react-router-dom";
 import ItemList from "../item/ItemList";
