@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Main from "./components/common/Main";
+import Body from "./components/common/Body";
 
 // router
 import { Route, Routes, Link } from "react-router-dom";
@@ -14,9 +15,10 @@ import Lounge from "./components/community/Lounge";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="wrap">
       <Header />
-
+      <Body />
+      {/* <Main /> */}
       <Routes>
         <Route path="/main/*" element={<Main />} />
         <Route path="/login/*" element={<Login />} />
@@ -26,7 +28,6 @@ function App() {
         <Route path="/itemlist/*" element={<ItemList />} />
         <Route path="/lounge/*" element={<Lounge />} />
       </Routes>
-
       <Footer />
     </div>
   );
