@@ -7,7 +7,7 @@ import Main from "./components/common/Main";
 import { Route, Routes, Link } from "react-router-dom";
 import Login from "./components/login/Login";
 import Join from "./components/join/Join";
-import Cart from "./components/payment/Cart";
+import Cart from "./components/cart/Cart";
 import Board from "./components/board/Board";
 import ItemList from "./components/item/ItemList";
 import Lounge from "./components/community/Lounge";
