@@ -2,7 +2,7 @@ import "../../css/login/login.css";
 
 const Login = () => {
   return (
-    <main>
+    <main className="login">
       <div className="img_container">
         <img src={"/images/login/bg3.png"} alt="" />
       </div>

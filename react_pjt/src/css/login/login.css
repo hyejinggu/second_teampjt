@@ -1,4 +1,4 @@
-main {
+.login {
     box-sizing: border-box;
     margin: 50px auto;
     background-color: #fff;
@@ -11,39 +11,39 @@ main {
     align-items: center;
 }
 
-main .img_container {
+.login .img_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main .img_container img {
+.login .img_container img {
     /* width: 750px;
   height: 641px; */
     box-sizing: border-box;
 }
 
-main .login_container {
+.login .login_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main .login_container .login_box {
+.login .login_container .login_box {
     border-radius: 5px;
     line-height: 30px;
 }
 
-main .login_container .login_box h2 {
+.login .login_container .login_box h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
 
-main .login_container .login_box input[type="text"],
-main .login_container .login_box input[type="password"] {
+.login .login_container .login_box input[type="text"],
+.login .login_container .login_box input[type="password"] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -52,11 +52,11 @@ main .login_container .login_box input[type="password"] {
     border: 1px solid #b0a1a1;
 }
 
-main .login_container .login_box input[type="password"] {
+.login .login_container .login_box input[type="password"] {
     margin: 0;
 }
 
-main .login_container .login_box input[type="submit"] {
+.login .login_container .login_box input[type="submit"] {
     border: 1px solid #ffa900;
     cursor: pointer;
     background-color: #fff;
@@ -66,21 +66,21 @@ main .login_container .login_box input[type="submit"] {
     margin-top: 55px;
 }
 
-main .login_container .login_box input[type="submit"]:hover {
+.login .login_container .login_box input[type="submit"]:hover {
     transition: .5s;
     background-color: #ffe344;
 }
 
-main .login_container .login_box .idpwfind {
+.login .login_container .login_box .idpwfind {
     float: right;
     line-height: 30px;
     color: #b0a1a1;
 }
 
-main .login_container .login_box .idpwfind a {
+.login .login_container .login_box .idpwfind a {
     color: #b0a1a1;
 }
 
-main .login_container .login_box .idpwfind a:hover {
+.login .login_container .login_box .idpwfind a:hover {
     text-decoration: underline;
 }
