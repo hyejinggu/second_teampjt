@@ -4,10 +4,9 @@ header * {
     white-space: nowrap;
 }
 
-header {
+header nav {
     margin-top: 15px;
     width: 100%;
-    margin-bottom: 20px;
 }
 
 /* 메뉴 리스트 */
