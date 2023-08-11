@@ -1,30 +1,30 @@
 import React from 'react';
-import '../../css/subpage/ItemDetail.css'
+import styles from "../../css/subpage/ItemDetail.module.css"
 
 const ItemDetail = () => {
     return (
         <section id="pagetop">
-            <div className="top_area">
-                <section className="img_area">
-                    <div className="main_img">
+            <div className={styles.top_area}>
+                <section className={styles.img_area}>
+                    <div className={styles.main_img}>
                         <img src="../image/item1_1.jpg" alt="상품이미지" />
                     </div>
-                    <div className="sub_img">
+                    <div className={styles.sub_img}>
                         <img src="../image/item1.jpg" alt="상품이미지" />
                         <img src="../image/item1_2.jpg" alt="상품이미지" />
-                        <img src="../image/item1_3.jpg" alt="상품이미지" />
+                        <img src="../image/item1_3.jpg" alt="상품이미지" />``
                         <img src="../image/item1_4.jpg" alt="상품이미지" />
                         <img src="../image/item1_5.jpg" alt="상품이미지" />
                     </div>
                 </section>
-                <section className="info_area">
+                <section className={styles.info_area}>
                     <div>상품명</div>
-                    <div className="present_pr">알록달록 로프 장난감</div>
+                    <div className={styles.present_pr}>알록달록 로프 장난감</div>
                     <div>판매가</div>
                     <div>
-                        <span className="sale_info">10%</span>
-                        <span className="normal_pr">13,000원</span>
-                        <span className="present_pr">11,700원</span>
+                        <span className={styles.sale_info}>10%</span>
+                        <span className={styles.normal_pr}>13,000원</span>
+                        <span className={styles.present_pr}>11,700원</span>
                     </div>
                     <div>배송비</div>
                     <div>3000원(30,000원 이상 구매시 무료)</div>
@@ -55,7 +55,7 @@ const ItemDetail = () => {
                     </div>
                 </section>
             </div>
-            <section id="section1" className="section">
+            <section id="section1" className={styles.section}>
                 <nav>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
@@ -83,7 +83,7 @@ const ItemDetail = () => {
                     </a>
                 </button>
                 <h3>상품정보고지</h3>
-                <table className="Product_info">
+                <table className={styles.Product_info}>
                     <tr>
                         <th>품명 :</th>
                         <td>알록달록 로프 장난감</td>
@@ -102,15 +102,15 @@ const ItemDetail = () => {
                     </tr>
                 </table>
             </section>
-            <section id="section2" className="section">
+            <section id="section2" className={styles.section}>
                 <nav>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
                     <a href="#section4">상품Q&A</a>
                 </nav>
-                <div className="purchase_info">
-                    <div className="purchase_left">
+                <div className={styles.purchase_info}>
+                    <div className={styles.purchase_left}>
                         <div>
                             <h3>[ 배송정보 ]</h3>
                             배송 방법 : 택배
@@ -146,7 +146,7 @@ const ItemDetail = () => {
                             5. 최초 구매하셨던 구매처를 통해서만 교환/반품이 가능합니다.
                         </div>
                     </div>
-                    <div className="purchase_right">
+                    <div className={styles.purchase_right}>
                         {/* 상품결제정보 */}
                         <div>
                             <h3>[ 상품결제정보 ]</h3>
@@ -185,27 +185,27 @@ const ItemDetail = () => {
                     </div>
                 </div>
             </section>
-            <section id="section3" className="section">
+            <section id="section3" className={styles.section}>
                 <nav>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
                     <a href="#section3">상품사용후기</a>
                     <a href="#section4">상품Q&A</a>
                 </nav>
-                <div className="review_wrap">
-                    <div className="review">
+                <div className={styles.review_wrap}>
+                    <div className={styles.review}>
                         <span>REVIEW</span>
                         <span>(4)</span>
                         <hr />
                     </div>
-                    <div className="total_score">
-                        <div className="grades_1">
+                    <div className={styles.total_score}>
+                        <div className={styles.grades_1}>
                             <span>5.0</span>
                             <p>
                                 <strong>100%</strong>의 구매자가 이 상품을 좋아합니다.
                             </p>
                         </div>
-                        <div className="grades_2">
+                        <div className={styles.grades_2}>
                             <ul>
                                 <li>아주 좋아요 <span></span> <b>4</b></li>
                                 <li>맘에들어요<span></span> <b>0</b></li>
@@ -216,40 +216,40 @@ const ItemDetail = () => {
                         </div>
                     </div>
 
-                    <div className="user_review">
-                        <ul className="review_header">
-                            <li className="checking">추천순</li>
+                    <div className={styles.user_review}>
+                        <ul className={styles.review_header}>
+                            <li className={styles.checking}>추천순</li>
                             <li>최신순</li>
                             <li>별점순</li>
                         </ul>
                         <ul>
-                            <li className="grades_3">아주 좋아요</li>
-                            <li className="user_text_review">
+                            <li className={styles.grades_3}>아주 좋아요</li>
+                            <li className={styles.user_text_review}>
                                 만족합니다. 재질도 부들부들하니 저도 물고싶네요
                             </li>
                         </ul>
                         <ul>
-                            <li className="grades_3">아주 좋아요</li>
-                            <li className="user_text_review">
+                            <li className={styles.grades_3}>아주 좋아요</li>
+                            <li className={styles.user_text_review}>
                                 만족합니다. 재질도 부들부들하니 저도 물고싶네요
                             </li>
                         </ul>
                         <ul>
-                            <li className="grades_3">아주 좋아요</li>
-                            <li className="user_text_review">
+                            <li className={styles.grades_3}>아주 좋아요</li>
+                            <li className={styles.user_text_review}>
                                 만족합니다. 재질도 부들부들하니 저도 물고싶네요
                             </li>
                         </ul>
                         <ul>
-                            <li className="grades_3">아주 좋아요</li>
-                            <li className="user_text_review">
+                            <li className={styles.grades_3}>아주 좋아요</li>
+                            <li className={styles.user_text_review}>
                                 만족합니다. 재질도 부들부들하니 저도 물고싶네요
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
-            <section id="section4" className="section">
+            <section id="section4" className={styles.section}>
                 <nav>
                     <a href="#section1">상품상세정보</a>
                     <a href="#section2">상품구매안내</a>
