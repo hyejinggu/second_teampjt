@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <header>
       <div className="menu_list">
-        <Link to="/main">
+        <a href="#">
           <img src={"/images/header/logo.png"} alt="로고" className="logo" />
-        </Link>
+        </a>
         <input
           type="search"
           name="search"

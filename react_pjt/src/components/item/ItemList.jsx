@@ -7,13 +7,13 @@ const ItemList = () => {
   const arrayReducer = (state, action) => {
     switch (action.type) {
       case "popular":
-        return [...state].sort((a, b) => a.clicked - b.clicked);
+        return [...state].sort((a, b) => b.clicked - a.clicked);
       case "low":
         return [...state].sort((a, b) => b.normalPr - a.normalPr);
       case "high":
         return [...state].sort((a, b) => a.normalPr - b.normalPr);
       case "new":
-        return state;
+        return iteminfo;
       default:
         return state;
     }

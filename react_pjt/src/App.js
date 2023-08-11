@@ -16,8 +16,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
-      <Footer />
 
       <Routes>
         <Route path="/main/*" element={<Main />} />
@@ -28,6 +26,8 @@ function App() {
         <Route path="/itemlist/*" element={<ItemList />} />
         <Route path="/lounge/*" element={<Lounge />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
