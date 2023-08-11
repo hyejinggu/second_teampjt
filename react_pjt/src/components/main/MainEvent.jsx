@@ -7,7 +7,7 @@ const MainEvent = () => {
         <div className="community_wrap">
             <div className="community_event">
                 <a href="#" className="event_img">
-                    <img src={"/images/main/event_sample.PNG"} alt="" />
+                    <img src={"images/main/event_sample.PNG"} alt="" />
                 </a>
                 <p className="event_title">🐕ANF 6Free+ 심플팩 100원!🐕</p>
                 <span>반려동물을 이해해온 68년, 이해하니까 더 무해하게, ANF 멜로망스 김민석이
