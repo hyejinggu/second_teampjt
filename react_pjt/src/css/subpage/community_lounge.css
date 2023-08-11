@@ -39,7 +39,7 @@
 }
 
 .content_wrap table th,
-td {
+.content_wrap table td {
   padding: 15px;
   border-bottom: 1px solid rgb(210, 210, 210);
 }
@@ -67,42 +67,12 @@ td {
   overflow: hidden;
 }
 
-table {
+.content_wrap table {
   width: 100%;
 }
 
 .content_wrap table tbody tr:hover {
   background-color: #f2f2f2;
-}
-
-/* ===== 페이지 이동 ===== */
-
-.content_wrap .page_shift {
-  padding: 50px;
-}
-
-.content_wrap .page_shift a {
-  box-sizing: border-box;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-
-  font-size: 1.2em;
-  border: #ffa900 1px solid;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
-  margin: 0 5px;
-}
-
-.content_wrap .page_shift a:hover {
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
-}
-
-.content_wrap .page_shift a[href="#"] {
-  border: #ff9100 3px solid;
-  font-weight: bold;
 }
 
 /* ===== 검색 조건 및 글쓰기 영역 시작 ===== */
