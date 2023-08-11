@@ -27,7 +27,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/join">
+            <Link to="/join/profile">
               <img src={"/images/header/join_img.png"} alt="" />
               회원가입
             </Link>
