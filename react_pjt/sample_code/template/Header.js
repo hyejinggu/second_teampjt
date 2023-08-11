@@ -2,25 +2,24 @@
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import '../common/css/header.css';
-import '../common/css/reset.css';
 import '../common/css/common.css';
 
 function Header() {
 
-  // const [openedDrawer, setOpenedDrawer] = useState(false)
+    // const [openedDrawer, setOpenedDrawer] = useState(false)
 
-  // function toggleDrawer() {
-  //   setOpenedDrawer(!openedDrawer);
-  // }
+    // function toggleDrawer() {
+    //   setOpenedDrawer(!openedDrawer);
+    // }
 
-  // function changeNav(event) {
-  //   if (openedDrawer) {
-  //     setOpenedDrawer(false)
-  //   }
-  // }
+    // function changeNav(event) {
+    //   if (openedDrawer) {
+    //     setOpenedDrawer(false)
+    //   }
+    // }
 
-  return (
-    <div className="menu_list">
+    return (
+        <div className="menu_list">
             <a href="./index.html">
                 <img src={'/header/logo.png'} alt="로고" className="logo" />
             </a>
@@ -48,7 +47,7 @@ function Header() {
                 </li>
             </ul>
         </div>
-  );
+    );
 }
 
 export default Header;

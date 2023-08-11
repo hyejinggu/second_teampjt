@@ -1,4 +1,4 @@
-import "../../css/subpage/community_lounge.css";
+// import "../../css/subpage/community_lounge.css";
 import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
 import { useReducer } from "react";

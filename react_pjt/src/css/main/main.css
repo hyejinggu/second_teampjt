@@ -29,7 +29,7 @@ main {
   object-fit: cover;
   border-radius: 30px;
   position: absolute;
-  /* transform: translateX(-50%); */
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
@@ -323,6 +323,7 @@ main .bestseller li:hover img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 33%;
 }
 
 .community_wrap .community_event .event_img {
@@ -339,12 +340,12 @@ main .bestseller li:hover img {
 }
 
 .community_wrap .community_event span {
-  display: block;
   text-align: justify;
   word-break: break-all;
   width: 65%;
   padding: 0 calc((100% - 65%)/2);
   font-size: 14px;
+  white-space: break-spaces;
 }
 
 .community_wrap .community_event .event_account {
