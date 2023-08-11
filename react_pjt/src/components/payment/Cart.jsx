@@ -25,7 +25,7 @@ export default function Cart() {
               </td>
               <td>
                 <a href="../../subpage/html/subpage2.html">
-                  <img src="../image/exImg.jpg" alt="이미지" />
+                  <img src={"/images/cart/exImg.jpg"} alt="이미지" />
                 </a>
                 <span className="text-ellipsis">[네츄럴코어 사료 연어 7kg] 할인 적용</span>
               </td>
@@ -46,7 +46,7 @@ export default function Cart() {
               </td>
               <td>
                 <a href="../../subpage/html/subpage2.html">
-                  <img src="../image/exImg.jpg" alt="이미지" />
+                  <img src={"/images/cart/exImg.jpg"} alt="이미지" />
                 </a>
                 <span className="text-ellipsis">[네츄럴코어 사료 연어 7kg]</span>
               </td>
@@ -67,7 +67,7 @@ export default function Cart() {
               </td>
               <td>
                 <a href="../../subpage/html/subpage2.html">
-                  <img src="../../subpage/image/item1_2.jpg" alt="이미지" />
+                  <img src={"images/subpage/item1_2.jpg"} alt="이미지" />
                 </a>
                 <span className="text-ellipsis">[알록달록 로프 장난감]</span>
               </td>
