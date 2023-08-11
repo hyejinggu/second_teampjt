@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header>
       <div className="menu_list">
-        <a href="./index.html">
+        <a href="#">
           <img src={"/images/header/logo.png"} alt="로고" className="logo" />
         </a>
         <input
@@ -23,31 +23,31 @@ const Header = () => {
 
         <ul>
           <li>
-            <a href="./react_pjt/login/html/login.html">
+            <Link to="/login">
               <img src={"/images/header/login_img.png"} alt="" /> 로그인
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./react_pjt/join/html/profile.html">
+            <Link to="/profile">
               <img src={"/images/header/join_img.png"} alt="" />
               회원가입
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./react_pjt/cart/html/cart.html">
+            <Link to="/cart">
               <img src={"/images/header/cart_img.png"} alt="" />
               장바구니
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./react_pjt/board/html/board.html">
+            <Link to="/board">
               <img src={"/images/header/customer_service_img.png"} alt="" />
               고객센터
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-      <ul class="gnb_list">
+      <ul className="gnb_list">
         <li>
           <a href="#">
             <img src={"/images/header/food_img.png"} alt="" />
@@ -73,16 +73,12 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a href="../../subpage/html/community_lounge.html">
+          <Link to="/lounge">
             <img src={"/images/header/community_img.png"} alt="" />
             커뮤니티
-          </a>
+          </Link>
         </li>
       </ul>
-
-      <Routes>
-        <Route path="/itemlist" element={<ItemList />} />
-      </Routes>
     </header>
   );
 };

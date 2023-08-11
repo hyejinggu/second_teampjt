@@ -41,7 +41,7 @@ import "../../css/board/boardQna.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -61,7 +61,7 @@ import "../../css/board/boardQna.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -81,48 +81,7 @@ import "../../css/board/boardQna.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
-                        <span>
-                            회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
-                            톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
-                        </span>
-                    </td>
-
-                </tr>
-
-                <tr class="question_1">
-                    <td>
-                        <input type="checkbox" name="checkbox" class="board_checkbox">
-                    </td>
-                    <td>1</td>
-                    <td>첫 번째 게시물 제목</td>
-                    <td>김철수</td>
-                    <td>2023-05-19</td>
-                    <td>10</td>
-                </tr>
-
-                <tr class="answer">
-                    <td colspan="6">
-                        <span>
-                            회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
-                            톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
-                        </span>
-                    </td>
-                </tr>
-
-                <tr class="question_1">
-                    <td>
-                        <input type="checkbox" name="checkbox" class="board_checkbox">
-                    </td>
-                    <td>1</td>
-                    <td>첫 번째 게시물 제목</td>
-                    <td>김철수</td>
-                    <td>2023-05-19</td>
-                    <td>10</td>
-                </tr>
-
-                <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -143,7 +102,48 @@ import "../../css/board/boardQna.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
+                        <span>
+                            회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
+                            톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
+                        </span>
+                    </td>
+                </tr>
+
+                <tr class="question_1">
+                    <td>
+                        <input type="checkbox" name="checkbox" class="board_checkbox">
+                    </td>
+                    <td>1</td>
+                    <td>첫 번째 게시물 제목</td>
+                    <td>김철수</td>
+                    <td>2023-05-19</td>
+                    <td>10</td>
+                </tr>
+
+                <tr class="answer">
+                    <td colSpan="6">
+                        <span>
+                            회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
+                            톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr class="question_1">
+                    <td>
+                        <input type="checkbox" name="checkbox" class="board_checkbox">
+                    </td>
+                    <td>1</td>
+                    <td>첫 번째 게시물 제목</td>
+                    <td>김철수</td>
+                    <td>2023-05-19</td>
+                    <td>10</td>
+                </tr>
+
+                <tr class="answer">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.

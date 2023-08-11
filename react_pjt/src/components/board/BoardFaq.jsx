@@ -41,7 +41,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -61,7 +61,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -81,7 +81,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -102,7 +102,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -122,7 +122,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
@@ -143,7 +143,7 @@ import "../../css/board/boardFaq.css";
                 </tr>
 
                 <tr class="answer">
-                    <td colspan="6">
+                    <td colSpan="6">
                         <span>
                             회원가입 신청 후, 영업시간 기준 1일 이내에 담당자 확인후 승인이 완료됩니다. 승인이 완료되면, 카카오
                             톡 알림톡으로 회원가입 승인 완료 알림을 보내드리고 있습니다.
