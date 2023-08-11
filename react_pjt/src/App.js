@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Main from "./components/common/Main";
-import Body from "./components/common/Body";
 
 // router
 import { Route, Routes, Link } from "react-router-dom";
@@ -17,9 +16,8 @@ function App() {
   return (
     <div className="App" id="wrap">
       <Header />
-      <Body />
-      {/* <Main /> */}
       <Routes>
+        <Route path="/*" element={<Main />} />
         <Route path="/main/*" element={<Main />} />
         <Route path="/login/*" element={<Login />} />
         <Route path="/profile/*" element={<Profile />} />
