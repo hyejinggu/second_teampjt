@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import "../../css/join/join.css";
 
 const Proflie = () => {
@@ -6,7 +5,7 @@ const Proflie = () => {
     <div className="right_contents">
       <htmlForm action="#" method="post">
         <figure>
-          
+
           <table>
             <tbody>
               <tr>
