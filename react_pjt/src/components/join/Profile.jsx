@@ -6,22 +6,7 @@ const Proflie = () => {
     <div className="right_contents">
       <htmlForm action="#" method="post">
         <figure>
-          <ul>
-            <li>
-              <NavLink to='/Profile'>
-                Proflie
-              </NavLink>
-            </li>
-            <li>
-              <a href="./details.html">Details</a>
-            </li>
-            <li>
-              <a href="./inhtmlFormation.html">inhtmlFormation</a>
-            </li>
-            <li>
-              <a href="./agree.html">Agree</a>
-            </li>
-          </ul>
+          
           <table>
             <tbody>
               <tr>

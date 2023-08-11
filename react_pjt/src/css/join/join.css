@@ -1,4 +1,4 @@
- {
+ /* .right_contents {
      box-sizing: border-box;
      margin: 50px auto;
      background-color: #fff;
@@ -10,10 +10,14 @@
      display: flex;
      justify-content: center;
      align-items: center;
- }
+ } */
 
  /*==================================================================*/
  /*  layout */
+ .active {
+     color: #ffe344;
+ }
+
  .img_container {
      width: 50%;
      display: flex;

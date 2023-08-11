@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../../css/main/bestseller.css';
-import "../../css/common/reset.css";
 import "../../css/common/common.css";
 import BestsellerList from './BestsellerList';
 
