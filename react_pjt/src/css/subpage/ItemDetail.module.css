@@ -44,7 +44,8 @@ section section {
 
 .fixed_nav>a:hover,
 .nav>a:hover,
-input[type="button"]:hover {
+input[type="button"]:hover,
+div>a>.button:hover {
     transition: .5s;
     background-color: #ffe344;
 }
@@ -234,7 +235,7 @@ input[type="button"]:hover {
     /* padding: 1em; */
 }
 
-.info_area div input {
+.info_area input {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
