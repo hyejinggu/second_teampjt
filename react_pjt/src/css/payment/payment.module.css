@@ -3,19 +3,19 @@
     font-size: 14px;
 }
 
-.text-white {
+.text_white {
     color: white;
 }
 
-.text-center {
+.text_center {
     text-align: center;
 }
 
-.d-none {
+.d_none {
     display: none;
 }
 
-.d-flex {
+.d_flex {
     display: flex;
 }
 
@@ -162,7 +162,7 @@ table {
 
 /*====================================================================== 약관동의 ====================================================================== */
 
-.checkbox-wrapper input[type=checkbox] {
+.checkbox_wrapper input[type=checkbox] {
     margin-top: 12px;
     margin-right: 10px;
 }
@@ -178,18 +178,18 @@ form section div p {
 }
 
 .content p::-webkit-scrollbar,
-.checkbox-wrapper::-webkit-scrollbar {
+.checkbox_wrapper::-webkit-scrollbar {
     width: 6px;
 }
 
 .content p::-webkit-scrollbar-thumb,
-.checkbox-wrapper::-webkit-scrollbar-thumb {
+.checkbox_wrapper::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 8px;
 }
 
 .content p::-webkit-scrollbar-track,
-.checkbox-wrapper::-webkit-scrollbar-track {
+.checkbox_wrapper::-webkit-scrollbar-track {
     background-color: #eee;
     border-radius: 8px;
 }

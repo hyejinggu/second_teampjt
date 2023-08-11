@@ -1,19 +1,15 @@
-// import '../../css/payment/payment.css'
-export default function Payment() {
-  return <div>payment</div>;
-}
+// import styles from '../../css/payment/payment.module.css';
 
 // const Payment = () => {
 //     return (
 //         <div>
-//             <h2 className="title">주문/결제</h2>
-//             {/* <!-- <section className="main"> --> */}
+//             <h2 className={styles.title}>주문/결제</h2>
 
-//             <form action="" method="" className="main">
+//             <form action="" method="" className={styles.main}>
 //                 {/* <!--배송지정보--> */}
 
 //                 <h2>배송지</h2>
-//                 <div className="address_input">
+//                 <div className={styles.address_input}>
 //                     <table>
 //                         <tr>
 //                             <th>
@@ -64,11 +60,11 @@ export default function Payment() {
 //                             </td>
 //                         </tr>
 //                     </table>
-//                     <a href="../.././../index.html" className="img_area">
+//                     <a href="../.././../index.html" className={styles.img_area}>
 //                         <img src="https://i.pinimg.com/originals/7e/35/0c/7e350c22750cea72abeb1ab755ad43d0.gif" alt="" />
 //                     </a>
 //                     {/* <!-- 비회원 주문조회 비밀번호--> */}
-//                     <div className="pass_input">
+//                     <div className={styles.pass_input}>
 //                         <hr />
 //                         <h2>비회원 주문조회 비밀번호</h2>
 //                         <table>
@@ -89,27 +85,27 @@ export default function Payment() {
 //                 {/* <!-- 주문상품 --> */}
 
 //                 <h2>주문상품</h2>
-//                 <div className="desc">
+//                 <div className={styles.desc}>
 //             <table>
 //                 {products.map((product, index) => (
 //                     <tr key={index}>
 //                         <td>
-//                             <div className="thumb">
+//                             <div className={styles.thumb}>
 //                                 <img src={product.image} alt="상품이미지" />
 //                             </div>
 //                         </td>
 //                         <td>
-//                             <h3 className="name">{product.name}</h3>
+//                             <h3 className={styles.name}>{product.name}</h3>
 //                         </td>
 //                         <td>
 //                             <ul>
 //                                 <li>
-//                                     <span className="sale_info">{product.saleInfo}</span>
-//                                     <span className="normal_pr">{product.normalPrice}</span>
-//                                     <span className="present_pr">{product.presentPrice}</span>
+//                                     <span className={styles.sale_info}>{product.saleInfo}</span>
+//                                     <span className={styles.normal_pr}>{product.normalPrice}</span>
+//                                     <span className={styles.present_pr}>{product.presentPrice}</span>
 //                                 </li>
 //                                 <li>
-//                                     <span className="free-delivery">3000원(50,000원 이상 구매시 무료)</span>
+//                                     <span className={styles.free_delivery}>3000원(50,000원 이상 구매시 무료)</span>
 //                                 </li>
 //                             </ul>
 //                         </td>
@@ -122,7 +118,7 @@ export default function Payment() {
 //                 {/* <!--약관 동의--> */}
 
 //                 <section>
-//                     <div className="content">
+//                     <div className={styles.content}>
 //                         <h2>이용 약관</h2>
 //                         <p>
 //                             제1조(목적)
@@ -370,7 +366,7 @@ export default function Payment() {
 
 //                             1. 이 약관은 년 월 일부터 적용됩니다.
 //                         </p>
-//                         <div className="checkbox-wrapper">
+//                         <div className={styles.checkbox_wrapper}>
 //                             <label>
 //                                 <input type="checkbox" id="agree-checkbox" required />
 //                                 약관에 동의합니다.
@@ -398,7 +394,7 @@ export default function Payment() {
 //                             - 제공항목 : 구매자 이름, 전화번호, ID, 휴대폰번호, 이메일주소, 상품 구매정보, 상품 수취인 정보(이름, 주소, 전화번호)
 //                             - 보유/이용기간 : 배송완료 후 한달</p>
 
-//                         <div className="checkbox-wrapper">
+//                         <div className={styles.checkbox_wrapper}>
 //                             <label>
 //                                 <input type="checkbox" id="agree-checkbox" required />
 //                                 개인 정보 처리 방침에 동의합니다.
@@ -406,7 +402,7 @@ export default function Payment() {
 //                         </div>
 //                     </div>
 //                 </section>
-//                 <div className="button">
+//                 <div className={styles.button}>
 //                     <a href="../../../index.html">
 //                         <input type="button" value="할인 상품 더 보기" />
 //                     </a>
