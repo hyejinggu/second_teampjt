@@ -1,6 +1,6 @@
 // import "../../css/subpage/subpage_itemlist.css";
 import { Routes, Route, Link } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
+// import ItemDetail from "./ItemDetail";
 
 function ItemInfo({ iteminfo, presentPr, normalPr }) {
   return (
@@ -34,9 +34,9 @@ function ItemInfo({ iteminfo, presentPr, normalPr }) {
         ))}
       </ul>
 
-      <Routes>
+      {/* <Routes>
         <Route path="/itemdetail" element={<ItemDetail />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
