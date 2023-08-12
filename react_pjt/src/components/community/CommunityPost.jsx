@@ -1,11 +1,11 @@
-import "../../css/subpage/community_lounge.css";
+// import styles from "../../css/subpage/community_lounge.module.css";
 
 export default function CommunityPost({ loungePostArray }) {
   return (
     <tbody>
       {loungePostArray.map((post, index) => (
         <tr>
-          <td>{index + 1}</td>
+          <td>{loungePostArray.length - index}</td>
           <td>
             <img src={post.image} />
           </td>
