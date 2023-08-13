@@ -179,11 +179,9 @@ export default function Lounge() {
                   name="search_condition"
                   id="search_condition"
                 >
-                  <optgroup label="검색 조건">
-                    <option value="postTitle">제목</option>
-                    <option value="postContent">내용</option>
-                    <option value="postUserId">작성자</option>
-                  </optgroup>
+                  <option value="postTitle">제목</option>
+                  <option value="postContent">내용</option>
+                  <option value="postUserId">작성자</option>
                 </select>
                 <input
                   onChange={(e) => setInputValue(e.target.value)}
