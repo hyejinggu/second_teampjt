@@ -103,6 +103,9 @@ export default function Lounge() {
         );
       case "notice":
         return loungePostArray;
+      // 글 정렬
+
+      // 글 검색
       case "postTitle":
         return inputValue === ""
           ? state
