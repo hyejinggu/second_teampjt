@@ -34,18 +34,34 @@ class ItemDetail extends React.Component {
                     </section>
                     <section className={styles.info_area}>
                         {/* 상품명 */}
-                        <div>{itemInfo.name}</div>
+                        <div>
+                            상품명
+                        </div>
+                        <div className={styles.present_pr}>
+                            {itemInfo.name}
+                        </div>
                         {/* 판매가 */}
+                        <div>
+                            판매가
+                        </div>
                         <div>
                             <span className={styles.sale_info}>{itemInfo.salePercent}%</span>
                             <span className={styles.normal_pr}>{itemInfo.originalPrice}원</span>
                             <span className={styles.present_pr}>{itemInfo.discountedPrice}원</span>
                         </div>
                         {/* 배송비 */}
-                        <div>{itemInfo.shippingFee}원(30,000원 이상 구매시 무료)</div>
+                        <div>
+                            배송비
+                        </div>
+                        <div>
+                            {itemInfo.shippingFee}원(30,000원 이상 구매시 무료)
+                        </div>
                         {/* 사이즈 */}
                         <div>
-                            <select id="sizeOption" name="sizeOption">
+                            사이즈
+                        </div>
+                        <div>
+                            <select id="option" name="sizeOption">
                                 {itemInfo.sizes.map((size, index) => (
                                     <option key={index} value={size}>{size}</option>
                                 ))}
@@ -53,7 +69,10 @@ class ItemDetail extends React.Component {
                         </div>
                         {/* 컬러 */}
                         <div>
-                            <select id="colorOption" name="colorOption">
+                            컬러
+                        </div>
+                        <div>
+                            <select id="option" name="colorOption">
                                 {itemInfo.colors.map((color, index) => (
                                     <option key={index} value={color}>{color}</option>
                                 ))}
@@ -62,13 +81,13 @@ class ItemDetail extends React.Component {
                         {/* 구매 버튼 */}
                         <div>
                             <a href="../../cart/html/payment.html">
-                                <input type="button" value="바로 구매하기" />
+                                <input type="button" value="바로 구매하기" className={styles.button} />
                             </a>
                         </div>
                         {/* 장바구니 버튼 */}
                         <div>
                             <a href="../../cart/html/cart.html">
-                                <input type="button" value="장바구니 담기" />
+                                <input type="button" value="장바구니 담기" className={styles.button} />
                             </a>
                         </div>
                     </section>

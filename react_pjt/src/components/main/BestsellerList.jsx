@@ -1,19 +1,22 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const BestsellerList = ({ products }) => {
+const BestsellerList = ({ array, presentPr, normalPr }) => {
     return (
         <ul className="bestseller">
-            {products.map((product, index) => (
+            {array.map((item, index) => (
                 <li key={index}>
-                    <div className="item_info_wrap">
-                        <a href="#">
-                            <img src={product.image} alt={`상품 ${index + 1}`} />
-                            <h3>{product.name}</h3>
-                            <span className="sale_info">{product.saleInfo}</span>
-                            <span className="normal_pr">{product.normalPr}</span>
-                            <span className="present_pr">{product.presentPr}</span>
-                        </a>
-                    </div>
+                    <Link to="/itemdetail">
+                        <div className="item_info_wrap">
+                            <a href="#">
+                                <img src={item.image[0]} alt={`상품 ${index + 1}`} />
+                                <h3>{item.name}</h3>
+                                <span className="sale_info">{item.saleInfo}</span>
+                                <span className="normal_pr">{normalPr(item)}원</span>
+                                <span className="present_pr">{presentPr(item)}원</span>
+                            </a>
+                        </div>
+                    </Link>
                 </li>
             ))}
         </ul>

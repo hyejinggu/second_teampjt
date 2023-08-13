@@ -3,7 +3,7 @@
 }
 
 .item_sort_wrap,
-.content_wrap {
+.item_wrap {
   background-color: white;
 }
 
@@ -39,18 +39,18 @@
 
 /* ===== 상품 목록 영역 시작 ===== */
 
-.content_wrap {
+.item_wrap {
   padding: 30px 20px 50px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
 }
 
-.content_wrap ul {
+.item_wrap ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-.content_wrap li {
+.item_wrap li {
   flex: 0 0 25%;
   margin: 50px 0;
 }
@@ -116,6 +116,7 @@
 
 .page_shift {
   padding: 50px;
+  cursor: pointer;
 }
 
 .page_shift span {

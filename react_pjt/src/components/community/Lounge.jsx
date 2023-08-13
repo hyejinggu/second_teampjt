@@ -1,50 +1,11 @@
 // import "../../css/subpage/community_lounge.css";
+import styles from "../../css/subpage/community_lounge.module.css";
 import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
 import { useReducer, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Lounge() {
-  const arrayReducer = (state, action) => {
-    switch (action.type) {
-      case "popular":
-        return [...state].sort(
-          (a, b) => b.recommended + b.views - (a.recommended + a.views)
-        );
-      case "notice":
-        return loungePostArray;
-      case "postTitle":
-        return inputValue === ""
-          ? state
-          : state.filter((it) =>
-              it.title.toLowerCase().includes(inputValue.toLowerCase())
-            );
-      case "postContent":
-        return inputValue === ""
-          ? state
-          : state.filter((it) =>
-              it.content.toLowerCase().includes(inputValue.toLowerCase())
-            );
-      case "postUserId":
-        return inputValue === ""
-          ? state
-          : state.filter((it) =>
-              it.userid.toLowerCase().includes(inputValue.toLowerCase())
-            );
-      default:
-        return loungePostArray;
-    }
-  };
-
-  const [selectedValue, setSelectedValue] = useState("");
-  const handleSelectChange = (e) => {
-    const optionValue = e.target.value;
-    setSelectedValue(optionValue);
-  };
-  const [inputValue, setInputValue] = useState("");
-  const onChangeSearch = (e) => {
-    setInputValue(e.target.value);
-  };
-
   const loungePostArray = [
     {
       image:
@@ -134,19 +95,50 @@ export default function Lounge() {
     },
   ];
 
+  const arrayReducer = (state, action) => {
+    switch (action.type) {
+      case "popular":
+        return [...state].sort(
+          (a, b) => b.recommended + b.views - (a.recommended + a.views)
+        );
+      case "notice":
+        return loungePostArray;
+      // 글 정렬
+
+      // 글 검색
+      case "postTitle":
+        return inputValue === ""
+          ? state
+          : loungePostArray.filter((it) => it.title.includes(inputValue));
+      case "postContent":
+        return inputValue === ""
+          ? state
+          : loungePostArray.filter((it) => it.content.includes(inputValue));
+      case "postUserId":
+        return inputValue === ""
+          ? state
+          : loungePostArray.filter((it) => it.userid.includes(inputValue));
+      default:
+        return loungePostArray;
+    }
+  };
+
+  const [selectedValue, setSelectedValue] = useState("postTitle");
+  const [inputValue, setInputValue] = useState("");
+
   const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
+
   return (
-    <div id="wrap" className="lounge_container">
-      <div className="title">
+    <div id="wrap" className={styles.lounge_container}>
+      <div className={styles.title}>
         <strong>
           <a href="#">라운지</a>
-          <a href="">정보 공유&amp;리뷰</a>
-          <a href="">QnA</a>
           <a href="">이벤트</a>
+          <a href="">우리 동네</a>
         </strong>
       </div>
 
-      <div className="post sort">
+      <div className={styles.sort}>
         <ul>
           <li onClick={() => dispatch({ type: "popular" })}>인기글</li>
           <li onClick={() => dispatch({ type: "notice" })}>공지사항</li>
@@ -155,43 +147,61 @@ export default function Lounge() {
         </ul>
         <p>총 50개의 글</p>
       </div>
+      <div className={styles.content_wrap}>
+        <ul className={styles.side_bar}>
+          <li>자유 게시판</li>
+          <li>고민 상담소</li>
+          <li>지식 공유</li>
+          <li>친구 찾기</li>
+        </ul>
 
-      <div className="content_wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>번호</th>
-              <th>이미지</th>
-              <th>제목 및 내용</th>
-              <th>작성자</th>
-              <th>날짜</th>
-              <th>추천수</th>
-              <th>조회수</th>
-            </tr>
-          </thead>
-          <CommunityPost loungePostArray={array} />
-        </table>
-      </div>
+        <div className={styles.post_wrap}>
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>이미지</th>
+                <th>제목 및 내용</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>추천수</th>
+                <th>조회수</th>
+              </tr>
+            </thead>
+            <CommunityPost loungePostArray={array} />
+          </table>
 
-      <div className="search_and_post">
-        <div className="search_bar">
-          <form>
-            <select
-              onChange={handleSelectChange}
-              name="search_condition"
-              id="search_condition"
-            >
-              <option value="postTitle">제목</option>
-              <option value="postContent">내용</option>
-              <option value="postUserId">작성자</option>
-            </select>
-            <input onChange={onChangeSearch} type="text" placeholder="검색" />
-          </form>
-          <span onClick={() => dispatch({ type: selectedValue })}>🔍</span>
+          <div className={styles.search_and_post}>
+            <div className={styles.search_bar}>
+              <form>
+                <select
+                  onChange={(e) => setSelectedValue(e.target.value)}
+                  name="search_condition"
+                  id="search_condition"
+                >
+                  <option value="postTitle">제목</option>
+                  <option value="postContent">내용</option>
+                  <option value="postUserId">작성자</option>
+                </select>
+                <input
+                  onChange={(e) => setInputValue(e.target.value)}
+                  type="text"
+                  placeholder="검색"
+                />
+              </form>
+              <span onClick={() => dispatch({ type: selectedValue })}>🔍</span>
+            </div>
+            <Link to="/createpost">
+              <button>글쓰기</button>
+            </Link>
+          </div>
         </div>
-        <button>글쓰기</button>
       </div>
-      <PageNation />
+      <div className={styles.page_shift}>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </div>
     </div>
   );
 }
