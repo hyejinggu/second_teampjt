@@ -1,14 +1,22 @@
-import "../../css/main/main.css";
+import styles from "../../css/common/modal.module.css";
+
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 
-const Modal = ({ isModalOpen, modalContent, closeModal }) => {
+const Modal = ({ isModalOpen, modalContent, setIsModalOpen }) => {
   if (!isModalOpen) return null;
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className="modal" onClick={closeModal}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className={styles.modal} onClick={closeModal}>
+      <div
+        className={styles.modal_content}
+        onClick={(e) => e.stopPropagation()}
+      >
         <p>{modalContent}</p>
-        <span className="close" onClick={closeModal}>
+        <span className={styles.close} onClick={closeModal}>
           확인
         </span>
       </div>

@@ -197,11 +197,7 @@ export default function Lounge() {
           </div>
         </div>
       </div>
-      <div className={styles.page_shift}>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-      </div>
+      <PageNation />
     </div>
   );
 }

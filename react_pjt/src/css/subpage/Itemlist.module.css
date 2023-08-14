@@ -111,33 +111,3 @@
 }
 
 /* ===== 상품 목록 영역 끝 ===== */
-
-/* ===== 페이지 이동 ===== */
-
-.page_shift {
-  padding: 50px;
-  cursor: pointer;
-}
-
-.page_shift span {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 30px;
-  line-height: 28px;
-
-  font-size: 1.2em;
-  border: #ffa900 1px solid;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
-  margin: 0 5px;
-  padding-top: 3px;
-}
-
-.page_shift span:hover {
-  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
-}
-
-/* .page_shift .active {
-  background-color: #ffe344;
-  font-weight: bold;
-} */

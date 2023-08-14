@@ -430,7 +430,7 @@ const ItemList = () => {
   };
 
   // useReducer 선언
-  const [handleSortArray, dispatch] = useReducer(arrayReducer, iteminfo);
+  const [sortedArray, dispatch] = useReducer(arrayReducer, iteminfo);
 
   // ======== 가격 계산 및 형식 변환 함수 시작 ========
   const formatter = new Intl.NumberFormat("ko-KR", {
@@ -466,16 +466,12 @@ const ItemList = () => {
 
       <div className={styles.item_wrap}>
         <ItemInfo
-          selectedIteminfo={iteminfo}
+          selectedIteminfo={sortedArray}
           presentPr={presentPr}
           normalPr={normalPr}
         />
       </div>
-      <div className={styles.page_shift}>
-        <span onClick={(e) => setValue(e.target.innerText)}>1</span>
-        <span onClick={(e) => setValue(e.target.innerText)}>2</span>
-        <span onClick={(e) => setValue(e.target.innerText)}>3</span>
-      </div>
+      <PageNation setValue={setValue} />
     </div>
   );
 };
