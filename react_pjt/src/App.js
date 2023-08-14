@@ -12,6 +12,7 @@ import Board from "./components/board/Board";
 import ItemList from "./components/item/ItemList";
 import Lounge from "./components/community/Lounge";
 import ItemDetail from "./components/item/ItemDetail";
+import CartItem from "./components/cart/CartItem";
 
 // 커뮤니티 링크 페이지 import
 import CreatePost from "./components/community/CommunityPost";
@@ -34,6 +35,7 @@ function App() {
 
         {/* 커뮤니티 링크 */}
         <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/cartitem/*" element={<CartItem />} />
       </Routes>
       <Footer />
     </div>

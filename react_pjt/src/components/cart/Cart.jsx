@@ -1,12 +1,9 @@
 import "../../css/cart/cart.css";
 import CartItem from "./CartItem";
 import CartItemPrice from "./CartItemPrice";
-import { useLocation } from "react-router-dom";
+
 
 export default function Cart() {
-  const location = useLocation();
-  const cartItem = location.state.item;
-
   return (
     <div className="cart">
       <form action="#" method="post">
@@ -23,7 +20,7 @@ export default function Cart() {
             </tr>
           </thead>
           <tbody>
-            <CartItem cartItem={cartItem} />
+            <CartItem />
             <CartItem />
             <CartItem />
           </tbody>
