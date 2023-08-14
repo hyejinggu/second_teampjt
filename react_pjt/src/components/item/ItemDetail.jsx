@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from "../../css/subpage/ItemDetail.module.css"
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 
 class ItemDetail extends React.Component {
 
@@ -86,12 +89,22 @@ class ItemDetail extends React.Component {
                         </div>
                         {/* 장바구니 버튼 */}
                         <div>
-                            <a href="../../cart/html/cart.html">
+                            <Link to='/cart' state={{
+                                itemInfo: {
+                                    name: '알록달록 로프 장난감',
+                                    originalPrice: 13000,
+                                    salePercent: 10,
+                                    discountedPrice: 11700,
+                                    shippingFee: 3000,
+                                    sizes: ['S', 'M', 'L'],
+                                    colors: ['노랑', '연두'],
+                                }
+                            }}>
                                 <input type="button" value="장바구니 담기" className={styles.button} />
-                            </a>
+                            </Link>
                         </div>
                     </section>
-                </div>
+                </div >
                 <section id="section1" className={styles.section1}>
                     <nav className={styles.nav}>
                         <a href="#section1">상품상세정보</a>
@@ -300,7 +313,7 @@ class ItemDetail extends React.Component {
                         <input type="button" value="상품 문의하기" />
                     </a>
                 </section>
-            </div>
+            </div >
         );
     }
 }

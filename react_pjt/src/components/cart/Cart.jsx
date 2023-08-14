@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import CartItemPrice from './CartItemPrice';
 
 
-export default function Cart() {
+export default function Cart(itemInfo) {
   return (
     <div className="cart">
       <form action="#" method="post">
@@ -20,7 +20,7 @@ export default function Cart() {
             </tr>
           </thead>
           <tbody>
-            <CartItem />
+            <CartItem itemInfo={itemInfo} />
             <CartItem />
             <CartItem />
 
@@ -28,7 +28,7 @@ export default function Cart() {
         </table>
 
         <CartItemPrice />
-        
+
         <a href="./payment.html">
           <input type="button" value="구매하기" className="order" /></a>
       </form>
