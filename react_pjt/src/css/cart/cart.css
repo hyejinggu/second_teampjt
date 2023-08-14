@@ -115,7 +115,7 @@
     vertical-align: middle;
 }
 
-.cart table tbody tr td input[type=button] {
+.cart table tbody tr td button {
     padding: 3px;
     border: none;
     display: block;
@@ -131,7 +131,7 @@
     line-height: 40px;
 }
 
-.cart table tbody tr td input[type=button]:hover {
+.cart table tbody tr td button:hover {
     transition: .5s;
     background-color: #ffe344;
 }

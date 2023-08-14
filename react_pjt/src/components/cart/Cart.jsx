@@ -1,9 +1,12 @@
-import "../../css/cart/cart.css";
+
 import CartItem from "./CartItem";
 import CartItemPrice from "./CartItemPrice";
-
+import { useLocation } from "react-router-dom";
+import "../../css/cart/cart.css";
 
 export default function Cart() {
+  const location = useLocation();
+  const selectedItem = location.state.selectedItem;
   return (
     <div className="cart">
       <form action="#" method="post">
@@ -20,9 +23,7 @@ export default function Cart() {
             </tr>
           </thead>
           <tbody>
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            <CartItem selectedItem={selectedItem} />
           </tbody>
         </table>
 
