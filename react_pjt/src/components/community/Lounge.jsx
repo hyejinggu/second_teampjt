@@ -2,6 +2,7 @@
 import styles from "../../css/subpage/community_lounge.module.css";
 import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
+import CommunityTitle from "./CommunityTitle";
 import { useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -97,15 +98,15 @@ export default function Lounge() {
 
   const arrayReducer = (state, action) => {
     switch (action.type) {
+      // 글 정렬 case
       case "popular":
         return [...state].sort(
           (a, b) => b.recommended + b.views - (a.recommended + a.views)
         );
       case "notice":
         return loungePostArray;
-      // 글 정렬
 
-      // 글 검색
+      // 글 검색 case
       case "postTitle":
         return inputValue === ""
           ? state
@@ -123,21 +124,19 @@ export default function Lounge() {
     }
   };
 
+  // 글 검색을 위해 select, input value에 useState 설정
   const [selectedValue, setSelectedValue] = useState("postTitle");
   const [inputValue, setInputValue] = useState("");
 
+  // 글 정렬을 위해 useReducer 설정
   const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
 
   return (
     <div id="wrap" className={styles.lounge_container}>
-      <div className={styles.title}>
-        <strong>
-          <a href="#">라운지</a>
-          <a href="">이벤트</a>
-          <a href="">우리 동네</a>
-        </strong>
-      </div>
+      {/* 커뮤니티 타이틀 */}
+      <CommunityTitle />
 
+      {/* 글 정렬, 사이드 바 */}
       <div className={styles.sort}>
         <ul>
           <li onClick={() => dispatch({ type: "popular" })}>인기글</li>
@@ -155,6 +154,7 @@ export default function Lounge() {
           <li>친구 찾기</li>
         </ul>
 
+        {/* 글 목록 시작 */}
         <div className={styles.post_wrap}>
           <table>
             <thead>
@@ -171,6 +171,7 @@ export default function Lounge() {
             <CommunityPost loungePostArray={array} />
           </table>
 
+          {/* 검색 및 글쓰기 */}
           <div className={styles.search_and_post}>
             <div className={styles.search_bar}>
               <form>
@@ -197,6 +198,8 @@ export default function Lounge() {
           </div>
         </div>
       </div>
+
+      {/* 페이지 이동 */}
       <PageNation />
     </div>
   );

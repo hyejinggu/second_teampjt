@@ -56,6 +56,7 @@ main {
 /* ===== 상단 슬라이드 배너 영역 끝 ===== */
 
 /* ===== 베스트셀러 영역 시작 ===== */
+
 /* 베스트셀러 카테고리 목록 */
 .bestseller_wrap {
   margin-top: 50px;
@@ -92,20 +93,20 @@ main {
 }
 
 /* 베스트셀러 상품 목록 */
-main .bestseller {
+.bestseller {
   margin: 50px 150px;
   height: 300px;
   display: flex;
 }
 
-main .bestseller li {
+.bestseller li {
   box-sizing: border-box;
   width: 250px;
   height: 250px;
   margin: auto;
 }
 
-main .bestseller li img {
+.bestseller li img {
   box-sizing: border-box;
   border-radius: 10px;
   width: 200px;
@@ -113,11 +114,25 @@ main .bestseller li img {
   border: 2px solid white;
 }
 
-main .bestseller li:hover img {
+.bestseller li:hover img {
   transition: 1s;
   border: solid 2px #ffa900;
 }
 
+.sale_info {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.normal_pr {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.present_pr {
+  font-weight: bold;
+}
 /* ===== 베스트 셀러 영역 끝 ===== */
 
 /* ===== 사용자 리뷰 영역 시작 ===== */

@@ -1,5 +1,4 @@
-import "../../css/common/header.css";
-import "../../css/common/common.css";
+import styles from "../../css/common/common.module.css";
 import { Route, Routes, Link } from "react-router-dom";
 import ItemList from "../item/ItemList";
 
@@ -9,9 +8,13 @@ import "../../css/common/community.css" */
 const Header = () => {
   return (
     <header>
-      <div className="menu_list">
+      <div className={styles.menu_list}>
         <Link to="/main">
-          <img src={"/images/header/logo.png"} alt="로고" className="logo" />
+          <img
+            src={"/images/header/logo.png"}
+            alt="로고"
+            className={styles.logo}
+          />
         </Link>
         <input
           type="search"
@@ -46,7 +49,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <ul className="gnb_list">
+      <ul className={styles.gnb_list}>
         <li>
           <a href="#">
             <img src={"/images/header/food_img.png"} alt="" />

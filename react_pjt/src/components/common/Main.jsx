@@ -3,13 +3,14 @@ import Slide from "../main/Slide";
 import NoticeBanner from "../main/NoticeBanner";
 import MainEvent from "../main/MainEvent";
 import Promote from "../main/Promote";
-import "../../css/main/main.css";
 import UserReview from "../main/UserReview";
 import Video from "../main/Video";
 
+import "../../css/common/common.module.css";
+
 const Main = () => {
   return (
-    <div>
+    <div id="wrap">
       <Slide />
       <Bestseller />
       <UserReview />
