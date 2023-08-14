@@ -1,9 +1,12 @@
-import '../../css/cart/cart.css';
-import CartItem from './CartItem';
-import CartItemPrice from './CartItemPrice';
+import "../../css/cart/cart.css";
+import CartItem from "./CartItem";
+import CartItemPrice from "./CartItemPrice";
+import { useLocation } from "react-router-dom";
 
+export default function Cart() {
+  const location = useLocation();
+  const cartItem = location.state.item;
 
-export default function Cart(itemInfo) {
   return (
     <div className="cart">
       <form action="#" method="post">
@@ -20,18 +23,18 @@ export default function Cart(itemInfo) {
             </tr>
           </thead>
           <tbody>
-            <CartItem itemInfo={itemInfo} />
+            <CartItem cartItem={cartItem} />
             <CartItem />
             <CartItem />
-
           </tbody>
         </table>
 
         <CartItemPrice />
 
         <a href="./payment.html">
-          <input type="button" value="구매하기" className="order" /></a>
+          <input type="button" value="구매하기" className="order" />
+        </a>
       </form>
     </div>
-  )
+  );
 }

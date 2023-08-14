@@ -7,7 +7,10 @@ function ItemInfo({ selectedIteminfo, presentPr, normalPr }) {
       <ul>
         {selectedIteminfo.map((item, index) => (
           <li key={index}>
-            <Link to="/itemdetail">
+            <Link
+              to="/itemdetail"
+              state={{ selectedItem: selectedIteminfo[index] }}
+            >
               <div className={styles.item_container}>
                 <div className={styles.normal_item}>
                   <img src={item.image[0]} alt="" />

@@ -13,6 +13,8 @@ const ItemList = () => {
       image: ["/images/subpage/item1.jpg", "/images/subpage/item1_1.jpg"],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "붕어빵 기계 장난감",
@@ -21,6 +23,8 @@ const ItemList = () => {
       image: ["/images/subpage/item2.jpg", "/images/subpage/item2_1.jpg"],
       color: ["#7d7d7d", "#865d10"],
       clicked: 2200,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "도토리를 찾아라!",
@@ -29,6 +33,8 @@ const ItemList = () => {
       image: ["/images/subpage/item3.jpg", "/images/subpage/item3_1.jpg"],
       color: ["#865d10"],
       clicked: 1032,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "애벌레야, 안녕",
@@ -37,6 +43,8 @@ const ItemList = () => {
       image: ["/images/subpage/item4.jpg", "/images/subpage/item4_1.jpg"],
       color: ["#fe60c2", "#1dcc03", "#ffeb0c"],
       clicked: 982,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "당근 밭에서 당근 난다",
@@ -45,6 +53,8 @@ const ItemList = () => {
       image: ["/images/subpage/item5.jpeg", "/images/subpage/item5_1.jpg"],
       color: ["#ff9b0e"],
       clicked: 1870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "돌려 돌려 미로",
@@ -53,6 +63,8 @@ const ItemList = () => {
       image: ["/images/subpage/item6.jpg", "/images/subpage/item6_1.jpg"],
       color: ["#ff9b0e", "#1dcc03", "#0ea7ff", "#ff0e0e"],
       clicked: 870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "피자 한 입 먹을 견",
@@ -61,6 +73,8 @@ const ItemList = () => {
       image: ["/images/subpage/item7.jpg", "/images/subpage/item7-1.jpg"],
       color: ["#ff9b0e", "#ff0e0e"],
       clicked: 1432,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "그냥 왕 물어버려(치석 제거)",
@@ -69,6 +83,8 @@ const ItemList = () => {
       image: ["/images/subpage/item8.jpg", "/images/subpage/item8_1.jpg"],
       color: ["#ffeb0c", "#1dcc03", "#0ea7ff", "#fe60c2"],
       clicked: 999,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "알록달록 로프 장난감",
@@ -77,6 +93,8 @@ const ItemList = () => {
       image: ["/images/subpage/item1.jpg", "/images/subpage/item1_1.jpg"],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "붕어빵 기계 장난감",
@@ -85,6 +103,8 @@ const ItemList = () => {
       image: ["/images/subpage/item2.jpg", "/images/subpage/item2_1.jpg"],
       color: ["#7d7d7d", "#865d10"],
       clicked: 2200,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "도토리를 찾아라!",
@@ -93,6 +113,8 @@ const ItemList = () => {
       image: ["/images/subpage/item3.jpg", "/images/subpage/item3_1.jpg"],
       color: ["#865d10"],
       clicked: 1032,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "애벌레야, 안녕",
@@ -101,6 +123,8 @@ const ItemList = () => {
       image: ["/images/subpage/item4.jpg", "/images/subpage/item4_1.jpg"],
       color: ["#fe60c2", "#1dcc03", "#ffeb0c"],
       clicked: 982,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "당근 밭에서 당근 난다",
@@ -109,6 +133,8 @@ const ItemList = () => {
       image: ["/images/subpage/item5.jpeg", "/images/subpage/item5_1.jpg"],
       color: ["#ff9b0e"],
       clicked: 1870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "돌려 돌려 미로",
@@ -117,6 +143,8 @@ const ItemList = () => {
       image: ["/images/subpage/item6.jpg", "/images/subpage/item6_1.jpg"],
       color: ["#ff9b0e", "#1dcc03", "#0ea7ff", "#ff0e0e"],
       clicked: 870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "피자 한 입 먹을 견",
@@ -125,6 +153,8 @@ const ItemList = () => {
       image: ["/images/subpage/item7.jpg", "/images/subpage/item7-1.jpg"],
       color: ["#ff9b0e", "#ff0e0e"],
       clicked: 1432,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "그냥 왕 물어버려(치석 제거)",
@@ -133,6 +163,8 @@ const ItemList = () => {
       image: ["/images/subpage/item8.jpg", "/images/subpage/item8_1.jpg"],
       color: ["#ffeb0c", "#1dcc03", "#0ea7ff", "#fe60c2"],
       clicked: 999,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
   ];
   const iteminfo2 = [
@@ -430,7 +462,7 @@ const ItemList = () => {
   };
 
   // useReducer 선언
-  const [sortedArray, dispatch] = useReducer(arrayReducer, iteminfo);
+  const [selectedIteminfo, dispatch] = useReducer(arrayReducer, iteminfo);
 
   // ======== 가격 계산 및 형식 변환 함수 시작 ========
   const formatter = new Intl.NumberFormat("ko-KR", {
@@ -466,7 +498,7 @@ const ItemList = () => {
 
       <div className={styles.item_wrap}>
         <ItemInfo
-          selectedIteminfo={sortedArray}
+          selectedIteminfo={selectedIteminfo}
           presentPr={presentPr}
           normalPr={normalPr}
         />
