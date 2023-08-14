@@ -1,15 +1,10 @@
 import styles from "../../css/subpage/community_neighbor.module.css";
+import CommunityTitle from "./CommunityTitle";
 
 export default function Neighborhood() {
   return (
     <div className={styles.neighborhood_container}>
-      <div className={styles.title}>
-        <strong>
-          <a href="">라운지</a>
-          <a href="#">이벤트</a>
-          <a href="">우리 동네</a>
-        </strong>
-      </div>
+      <CommunityTitle />
 
       <ul className={styles.side_bar}>
         <li>미용</li>

@@ -1,3 +1,64 @@
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#wrap {
+  width: 100%;
+  min-width: 1200px;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #000;
+  outline: none;
+}
+
+body {
+  font-family: "Cafe24SsurroundAir", sans-serif;
+  background-color: #fffbee;
+}
+
+input[type="button"] {
+  font-family: "Cafe24SsurroundAir";
+}
+
+/* ===== 페이지 이동 ===== */
+
+.page_shift {
+  padding: 50px;
+  cursor: pointer;
+}
+
+.page_shift span {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 30px;
+  line-height: 28px;
+
+  font-size: 1.2em;
+  border: #ffa900 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  margin: 0 5px;
+  padding-top: 3px;
+}
+
+.page_shift span:hover {
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+}
+
 /*========================================================================*/
 /*header*/
 
@@ -44,24 +105,24 @@ header nav {
   justify-self: end;
 }
 
-.menu_list ul>li {
+.menu_list ul > li {
   display: inline-block;
   margin-right: 20px;
 }
 
-.menu_list ul>li a {
+.menu_list ul > li a {
   font-size: 0.9em;
   font-weight: bold;
 }
 
-.menu_list ul>li a img {
+.menu_list ul > li a img {
   width: 16px;
   height: 16px;
   margin: 2px 3px;
   vertical-align: middle;
 }
 
-.menu_list ul>li a:hover {
+.menu_list ul > li a:hover {
   text-decoration: underline;
 }
 
@@ -76,24 +137,24 @@ header nav {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.gnb_list>li {
+.gnb_list > li {
   align-self: center;
   justify-self: center;
   cursor: pointer;
 }
 
-.gnb_list>li a {
+.gnb_list > li a {
   color: rgb(38, 39, 132);
   font-weight: bold;
 }
 
-.gnb_list>li img {
+.gnb_list > li img {
   vertical-align: middle;
   width: 30px;
   margin-bottom: 5px;
 }
 
-.gnb_list>li:hover>a {
+.gnb_list > li:hover > a {
   font-size: 1.1em;
 }
 

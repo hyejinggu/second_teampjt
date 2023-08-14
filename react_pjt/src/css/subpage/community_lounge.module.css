@@ -13,16 +13,16 @@
   font-weight: bold;
 }
 
-.lounge_container .title a {
+.title a {
   margin: 0 30px;
   padding: 3px;
 }
 
-.lounge_container .title a[href="#"] {
+.title .active {
   border-bottom: 5px solid #ffa900;
 }
 
-.lounge_container .title a:hover {
+.title a:hover {
   border-bottom: 5px solid #ffa900;
 }
 

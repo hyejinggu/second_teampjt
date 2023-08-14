@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import "../../css/main/main.css";
+import styles from "../../css/main/main.module.css";
 
 const Slide = () => {
   const slideImages = [
     {
       id: 0,
-      img: "https://cdnimg.dogpang.com/catpang/data/event/banner/sno_maintopnew_202307261136213.jpg",
+      img: "https://pethroom.com/file_data/pepem1//2023/08/01/fba10a676bd1d9b72d9dadc41e923f56.jpg",
     },
     {
       id: 1,
@@ -38,14 +38,16 @@ const Slide = () => {
   };
 
   return (
-    <div className="banner_wrap">
-      <div className="slide_banner">
+    <div className={styles.banner_wrap}>
+      <div className={styles.slide_banner}>
         <img onClick={preSlide} src={"/images/main/arrow_left.svg"} />
-        {/* <div className="slide_container"> */}
+        {/* <div className={styles.slide_container"> */}
         {slideImages.map((image, index) => (
           <img
             key={index}
-            className={`banner_image ${index === currentIdx ? "active" : ""}`}
+            className={`${styles.banner_image} ${
+              index === currentIdx ? styles.active : ""
+            }`}
             src={image.img}
             // src={slideImages[currentIdx].img}
             alt={`slide ${index}`}

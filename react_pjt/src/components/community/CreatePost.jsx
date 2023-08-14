@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 /* const handleWriteSubmit = (data) => {
   // 실제로 데이터를 서버에 전송하거나 저장하는 로직을 구현합니다.
@@ -24,7 +24,7 @@ const CreatePost = () => {
     } else if (!content) {
       console.log("내용 입력");
     } else return;
-    onSubmit({ title, content });
+    // onSubmit({ title, content });
     setTitle("");
     setContent("");
   };

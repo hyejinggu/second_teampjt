@@ -15,11 +15,14 @@ import ItemDetail from "./components/item/ItemDetail";
 import CartItem from "./components/cart/CartItem";
 
 // 커뮤니티 링크 페이지 import
-import CreatePost from "./components/community/CommunityPost";
+import CreatePost from "./components/community/CreatePost";
+import Neighborhood from "./components/community/Neighborhood";
+import Event from "./components/community/Event";
 
+import styles from "./css/common/common.module.css";
 function App() {
   return (
-    <div className="App" id="wrap">
+    <div className="App" id={styles.wrap}>
       <Header />
       <Routes>
         {/* header 링크 */}
@@ -30,11 +33,15 @@ function App() {
         <Route path="/cart/*" element={<Cart />} />
         <Route path="/board/*" element={<Board />} />
         <Route path="/itemlist/*" element={<ItemList />} />
-        <Route path="/lounge/*" element={<Lounge />} />
         <Route path="/itemdetail" element={<ItemDetail />} />
 
         {/* 커뮤니티 링크 */}
-        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/lounge/*" element={<Lounge />} />
+        <Route path="/event/*" element={<Event />} />
+        <Route path="/neighborhood/*" element={<Neighborhood />} />
+        <Route path="/createpost/*" element={<CreatePost />} />
+
+        {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
       </Routes>
       <Footer />
