@@ -63,8 +63,32 @@
   background-color: white;
 }
 
+/* 사이드 바 */
+.side_bar_wrap {
+  position: relative;
+  display: grid;
+}
+
+.side_bar {
+  margin: 50px auto;
+  position: fixed;
+  width: 130px;
+  background-color: rgb(255, 227, 68, 0.7);
+  border-radius: 10px;
+
+  justify-self: center;
+}
+
 .side_bar li {
+  padding: 20px 10px;
+  font-size: 1.2em;
+  font-weight: bold;
   cursor: pointer;
+  border-bottom: #ffa900 1px solid;
+}
+
+.side_bar li:last-child {
+  border: none;
 }
 
 /* ===== 게시글 영역 시작 ===== */
@@ -88,6 +112,15 @@
 .post_wrap table td {
   padding: 15px;
   border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.post_wrap th:first-child,
+.post_wrap td:first-child {
+  border-left: 1px solid rgb(210, 210, 210);
+}
+.post_wrap th:last-child,
+.post_wrap td:last-child {
+  border-right: 1px solid rgb(210, 210, 210);
 }
 
 .post_wrap table td {
@@ -123,7 +156,7 @@
 
 /* ===== 검색 조건 및 글쓰기 영역 시작 ===== */
 .search_and_post {
-  margin-top: 20px;
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
 }

@@ -147,12 +147,14 @@ export default function Lounge() {
         <p>총 50개의 글</p>
       </div>
       <div className={styles.content_wrap}>
-        <ul className={styles.side_bar}>
-          <li>자유 게시판</li>
-          <li>고민 상담소</li>
-          <li>지식 공유</li>
-          <li>친구 찾기</li>
-        </ul>
+        <div className={styles.side_bar_wrap}>
+          <ul className={styles.side_bar}>
+            <li>자유 게시판</li>
+            <li>고민 상담소</li>
+            <li>지식 공유</li>
+            <li>친구 찾기</li>
+          </ul>
+        </div>
 
         {/* 글 목록 시작 */}
         <div className={styles.post_wrap}>
