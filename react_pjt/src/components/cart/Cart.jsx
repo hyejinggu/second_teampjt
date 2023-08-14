@@ -22,12 +22,17 @@ export default function Cart() {
     if (count > 0) {
       setCount(count - 1);
       e.preventDefault();
+    } else {
+      alert('최소 주문수량은 1개 입니다.');
+      e.preventDefault();
+
     }
   };
 
   const totalPrice = () => {
     return (selectedItem.normalPr * count).toLocaleString();
   };
+
   return (
     <div className="cart">
       <form action="#" method="post">
@@ -45,11 +50,11 @@ export default function Cart() {
           </thead>
           <tbody>
             <CartItem onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
+            <CartItem onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
           </tbody>
         </table>
 
         <CartItemPrice onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
-
         <a href="./payment.html">
           <input type="button" value="구매하기" className="order" />
         </a>

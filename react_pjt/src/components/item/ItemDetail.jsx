@@ -27,11 +27,11 @@ const ItemDetail = () => {
                 <section className={styles.img_area}>
                     {/* 이미지 렌더링 */}
                     <div className={styles.main_img}>
-                        <img src={"/image/header/logo.png"} alt="상품이미지" />
+                        <img src={selectedItem.image[1]} alt="상품이미지" />
                     </div>
                     <div className={styles.sub_img}>
-                        <img src={"/image/header/logo.png"} alt="상품이미지" />
-                        <img src={"/image/header/logo.png"} alt="상품이미지" />
+                        <img src={selectedItem.image[0]} alt="상품이미지" />
+                        <img src={selectedItem.image[1]} alt="상품이미지" />
                         {/* 나머지 이미지들 추가 */}
                     </div>
                 </section>
