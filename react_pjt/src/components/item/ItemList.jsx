@@ -1,6 +1,6 @@
 import ItemInfo from "./ItemInfo";
 import styles from "../../css/subpage/Itemlist.module.css";
-// import PageNation from "./PageNation";
+import PageNation from "./PageNation";
 import { useReducer, useState } from "react";
 
 const ItemList = () => {
@@ -509,6 +509,7 @@ const ItemList = () => {
   const itemsPerPage = 16;
   const startIndex = (page - 1) * itemsPerPage;
   const displayedItemInfo = array.slice(startIndex, startIndex + itemsPerPage);
+
   // ======== 가격 계산 및 형식 변환 함수 시작 ========
   const formatter = new Intl.NumberFormat("ko-KR", {
     //   style: "currency",
@@ -548,14 +549,7 @@ const ItemList = () => {
           normalPr={normalPr}
         />
       </div>
-      {/* <PageNation setPage={setPage} /> */}
-      <div className={styles.page_shift}>
-        {[1, 2, 3].map((pageNumber) => (
-          <span key={pageNumber} onClick={() => setPage(pageNumber)}>
-            {pageNumber}
-          </span>
-        ))}
-      </div>
+      <PageNation setPage={setPage} />
     </div>
   );
 };
