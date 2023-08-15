@@ -66,17 +66,17 @@
 /* 사이드 바 */
 .side_bar_wrap {
   position: relative;
-  display: grid;
 }
 
 .side_bar {
-  margin: 50px auto;
-  position: fixed;
+  margin: 100px auto;
   width: 130px;
   background-color: rgb(255, 227, 68, 0.7);
   border-radius: 10px;
-
   justify-self: center;
+  position: sticky;
+  top: 70px;
+  transition: margin-top ease-in-out 1s;
 }
 
 .side_bar li {

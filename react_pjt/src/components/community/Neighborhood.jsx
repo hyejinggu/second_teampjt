@@ -1,31 +1,30 @@
 import styles from "../../css/subpage/community_neighbor.module.css";
 import CommunityTitle from "./CommunityTitle";
+import SideBar from "./SideBar";
 
 export default function Neighborhood() {
   return (
     <div className={styles.neighborhood_container}>
       <CommunityTitle />
+      <div className={styles.content_wrap}>
+        <SideBar content="neighbor" />
 
-      <ul className={styles.side_bar}>
-        <li>미용</li>
-        <li>병원</li>
-        <li>훈련, 시터</li>
-        <li>카페, 호텔</li>
-      </ul>
+        <div className={styles.right_side}>
+          <div className={styles.map_wrap}>
+            <div></div>
+          </div>
 
-      <div className={styles.map_wrap}>
-        <div></div>
-      </div>
-
-      <div className={styles.review_wrap}>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+          <div className={styles.review_wrap}>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
