@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLocation } from "react";
 
 /* const handleWriteSubmit = (data) => {
   // 실제로 데이터를 서버에 전송하거나 저장하는 로직을 구현합니다.
@@ -13,6 +13,9 @@ return (
 ); */
 
 const CreatePost = () => {
+  const location = useLocation();
+  const loungePostArray = location.state?.loungePostArray || [];
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);

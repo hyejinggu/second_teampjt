@@ -15,6 +15,11 @@
   background-color: aquamarine;
 }
 
+#map {
+  width: 500px;
+  height: 400px;
+}
+
 .review_wrap {
   width: 90%;
   background-color: cornflowerblue;

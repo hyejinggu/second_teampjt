@@ -57,6 +57,12 @@ input[type="button"] {
 
 .page_shift span:hover {
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.5);
+  background-color: #ffe344;
+  transition: 0.5s ease-in-out;
+}
+
+.clicked_page {
+  background-color: #ffe344;
 }
 
 /*========================================================================*/
