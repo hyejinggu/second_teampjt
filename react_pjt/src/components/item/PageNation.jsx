@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "../../css/common/common.module.css";
 import PropTypes from "prop-types";
+import React from "react";
 
-export default function PageNation({ setPage }) {
+const PageNation = ({ setPage }) => {
   const [clickedPage, setClickedPage] = useState(1);
 
   return (
@@ -21,8 +22,10 @@ export default function PageNation({ setPage }) {
       ))}
     </div>
   );
-}
+};
 
 PageNation.propTypes = {
   setValue: PropTypes.func.isRequired,
 };
+
+export default React.memo(PageNation);
