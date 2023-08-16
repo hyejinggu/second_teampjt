@@ -1,22 +1,28 @@
 import styles from "../../css/subpage/create_post.module.css";
-import { useState, useRef, useContext } from "react";
-import { CreatePostContext } from "./Lounge";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useContext } from "react";
+// import { Link } from "react-router-dom";
+import { CreatePostContext } from "./Community";
+import { Link, useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-  const { onCreate, postTitle, postContent, setPostTitle, setPostContent } =
-    useContext(CreatePostContext);
+  const { onCreate } = useContext(CreatePostContext);
+  const navigate = useNavigate();
 
   // const [image, setImage] = useState(null);
   const titleRef = useRef(null);
 
+  const [postTitle, setPostTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (!postTitle) {
       titleRef.current.innerText = "제목 입력";
     } else if (!postContent) {
       console.log("내용 입력");
     } else {
       onCreate(postTitle, postContent);
+      navigate("/community/lounge/*");
     }
     setPostTitle("");
     setPostContent("");
@@ -72,11 +78,9 @@ const CreatePost = () => {
           </div>
 
           <div>
-            {/* <Link to="/lounge"> */}
             <button type="submit" onClick={handleSubmit}>
               작성 완료
             </button>
-            {/* </Link> */}
           </div>
         </form>
       </div>

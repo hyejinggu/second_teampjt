@@ -1,3 +1,7 @@
+import '../../css/join/join.css';
+import { Link } from 'react-router-dom';
+
+
 const Information = () => {
 
     return (
@@ -46,7 +50,8 @@ const Information = () => {
 
                     </table>
                 </figure>
-                <input type="submit" value="Next" />
+                <Link to="/join/agree/*"><input type="submit" value="Next" /></Link>
+
             </form>
         </div>
     )

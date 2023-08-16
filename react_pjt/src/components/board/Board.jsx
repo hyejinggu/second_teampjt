@@ -1,4 +1,8 @@
 import "../../css/board/board.css";
+/* join 참고해서 맨위에 import, import Route추가
+table을 배열로 수정
+const로 수정  */
+
 
 export default function Board() {
   return (
@@ -177,6 +181,24 @@ export default function Board() {
           <input type="submit" value="글쓰기" />
         </div>
       </div>
+
+      {/* 링크주소바꾸기, a태그를 link로 바꾸기*/}
+      {/* <div className="">
+        <ul>
+          <li><NavLink to='/join/profile'>링크이름</NavLink></li>
+          <li><NavLink to='/join/details'>Details</NavLink></li>
+          <li><NavLink to='/join/agree'>Agree</NavLink></li>
+          <li><NavLink to='/join/information'>Information</NavLink></li>
+        </ul>
+
+        <Routes>
+          <Route path="/profile/*" element={<Profile />} />
+          <Route path="/details/*" element={<Details />} />
+          <Route path="/agree/*" element={<Agree />} />
+          <Route path="/information/*" element={<Information />} />
+        </Routes>
+      </div > */}
+
     </main>
   );
 }

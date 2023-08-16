@@ -1,5 +1,6 @@
-import "../../css/join/join.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import '../../css/join/join.css';
 
 const Proflie = () => {
   const [formValue, setFormValue] = useState({
@@ -239,7 +240,8 @@ const Proflie = () => {
           </tbody>
         </table>
       </figure>
-      <input type="submit" value="Next" />
+      <Link to="/join/details/*"><input type="submit" value="Next" /></Link>
+
     </form>
   );
 };

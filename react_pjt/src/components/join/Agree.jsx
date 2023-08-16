@@ -1,6 +1,7 @@
 import '../../css/join/join.css';
 
 
+
 const Agree = () => {
 
     return (

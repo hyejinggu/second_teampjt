@@ -8,12 +8,13 @@ import Profile from './Profile';
 import { useState } from 'react';
 
 
+
 const Join = () => {
 
     return (
         <>
             <h2 className="title">회원가입</h2>
-            <main className='join'>
+            <main className="join">
                 <div className="img_container">
                     <img src={"/images/join/bg5.jpg"} alt="" />
                 </div>
@@ -34,8 +35,7 @@ const Join = () => {
                     </Routes>
                 </div >
 
-
-            </main>
+            </main >
 
         </>
     )
