@@ -1,3 +1,6 @@
+import joinStyle from '../../css/join/join.module.css';
+
+
 const Information = () => {
 
     return (
@@ -26,7 +29,7 @@ const Information = () => {
                             <th>
                                 <label htmlFor="ani_gender">반려동물 성별</label>
                             </th>
-                            <td className="ani_gender">
+                            <td className={joinStyle.ani_gender}>
                                 <input type="radio" name="ani_gender" id="male" />
                                 <label htmlFor="male">남아</label>
                                 <input type="radio" name="ani_gender" id="female" />
@@ -37,7 +40,7 @@ const Information = () => {
                             <th>
                                 <label htmlFor="ani_character">반려동물 특성</label>
                             </th>
-                            <td className="ani_character">
+                            <td className={joinStyle.ani_character}>
                                 <textarea name="ani_character" id="ani_character" cols="84" rows="3"></textarea>
                             </td>
                         </tr>

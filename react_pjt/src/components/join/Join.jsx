@@ -1,4 +1,4 @@
-import '../../css/join/join.css';
+import joinStyle from '../../css/join/join.module.css';
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 
 import Agree from './Agree';
@@ -12,13 +12,13 @@ const Join = () => {
 
     return (
         <>
-            <h2 className="title">회원가입</h2>
-            <main className='join'>
-                <div className="img_container">
+            <h2 className={joinStyle.title}>회원가입</h2>
+            <main className={joinStyle.join}>
+                <div className={joinStyle.img_container}>
                     <img src={"/images/join/bg5.jpg"} alt="" />
                 </div>
 
-                <div className="right_contents">
+                <div className={joinStyle.right_contents}>
                     <ul>
                         <li><NavLink to='/join/profile'>Proflie</NavLink></li>
                         <li><NavLink to='/join/details'>Details</NavLink></li>
