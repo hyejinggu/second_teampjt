@@ -39,10 +39,12 @@
 
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../css/join/join.css';
 
 const Details = () => {
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         user_id: '',
         user_password: '',
@@ -54,7 +56,6 @@ const Details = () => {
         user_password: '',
         user_password2: '',
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -107,11 +108,14 @@ const Details = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // 유효성 검사 실행
-        if (validateForm()) {
+        if (validateForm) {
             // 유효성 검사 통과 시 다음 단계로 진행
-            // 예: 다음 페이지로 이동
+            navigate('/join/information/*');
+        } else {
+            alert('유효성 검사 실패');
         }
     };
+
 
     const validateForm = () => {
         const newErrors = { ...errors };
@@ -181,7 +185,7 @@ const Details = () => {
                     </tbody>
                 </table>
             </figure>
-            <Link to="/join/information/*"><input type="submit" value="Next" /></Link>
+            <input type="submit" value="Next" onClick={handleSubmit} />
         </form>
     );
 };
