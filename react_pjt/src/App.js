@@ -55,21 +55,11 @@ function App() {
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         {/* 로그인 */}
         <Route path="/findid/*" element={<FindId />} />
         <Route path="/findpw/*" element={<FindPw />} />
         {/* <li><NavLink to='/main/*'>로그인</NavLink></li> */}
-        
-      </Routes>
 
-
-=======
-
-=======
->>>>>>> dc2c981d44be150c14373077cee506fa9fd04f4b
-        {/* 회원가입 */}
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/details/*" element={<Details />} />
         <Route path="/agree/*" element={<Agree />} />
@@ -77,12 +67,11 @@ function App() {
 
         <Route path="/itemdetail" element={<ItemDetail />} />
         <Route path="/payment" element={<Payment />} />
-<<<<<<< HEAD
       </Routes >
->>>>>>> main
-=======
-      </Routes>
->>>>>>> dc2c981d44be150c14373077cee506fa9fd04f4b
+
+
+
+      {/* 회원가입 */}
       <Footer />
     </div>
   );
