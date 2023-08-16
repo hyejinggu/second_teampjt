@@ -1,9 +1,17 @@
 import styles from "../../css/subpage/community_event.module.css";
 import CommunityTitle from "./CommunityTitle";
+import { NavLink } from "react-router-dom";
 
 export default function Event() {
   return (
     <div id="wrap" className={styles.event_container}>
+      <div className={styles.title}>
+        <strong>
+          <NavLink to="/community/lounge">라운지</NavLink>
+          <NavLink to="/community/event">이벤트</NavLink>
+          <NavLink to="/community/neighborhood">우리 동네</NavLink>
+        </strong>
+      </div>
       <ul className={styles.event_type}>
         <li>전체 이벤트</li>
         <li>구매자 이벤트</li>

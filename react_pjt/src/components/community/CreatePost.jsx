@@ -1,10 +1,12 @@
 import styles from "../../css/subpage/create_post.module.css";
 import React, { useState, useRef, useContext } from "react";
 // import { Link } from "react-router-dom";
-import { CreatePostContext } from "./Lounge";
+import { CreatePostContext } from "./Community";
+import { Link, useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const { onCreate } = useContext(CreatePostContext);
+  const navigate = useNavigate();
 
   // const [image, setImage] = useState(null);
   const titleRef = useRef(null);
@@ -20,6 +22,7 @@ const CreatePost = () => {
       console.log("내용 입력");
     } else {
       onCreate(postTitle, postContent);
+      navigate("/community/lounge/*");
     }
     setPostTitle("");
     setPostContent("");

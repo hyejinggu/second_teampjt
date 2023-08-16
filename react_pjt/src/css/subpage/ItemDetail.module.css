@@ -8,13 +8,14 @@
     background-color: #ffffff;
 }
 
-section {
+.detail_wrap div:nth-child(0),
+.detail_wrap section {
     width: 100%;
     margin: 0 auto;
     border-bottom: 2px solid #ffa900;
 }
 
-section section {
+.detail_wrap section {
     width: 100%;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -34,7 +35,7 @@ section section {
     display: flex;
 }
 
-.nav>li {
+.nav>a {
     width: 100%;
     margin: 1em;
     padding: 1em;
@@ -44,26 +45,26 @@ section section {
 }
 
 /* .fixed_nav>a:hover, */
-.nav>li:hover,
-input[type="button"]:hover,
+.nav>a:hover,
+.detail_wrap input[type="button"]:hover,
 div>a>.button:hover {
     transition: .5s;
     background-color: #ffe344;
 }
 
-.section1>.nav>li:nth-child(1) {
+.section1>.nav>a:nth-child(1) {
     background-color: #ffe344;
 }
 
-.section2>.nav>li:nth-child(2) {
+.section2>.nav>a:nth-child(2) {
     background-color: #ffe344;
 }
 
-.section3>.nav>li:nth-child(3) {
+.section3>.nav>a:nth-child(3) {
     background-color: #ffe344;
 }
 
-.section4>.nav>li:nth-child(4) {
+.section4>.nav>a:nth-child(4) {
     background-color: #ffe344;
 }
 
@@ -88,13 +89,13 @@ div>a>.button:hover {
 
 /*========================================= toparea =========================================*/
 
-.top_area {
+.detail_wrap .top_area {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-top: 2px solid #ffa900;
 }
 
-.img_area {
+.detail_wrap .img_area {
     /* height: 60vh; */
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -138,7 +139,7 @@ div>a>.button:hover {
     background-color: bisque;
 }
 
-.info_area {
+.detail_wrap .info_area {
     display: grid;
     grid-template-columns: .5fr 1.5fr 3.5fr .5fr;
     grid-template-rows: .5fr repeat(5, 1fr) repeat(3, .5fr);
