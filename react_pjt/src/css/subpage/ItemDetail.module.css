@@ -1,11 +1,12 @@
 /*========================================= common =========================================*/
 
-/* main {
-    min-width: 1200px;
-    max-width: 1500px;
-    margin: 50px auto;
+.detail_wrap{
+    /* min-width: 1200px; */
+    /* max-width: 1500px; */
+    /* width: 100%; */
+    /* margin: 50px auto; */
     background-color: #ffffff;
-} */
+}
 
 section {
     width: 100%;
@@ -42,7 +43,7 @@ section section {
     border-radius: 10px;
 }
 
-.fixed_nav>a:hover,
+/* .fixed_nav>a:hover, */
 .nav>a:hover,
 input[type="button"]:hover,
 div>a>.button:hover {
@@ -461,4 +462,12 @@ select[id="option"] {
 .section4 input[type="button"] {
     width: 80%;
     margin-bottom: 3em;
+    background-color: #fff;
+    border: 1px solid #ffa900;
+    color: #ffa900;
+}
+
+.section4 input[type="button"]:hover {
+    transition: .5s;
+    background-color: #ffe344;
 }

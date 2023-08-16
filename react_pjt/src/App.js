@@ -13,6 +13,7 @@ import ItemList from "./components/item/ItemList";
 import Lounge from "./components/community/Lounge";
 import ItemDetail from "./components/item/ItemDetail";
 import CartItem from "./components/cart/CartItem";
+import Payment from "./components/payment/Payment";
 
 // 커뮤니티 링크 페이지 import
 import CreatePost from "./components/community/CreatePost";
@@ -43,6 +44,8 @@ function App() {
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
+        <Route path="/itemdetail" element={<ItemDetail />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </div>
