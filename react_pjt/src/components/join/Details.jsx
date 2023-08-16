@@ -44,7 +44,7 @@ import '../../css/join/join.css';
 
 const Details = () => {
     const navigate = useNavigate();
-    
+
     const [formData, setFormData] = useState({
         user_id: '',
         user_password: '',
@@ -72,31 +72,13 @@ const Details = () => {
 
         switch (fieldName) {
             case 'user_id':
-                if (!value) {
-                    newErrors.user_id = '아이디를 입력하세요.';
-                } else if (value.length < 6 || value.length > 20) {
-                    newErrors.user_id = '아이디는 6~20자 사이여야 합니다.';
-                } else {
-                    newErrors.user_id = '';
-                }
+                newErrors.user_id = !value ? '아이디를 입력하세요.' : (value.length < 6 || value.length > 20) ? '아이디는 6~20자 사이여야 합니다.' : '';
                 break;
             case 'user_password':
-                if (!value) {
-                    newErrors.user_password = '비밀번호를 입력하세요.';
-                } else if (value.length < 8) {
-                    newErrors.user_password = '비밀번호는 8자 이상이어야 합니다.';
-                } else {
-                    newErrors.user_password = '';
-                }
+                newErrors.user_password = !value ? '비밀번호를 입력하세요.' : (value.length < 8) ? '비밀번호는 8자 이상이어야 합니다.' : '';
                 break;
             case 'user_password2':
-                if (!value) {
-                    newErrors.user_password2 = '비밀번호를 확인하세요.';
-                } else if (value !== formData.user_password) {
-                    newErrors.user_password2 = '비밀번호가 일치하지 않습니다.';
-                } else {
-                    newErrors.user_password2 = '';
-                }
+                newErrors.user_password2 = !value ? '비밀번호를 확인하세요.' : (value !== formData.user_password) ? '비밀번호가 일치하지 않습니다.' : '';
                 break;
             default:
                 break;
@@ -108,14 +90,13 @@ const Details = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // 유효성 검사 실행
-        if (validateForm) {
+        if (validateForm()) {
             // 유효성 검사 통과 시 다음 단계로 진행
             navigate('/join/information/*');
         } else {
             alert('유효성 검사 실패');
         }
     };
-
 
     const validateForm = () => {
         const newErrors = { ...errors };
@@ -127,8 +108,13 @@ const Details = () => {
 
         setErrors(newErrors);
 
-        // 모든 필드의 유효성을 통과하면 true를 반환합니다.
-        return Object.values(newErrors).every((error) => error === '');
+        // 모든 필드의 값이 존재하고, 에러가 없으면 true를 반환합니다.
+        return (
+            formData.user_id !== '' &&
+            formData.user_password !== '' &&
+            formData.user_password2 !== '' &&
+            Object.values(newErrors).every((error) => error === '')
+        );
     };
 
     return (
