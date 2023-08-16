@@ -1,4 +1,5 @@
-import '../../css/join/join.css';
+import joinStyle from '../../css/join/join.module.css';
+
 
 
 const Agree = () => {
@@ -10,7 +11,7 @@ const Agree = () => {
 
                 <table>
                     <tr>
-                        <td className="agree_text">
+                        <td className={joinStyle.agree_text}>
                             제1조(목적)
 
 
@@ -281,14 +282,14 @@ const Agree = () => {
 
                             1. 이 약관은 년 월 일부터 적용됩니다.
                         </td>
-                        <th className="agree_all">
+                        <th className={joinStyle.agree_all}>
                             <input type="checkbox" id="agree_all" name="agree_all" />
                             <label htmlFor="agree_all" className="required">(필수)모든 약관을 확인하였으며 전체 동의합니다.</label>
                         </th>
 
                     </tr>
                     <tr>
-                        <td className="agree_text">
+                        <td className={joinStyle.agree_text}>
                             1. - 목적 : 이용자 식별 및 본인여부 확인
                             - 항목 : 이름, 아이디, 비밀번호
                             - 보유 및 이용기간 : 회원탈퇴 후 5일까지
@@ -309,7 +310,7 @@ const Agree = () => {
                             - 제공항목 : 구매자 이름, 전화번호, ID, 휴대폰번호, 이메일주소, 상품 구매정보, 상품 수취인 정보(이름, 주소, 전화번호)
                             - 보유/이용기간 : 배송완료 후 한달
                         </td>
-                        <th className="agree_selection">
+                        <th className={joinStyle.agree_selection}>
                             <input type="checkbox" id="agree_selection" name="agree_selection" />
                             <label htmlFor="agree_selection">(선택)모든 약관을 확인하였으며 전체 동의합니다.</label>
                         </th>

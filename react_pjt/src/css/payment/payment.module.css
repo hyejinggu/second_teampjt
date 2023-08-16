@@ -25,12 +25,12 @@
     color: black;
 }
 
-h2 {
+.title {
     color: #ffa900;
     margin: 1em;
 }
 
-form {
+.main {
     max-width: 1500px;
     min-width: 1200px;
     margin: 50px auto;
@@ -41,15 +41,16 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-th {
+.address_input th,
+.pass_input th {
     width: 150px;
     margin: 0 auto;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select[id="payment-method"] {
+.address_input input[type="text"],
+.address_input input[type="email"],
+.pass_input input[type="password"],
+.address_input select[id="payment-method"] {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -61,7 +62,7 @@ select[id="payment-method"] {
 
 }
 
-input[type="tel"] {
+.address_input input[type="tel"] {
     width: 27%;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -72,8 +73,8 @@ input[type="tel"] {
     border-radius: 10px;
 }
 
-input[type="submit"],
-input[type="button"] {
+.button input[type="submit"],
+.button input[type="button"] {
     padding: 10px 20px;
     border: 1px solid #ffa900;
     border-radius: 10px;
@@ -84,12 +85,12 @@ input[type="button"] {
     text-align: center;
 }
 
-input[type="button"] {
+.button input[type="button"] {
     margin-right: 1em;
 }
 
-input[type="submit"]:hover,
-input[type="button"]:hover {
+.button input[type="submit"]:hover,
+.button input[type="button"]:hover {
     transition: .5s;
     background-color: #ffe344;
 }
@@ -102,7 +103,9 @@ input[type="button"]:hover {
 
 /*====================================================================== 배송지정보 ====================================================================== */
 
-table {
+.pass_input table,
+.address_input table,
+.desc table {
     margin-bottom: 40px;
     width: 100%;
     margin-bottom: 20px;
@@ -167,7 +170,7 @@ table {
     margin-right: 10px;
 }
 
-form section div p {
+form section .content p {
     width: 100%;
     height: 120px;
     overflow: auto;

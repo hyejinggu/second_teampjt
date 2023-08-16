@@ -34,7 +34,7 @@ section section {
     display: flex;
 }
 
-.nav>a {
+.nav>li {
     width: 100%;
     margin: 1em;
     padding: 1em;
@@ -44,26 +44,26 @@ section section {
 }
 
 /* .fixed_nav>a:hover, */
-.nav>a:hover,
+.nav>li:hover,
 input[type="button"]:hover,
 div>a>.button:hover {
     transition: .5s;
     background-color: #ffe344;
 }
 
-.section1>.nav>a:nth-child(1) {
+.section1>.nav>li:nth-child(1) {
     background-color: #ffe344;
 }
 
-.section2>.nav>a:nth-child(2) {
+.section2>.nav>li:nth-child(2) {
     background-color: #ffe344;
 }
 
-.section3>.nav>a:nth-child(3) {
+.section3>.nav>li:nth-child(3) {
     background-color: #ffe344;
 }
 
-.section4>.nav>a:nth-child(4) {
+.section4>.nav>li:nth-child(4) {
     background-color: #ffe344;
 }
 
@@ -255,6 +255,7 @@ div>a>.button:hover {
     padding: 1em;
     border: 1px solid #ffa900;
     border-radius: 10px;
+    width: 50%;
 }
 
 .Product_info>tr>th {
