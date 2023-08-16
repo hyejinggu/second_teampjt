@@ -1,0 +1,41 @@
+.form_wrap {
+  margin: 50px;
+}
+
+.form_wrap form {
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr 0.8fr;
+  gap: 5px;
+  justify-items: start;
+}
+
+.form_wrap label {
+  font-size: 1.3em;
+  margin: 20px;
+}
+
+.title_wrap select {
+  padding: 10px 15px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  margin: 0 5px;
+}
+
+.title_wrap input {
+  padding: 10px;
+  border: none;
+  width: 700px;
+  text-align: left;
+}
+
+.content_wrap textarea {
+  padding: 10px;
+  width: 800px;
+  height: 700px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  text-align: left;
+}

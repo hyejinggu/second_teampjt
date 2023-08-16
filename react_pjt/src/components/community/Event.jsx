@@ -51,16 +51,27 @@ const eventArray = [
   },
 ];
 
+const date = new Date();
+const currentDate =
+  String(date.getFullYear()) +
+  String(date.getMonth() + 1).padStart(2, "0") +
+  String(date.getDate());
+
 const EventList = () => {
   return (
     <ul>
-      {eventArray.map((event) => {
-        <li>
-          <p>종료된 이벤트입니다.</p>
-          <div className={styles.opacity_box}></div>
-          <img src={event.eventImage} alt="event_img1" />
-        </li>;
-      })}
+      {eventArray.map((event, index) => (
+        <li key={index}>
+          {parseInt(currentDate) > event.eventPeriod ? (
+            <div className={styles.opacity_box}>
+              <p>종료된 이벤트입니다.</p>
+            </div>
+          ) : (
+            ""
+          )}
+          <img src={event.eventImage} alt={`event_img${index}`} />
+        </li>
+      ))}
     </ul>
   );
 };

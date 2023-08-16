@@ -1,6 +1,7 @@
 // import styles from "../../css/subpage/community_lounge.module.css";
 
 export default function CommunityPost({ loungePostArray }) {
+  const date = new Date();
   return (
     <tbody>
       {loungePostArray.map((post, index) => (

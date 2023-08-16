@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.error {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
 .join {
   width: 100%;
   box-sizing: border-box;
@@ -52,11 +58,11 @@
   margin-bottom: 50px;
 }
 
-.right_contents fure ul > li a:hover {
+.right_contents fure ul>li a:hover {
   color: #ffa900;
 }
 
-.right_contents ul > li:not(:last-child)::after {
+.right_contents ul>li:not(:last-child)::after {
   content: "　>　";
 }
 

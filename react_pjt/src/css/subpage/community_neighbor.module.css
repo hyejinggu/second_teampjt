@@ -1,0 +1,26 @@
+.content_wrap {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.right_side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+}
+
+.map_wrap {
+  width: 90%;
+  height: 600px;
+  background-color: aquamarine;
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+}
+
+.review_wrap {
+  width: 90%;
+  background-color: cornflowerblue;
+}

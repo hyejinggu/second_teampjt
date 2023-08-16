@@ -283,7 +283,7 @@ const Agree = () => {
                         </td>
                         <th className="agree_all">
                             <input type="checkbox" id="agree_all" name="agree_all" />
-                            <label htmlfor="agree_all" className="required">(필수)모든 약관을 확인하였으며 전체 동의합니다.</label>
+                            <label htmlFor="agree_all" className="required">(필수)모든 약관을 확인하였으며 전체 동의합니다.</label>
                         </th>
 
                     </tr>
@@ -311,7 +311,7 @@ const Agree = () => {
                         </td>
                         <th className="agree_selection">
                             <input type="checkbox" id="agree_selection" name="agree_selection" />
-                            <label htmlfor="agree_selection">(선택)모든 약관을 확인하였으며 전체 동의합니다.</label>
+                            <label htmlFor="agree_selection">(선택)모든 약관을 확인하였으며 전체 동의합니다.</label>
                         </th>
                     </tr>
 

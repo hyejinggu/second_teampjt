@@ -5,34 +5,39 @@ import Agree from './Agree';
 import Details from './Details';
 import Information from './Information';
 import Profile from './Profile';
+import { useState } from 'react';
 
 
 const Join = () => {
 
     return (
-        <main className='join'>
-            <div className="img_container">
-                <img src={"/images/join/bg5.jpg"} alt="" />
-            </div>
+        <>
+            <h2 className="title">회원가입</h2>
+            <main className='join'>
+                <div className="img_container">
+                    <img src={"/images/join/bg5.jpg"} alt="" />
+                </div>
 
-            <div className="right_contents">
-                <ul>
-                    <li><NavLink to='/join/profile'>Proflie</NavLink></li>
-                    <li><NavLink to='/join/details'>Details</NavLink></li>
-                    <li><NavLink to='/join/agree'>Agree</NavLink></li>
-                    <li><NavLink to='/join/information'>Information</NavLink></li>
-                </ul>
+                <div className="right_contents">
+                    <ul>
+                        <li><NavLink to='/join/profile'>Proflie</NavLink></li>
+                        <li><NavLink to='/join/details'>Details</NavLink></li>
+                        <li><NavLink to='/join/information'>Information</NavLink></li>
+                        <li><NavLink to='/join/agree'>Agree</NavLink></li>
+                    </ul>
 
-                <Routes>
-                    <Route path="/profile/*" element={<Profile />} />
-                    <Route path="/details/*" element={<Details />} />
-                    <Route path="/agree/*" element={<Agree />} />
-                    <Route path="/information/*" element={<Information />} />
-                </Routes>
-            </div >
+                    <Routes>
+                        <Route path="/profile/*" element={<Profile />} />
+                        <Route path="/details/*" element={<Details />} />
+                        <Route path="/agree/*" element={<Agree />} />
+                        <Route path="/information/*" element={<Information />} />
+                    </Routes>
+                </div >
 
 
-        </main>
+            </main>
+
+        </>
     )
 }
 

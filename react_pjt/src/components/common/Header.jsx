@@ -1,9 +1,6 @@
 import styles from "../../css/common/common.module.css";
-import { Route, Routes, Link } from "react-router-dom";
-import ItemList from "../item/ItemList";
-
-/* import "../../css/common/main.css"
-import "../../css/common/community.css" */
+import { Link } from "react-router-dom";
+import React from "react";
 
 const Header = () => {
   return (
@@ -84,6 +81,6 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+export default React.memo(Header);
 
 // {'/header/cart_img.png'}
