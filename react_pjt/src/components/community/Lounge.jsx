@@ -4,7 +4,7 @@ import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
 import CommunityTitle from "./CommunityTitle";
 import SideBar from "./SideBar";
-import { useReducer, useState, useMemo } from "react";
+import { useReducer, useState, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 const date = new Date();
