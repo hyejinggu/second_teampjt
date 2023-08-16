@@ -1,4 +1,4 @@
-
+import "../../css/login/findpw.css";
 
 const FindPw = () => {
   return (
