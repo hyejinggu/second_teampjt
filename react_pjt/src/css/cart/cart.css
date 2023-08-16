@@ -25,23 +25,19 @@
     border-bottom: 2px solid #ffa900;
 }
 
+.cart table thead tr {
+    display: flex;
+}
 
 .cart table thead tr th,
 .cart table tbody tr td {
     width: 25%;
 }
 
-.cart table thead tr th:first-child,
-.cart table tbody tr td:first-child {
+/* .cart table thead tr th:last-child,
+.cart table tbody tr td:last-child {
     width: 50px;
-}
-
-.cart table thead tr th input[type=checkbox],
-.cart table tbody tr td input[type=checkbox] {
-    width: 15px;
-    height: 15px;
-    margin-left: 15px;
-}
+} */
 
 /*========================================================================*/
 /*tbody*/
@@ -67,6 +63,7 @@
 }
 
 .cart table tbody tr td {
+    width: 20%;
     line-height: 100px;
     text-align: center;
 }
@@ -116,15 +113,31 @@
 }
 
 .cart table tbody tr td button {
+    width: 22px;
+    height: 22px;
     padding: 3px;
     border: none;
-    display: block;
+    /* display: block; */
     border: 1px solid#ffa900;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 3px;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0px 10px;
     font-family: 'Cafe24SsurroundAir';
+}
+
+.cart table tbody tr td input[type=button] {
+    border: none;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0px 10px;
+    box-shadow: none;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+.cart table tbody tr td input[type=button] {
+    height: 100px;
 }
 
 .cart table tbody tr td:nth-child(3) {

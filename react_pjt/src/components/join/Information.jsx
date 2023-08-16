@@ -28,9 +28,9 @@ const Information = () => {
                             </th>
                             <td className="ani_gender">
                                 <input type="radio" name="ani_gender" id="male" />
-                                <label htmlfor="male">남아</label>
+                                <label for="male">남아</label>
                                 <input type="radio" name="ani_gender" id="female" />
-                                <label htmlfor="female">여아</label>
+                                <label for="female">여아</label>
                             </td>
                         </tr>
                         <tr>
