@@ -1,7 +1,7 @@
 import styles from "../../css/subpage/create_post.module.css";
-import { useState, useRef, useContext, useReducer } from "react";
-import { Link } from "react-router-dom";
-import { CreatePostContext } from "./Community";
+import React, { useState, useRef, useContext } from "react";
+// import { Link } from "react-router-dom";
+import { CreatePostContext } from "./Lounge";
 
 const CreatePost = () => {
   const { onCreate } = useContext(CreatePostContext);
@@ -75,11 +75,9 @@ const CreatePost = () => {
           </div>
 
           <div>
-            {/* <Link to="/lounge"> */}
             <button type="submit" onClick={handleSubmit}>
               작성 완료
             </button>
-            {/* </Link> */}
           </div>
         </form>
       </div>
