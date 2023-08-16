@@ -72,23 +72,3 @@
     transition: .5s;
     background-color: #ffe344;
 }
-
-.login .login_container .login_box .idpwfind {
-    margin-top: 10px;
-    float: right;
-    line-height: 30px;
-    color: #b0a1a1;
-}
-
-.login .login_container .login_box .saveId {
-    margin-top: 10px;
-    float: left;
-}
-
-.login .login_container .login_box .idpwfind li {
-    color: #b0a1a1;
-}
-
-.login .login_container .login_box .idpwfind li:hover {
-    text-decoration: underline;
-}
