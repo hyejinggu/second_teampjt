@@ -82,9 +82,9 @@ const Payment = () => {
                             </td>
                         </tr>
                     </table>
-                    <a href="../.././../index.html" className={styles.img_area}>
+                    <Link to="/itemList" className={styles.img_area}>
                         <img src="https://i.pinimg.com/originals/7e/35/0c/7e350c22750cea72abeb1ab755ad43d0.gif" alt="" />
-                    </a>
+                    </Link>
                     {/* <!-- 비회원 주문조회 비밀번호--> */}
                     <div className={styles.pass_input}>
                         <hr />
@@ -424,12 +424,12 @@ const Payment = () => {
                 </section>
                 <div className={styles.button}>
                     <Link
-                        to=""
+                        to="/itemList"
                     >
                         <input type="button" value="할인 상품 더 보기" />
                     </Link>
                     <Link
-                        to=''
+                        to="/main"
                     >
                         <input type="submit" value="구매하기" />
                     </Link>
