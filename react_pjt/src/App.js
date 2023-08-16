@@ -19,6 +19,10 @@ import CreatePost from "./components/community/CreatePost";
 import Neighborhood from "./components/community/Neighborhood";
 import Event from "./components/community/Event";
 
+//로그인
+import FindId from "./components/login/FindId";
+import FindPw from "./components/login/FindPw";
+
 import styles from "./css/common/common.module.css";
 function App() {
   return (
@@ -43,7 +47,15 @@ function App() {
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
+
+        {/* 로그인 */}
+        <Route path="/findid/*" element={<FindId />} />
+        <Route path="/findpw/*" element={<FindPw />} />
+        {/* <li><NavLink to='/main/*'>로그인</NavLink></li> */}
+        
       </Routes>
+
+
       <Footer />
     </div>
   );
