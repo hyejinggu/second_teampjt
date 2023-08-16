@@ -4,10 +4,11 @@ import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
 import CommunityTitle from "./CommunityTitle";
 import SideBar from "./SideBar";
-import { useReducer, useState, useMemo, useCallback } from "react";
+import React, { useReducer, useState, useMemo, useContext } from "react";
 import { Link } from "react-router-dom";
 
 const date = new Date();
+export const CreatePostContext = React.createContext();
 
 export default function Lounge() {
   const loungePostArray = useMemo(
@@ -125,6 +126,10 @@ export default function Lounge() {
 
   const arrayReducer = (state, action) => {
     switch (action.type) {
+      // 글 작성 case
+      case "create":
+        return [action.newPost, ...state];
+
       // 글 정렬 case
       case "popular":
         return [...state].sort(
@@ -155,7 +160,7 @@ export default function Lounge() {
   const [selectedValue, setSelectedValue] = useState("postTitle");
   const [inputValue, setInputValue] = useState("");
 
-  // 글 정렬을 위해 useReducer 설정
+  // 글 추가, 정렬을 위해 useReducer 설정
   const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
 
   // page 이동
@@ -164,6 +169,25 @@ export default function Lounge() {
   const startIndex = (page - 1) * itemsPerPage;
   const displayedItemInfo = array.slice(startIndex, startIndex + itemsPerPage);
 
+  // 글 추가 dispatch
+  const [postTitle, setPostTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
+
+  const onCreate = (postTitle, postContent) => {
+    dispatch({
+      type: "create",
+      newPost: {
+        image:
+          "https://bff-images.bemypet.kr/media/medias/all/405-20230618_200323.jpg",
+        title: postTitle,
+        content: postContent,
+        userid: "aaa",
+        date: date.toLocaleDateString(),
+        recommended: 0,
+        views: 0,
+      },
+    });
+  };
   return (
     <div id="wrap" className={styles.lounge_container}>
       {/* 커뮤니티 타이틀 */}
@@ -220,9 +244,19 @@ export default function Lounge() {
               </form>
               <span onClick={() => dispatch({ type: selectedValue })}>🔍</span>
             </div>
-            <Link to="/createpost">
-              <button>글쓰기</button>
-            </Link>
+            <CreatePostContext.Provider
+              value={{
+                onCreate,
+                postTitle,
+                postContent,
+                setPostTitle,
+                setPostContent,
+              }}
+            >
+              <Link to="/createpost">
+                <button>글쓰기</button>
+              </Link>
+            </CreatePostContext.Provider>
           </div>
         </div>
       </div>

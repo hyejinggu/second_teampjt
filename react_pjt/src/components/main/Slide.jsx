@@ -5,7 +5,7 @@ const Slide = () => {
   const slideImages = [
     {
       id: 0,
-      img: "https://pethroom.com/file_data/pepem1//2023/08/01/fba10a676bd1d9b72d9dadc41e923f56.jpg",
+      img: "https://pethroom.com/web/upload/images/3F_restaurant_web.gif",
     },
     {
       id: 1,
@@ -13,6 +13,10 @@ const Slide = () => {
     },
     {
       id: 2,
+      img: "https://pethroom.com/web/upload/images/1F_playroom_web.gif",
+    },
+    {
+      id: 3,
       img: "https://shop-phinf.pstatic.net/20230508_291/1683539721258Oj7Em_JPEG/PC-1.jpg?type=m10000_10000",
     },
   ];
