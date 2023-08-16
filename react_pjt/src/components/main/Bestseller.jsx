@@ -9,9 +9,16 @@ const Bestseller = () => {
       name: "알록달록 로프 장난감",
       saleInfo: 10,
       normalPr: 13000,
-      image: ["/images/subpage/item1.jpg", "/images/subpage/item1_1.jpg"],
+      image: ["/images/subpage/item1.jpg",
+        "/images/subpage/item1_1.jpg",
+        "/images/subpage/item1_2.jpg",
+        "/images/subpage/item1_3.jpg",
+        "/images/subpage/item1_4.jpg"
+      ],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "당근 밭에서 당근 난다",
@@ -20,6 +27,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item5.jpeg", "/images/subpage/item5_1.jpg"],
       color: ["#ff9b0e"],
       clicked: 1870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "도토리를 찾아라!",
@@ -28,6 +37,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item3.jpg", "/images/subpage/item3_1.jpg"],
       color: ["#865d10"],
       clicked: 1032,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "돌려 돌려 미로",
@@ -36,6 +47,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item6.jpg", "/images/subpage/item6_1.jpg"],
       color: ["#ff9b0e", "#1dcc03", "#0ea7ff", "#ff0e0e"],
       clicked: 870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
   ]);
 
@@ -49,6 +62,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item1.jpg", "/images/subpage/item1_1.jpg"],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "당근 밭에서 당근 난다",
@@ -57,6 +72,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item5.jpeg", "/images/subpage/item5_1.jpg"],
       color: ["#ff9b0e"],
       clicked: 1870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "도토리를 찾아라!",
@@ -65,6 +82,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item3.jpg", "/images/subpage/item3_1.jpg"],
       color: ["#865d10"],
       clicked: 1032,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
     {
       name: "돌려 돌려 미로",
@@ -73,6 +92,8 @@ const Bestseller = () => {
       image: ["/images/subpage/item6.jpg", "/images/subpage/item6_1.jpg"],
       color: ["#ff9b0e", "#1dcc03", "#0ea7ff", "#ff0e0e"],
       clicked: 870,
+      sizes: ["S", "M", "L"],
+      colors: ["노랑", "연두"],
     },
   ];
 
@@ -84,7 +105,7 @@ const Bestseller = () => {
     // ... 다른 산책 상품들
   ];
 
-  const [selectedItems, dispatch] = useReducer((state, action) => {
+  const [displayedItemInfo, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "SET_SELECTED_ITEMS":
         return action.payload;
@@ -132,7 +153,8 @@ const Bestseller = () => {
         </a>
       </div>
       <BestsellerList
-        array={selectedItems}
+        selectedIteminfo={displayedItemInfo}
+        // selectedItems
         presentPr={presentPr}
         normalPr={normalPr}
       />

@@ -17,6 +17,7 @@ import Agree from './components/join/Agree';
 import Details from './components/join/Details';
 import Information from './components/join/Information';
 import Profile from './components/join/Profile';
+import Payment from "./components/payment/Payment";
 
 // 커뮤니티 링크 페이지 import
 import CreatePost from "./components/community/CreatePost";
@@ -47,16 +48,21 @@ function App() {
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
+<<<<<<< HEAD
 
 
-        {/* 회원가입 */}
+  {/* 회원가입 */ }
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/details/*" element={<Details />} />
         <Route path="/agree/*" element={<Agree />} />
         <Route path="/information/*" element={<Information />} />
-      </Routes>
-      <Footer />
-    </div>
+=======
+        <Route path="/itemdetail" element={<ItemDetail />} />
+        <Route path="/payment" element={<Payment />} />
+>>>>>>> main
+      </Routes >
+    <Footer />
+    </div >
   );
 }
 

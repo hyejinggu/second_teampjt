@@ -10,7 +10,13 @@ const ItemList = () => {
       name: "알록달록 로프 장난감",
       saleInfo: 10,
       normalPr: 13000,
-      image: ["/images/subpage/item1.jpg", "/images/subpage/item1_1.jpg"],
+      image: [
+        "/images/subpage/item1.jpg",
+        "/images/subpage/item1_1.jpg",
+        "/images/subpage/item1_2.jpg",
+        "/images/subpage/item1_3.jpg",
+        "/images/subpage/item1_4.jpg"
+      ],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
       sizes: ["S", "M", "L"],
