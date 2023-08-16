@@ -5,6 +5,7 @@ import Agree from './Agree';
 import Details from './Details';
 import Information from './Information';
 import Profile from './Profile';
+import { useState } from 'react';
 
 
 const Join = () => {

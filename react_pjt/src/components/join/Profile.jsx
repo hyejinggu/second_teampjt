@@ -1,6 +1,11 @@
 import "../../css/join/join.css";
+import { useState } from "react";
 
 const Proflie = () => {
+  const [formValue, setFormValue] = useState({
+    user_name: '',
+  });
+
   return (
     <form action="#" method="post">
       <figure>
@@ -204,6 +209,7 @@ const Proflie = () => {
                   name="user_num"
                   id="user_num"
                   placeholder="- 없이 입력해주세요"
+                  minLength={9}
                 />
               </td>
             </tr>
