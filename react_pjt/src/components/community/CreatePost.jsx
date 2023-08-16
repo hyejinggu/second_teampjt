@@ -1,16 +1,19 @@
 import styles from "../../css/subpage/create_post.module.css";
-import { useState, useRef, useContext } from "react";
-import { CreatePostContext } from "./Lounge";
+import { useState, useRef, useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
+import { CreatePostContext } from "./Community";
 
 const CreatePost = () => {
-  const { onCreate, postTitle, postContent, setPostTitle, setPostContent } =
-    useContext(CreatePostContext);
+  const { onCreate } = useContext(CreatePostContext);
 
   // const [image, setImage] = useState(null);
   const titleRef = useRef(null);
 
+  const [postTitle, setPostTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (!postTitle) {
       titleRef.current.innerText = "제목 입력";
     } else if (!postContent) {

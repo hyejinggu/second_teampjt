@@ -4,7 +4,6 @@ import CommunityTitle from "./CommunityTitle";
 export default function Event() {
   return (
     <div id="wrap" className={styles.event_container}>
-      <CommunityTitle />
       <ul className={styles.event_type}>
         <li>전체 이벤트</li>
         <li>구매자 이벤트</li>

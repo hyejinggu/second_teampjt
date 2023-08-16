@@ -47,10 +47,10 @@ function App() {
 
         {/* 커뮤니티 링크 */}
         <Route path="/community/*" element={<Community />} />
-        <Route path="/lounge/*" element={<Lounge />} />
-        <Route path="/event/*" element={<Event />} />
-        <Route path="/neighborhood/*" element={<Neighborhood />} />
-        <Route path="/createpost/*" element={<CreatePost />} />
+        {/* <Route path="/lounge/*" element={<Lounge />} /> */}
+        {/* <Route path="/event/*" element={<Event />} /> */}
+        {/* <Route path="/neighborhood/*" element={<Neighborhood />} /> */}
+        {/* <Route path="/createpost/*" element={<CreatePost />} /> */}
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
@@ -67,9 +67,7 @@ function App() {
 
         <Route path="/itemdetail" element={<ItemDetail />} />
         <Route path="/payment" element={<Payment />} />
-      </Routes >
-
-
+      </Routes>
 
       {/* 회원가입 */}
       <Footer />

@@ -14,7 +14,6 @@ export default function Neighborhood() {
 
   return (
     <div className={styles.neighborhood_container}>
-      <CommunityTitle />
       <div className={styles.content_wrap}>
         <SideBar content="neighbor" />
 
