@@ -48,20 +48,19 @@ function App() {
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
-<<<<<<< HEAD
 
 
-  {/* 회원가입 */ }
+        {/* 회원가입 */}
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/details/*" element={<Details />} />
         <Route path="/agree/*" element={<Agree />} />
         <Route path="/information/*" element={<Information />} />
-=======
+
+
         <Route path="/itemdetail" element={<ItemDetail />} />
         <Route path="/payment" element={<Payment />} />
->>>>>>> main
       </Routes >
-    <Footer />
+      <Footer />
     </div >
   );
 }
