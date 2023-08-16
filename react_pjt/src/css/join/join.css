@@ -36,6 +36,10 @@
   font-weight: bold;
 }
 
+.title {
+  text-align: center;
+}
+
 /*==================================================================*/
 /*  layout */
 .img_container {
