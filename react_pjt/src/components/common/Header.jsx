@@ -72,7 +72,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <Link to="/lounge">
+          <Link to="/community">
             <img src={"/images/header/community_img.png"} alt="" />
             커뮤니티
           </Link>

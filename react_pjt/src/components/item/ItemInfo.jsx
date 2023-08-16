@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import styles from "../../css/subpage/Itemlist.module.css";
+import React from "react";
 
 function ItemInfo({ selectedIteminfo, presentPr, normalPr }) {
   return (
@@ -43,4 +44,4 @@ function ItemInfo({ selectedIteminfo, presentPr, normalPr }) {
   );
 }
 
-export default ItemInfo;
+export default React.memo(ItemInfo);
