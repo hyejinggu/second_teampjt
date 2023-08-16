@@ -6,6 +6,7 @@ main {
 
 /* ===== 상단 슬라이드 배너 영역 시작 ===== */
 .banner_wrap {
+  text-align: center;
   height: 600px;
   margin-bottom: 20px;
   border-radius: 30px;
