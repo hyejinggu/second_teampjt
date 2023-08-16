@@ -1,7 +1,7 @@
 
 import CartItem from "./CartItem";
 import CartItemPrice from "./CartItemPrice";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 import "../../css/cart/cart.css";
 
@@ -62,9 +62,11 @@ export default function Cart() {
           </table>
 
           <CartItemPrice onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
-          <a href="./payment.html">
-            <input type="button" value="구매하기" className="order" />
-          </a>
+
+          <Link to="/payment" state={{
+            selectedItem: selectedItem, // item 객체를 그대로 전달합니다.
+          }}><input type="button" value="구매하기" className="order" /></Link>
+
         </form>
       </div>
     </>
