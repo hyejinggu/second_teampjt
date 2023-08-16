@@ -30,7 +30,7 @@ export default function Cart() {
   };
 
   const totalPrice = () => {
-    return (selectedItem.normalPr * count).toLocaleString();
+    return selectedItem.normalPr * count;
   };
 
   return (
