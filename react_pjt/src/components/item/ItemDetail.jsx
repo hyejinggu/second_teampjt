@@ -119,12 +119,12 @@ const ItemDetail = () => {
                     </section>
                 </div>
                 <section id="section1" className={styles.section1}>
-                    <nav className={styles.nav}>
-                        <a href="#section1">상품상세정보</a>
-                        <a href="#section2">상품구매안내</a>
-                        <a href="#section3">상품사용후기</a>
-                        <a href="#section4">상품Q&A</a>
-                    </nav>
+                    <ul className={styles.nav}>
+                        <li href="#section1">상품상세정보</li>
+                        <li href="#section2">상품구매안내</li>
+                        <li href="#section3">상품사용후기</li>
+                        <li href="#section4">상품Q&A</li>
+                    </ul>
                     <div>
                         <img src="/images/subpage/order.jpg" alt="주문마감시간" />
                         <img src="../image/order1.jpg" alt="" />

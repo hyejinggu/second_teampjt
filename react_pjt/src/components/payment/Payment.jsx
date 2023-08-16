@@ -30,7 +30,7 @@ const Payment = () => {
             <form action="" method="" className={styles.main}>
                 {/* <!--배송지정보--> */}
 
-                <h2>배송지</h2>
+                <h2 className={styles.title}>배송지</h2>
                 <div className={styles.address_input}>
                     <table>
                         <tr>
@@ -88,7 +88,7 @@ const Payment = () => {
                     {/* <!-- 비회원 주문조회 비밀번호--> */}
                     <div className={styles.pass_input}>
                         <hr />
-                        <h2>비회원 주문조회 비밀번호</h2>
+                        <h2 className={styles.title}>비회원 주문조회 비밀번호</h2>
                         <table>
                             <tr>
                                 <th>
@@ -106,7 +106,7 @@ const Payment = () => {
 
                 {/* <!-- 주문상품 --> */}
 
-                <h2>주문상품</h2>
+                <h2 className={styles.title}>주문상품</h2>
                 <div className={styles.desc}>
                     <table>
                         <tr>
@@ -139,7 +139,7 @@ const Payment = () => {
 
                 <section>
                     <div className={styles.content}>
-                        <h2>이용 약관</h2>
+                        <h2 className={styles.title}>이용 약관</h2>
                         <p>
                             제1조(목적)
 
@@ -393,7 +393,7 @@ const Payment = () => {
                             </label>
                         </div>
 
-                        <h2>개인 정보 처리 방침</h2>
+                        <h2 className={styles.title}>개인 정보 처리 방침</h2>
                         <p>1. - 목적 : 이용자 식별 및 본인여부 확인
                             - 항목 : 이름, 아이디, 비밀번호
                             - 보유 및 이용기간 : 회원탈퇴 후 5일까지
