@@ -1,3 +1,25 @@
+/* ===== 상단 카테고리, 정렬 영역 시작 ===== */
+
+.title {
+  margin: 50px 0;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.title a {
+  margin: 0 30px;
+  padding: 3px;
+}
+
+.title .active {
+  border-bottom: 5px solid #ffa900;
+}
+
+.title a:hover {
+  border-bottom: 5px solid #ffa900;
+}
+
 .content_wrap {
   display: grid;
   grid-template-columns: 1fr 6fr;

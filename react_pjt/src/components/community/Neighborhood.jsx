@@ -1,6 +1,7 @@
 import styles from "../../css/subpage/community_neighbor.module.css";
 import CommunityTitle from "./CommunityTitle";
 import SideBar from "./SideBar";
+import { Link, Routes, Route, NavLink } from "react-router-dom";
 
 export default function Neighborhood() {
   // let container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
@@ -14,6 +15,13 @@ export default function Neighborhood() {
 
   return (
     <div className={styles.neighborhood_container}>
+      <div className={styles.title}>
+        <strong>
+          <NavLink to="/community/lounge">라운지</NavLink>
+          <NavLink to="/community/event">이벤트</NavLink>
+          <NavLink to="/community/neighborhood">우리 동네</NavLink>
+        </strong>
+      </div>
       <div className={styles.content_wrap}>
         <SideBar content="neighbor" />
 
