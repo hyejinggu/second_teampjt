@@ -1,5 +1,6 @@
 import { useState } from "react";
-import joinStyle from '../../css/join/join.module.css';
+import { Link } from "react-router-dom";
+import '../../css/join/join.css';
 
 const Proflie = () => {
   const [formValue, setFormValue] = useState({
@@ -14,7 +15,7 @@ const Proflie = () => {
           <tbody>
             <tr>
               <th>
-                <label htmlFor="user_name" className={joinStyle.required}>
+                <label htmlFor="user_name" className="required">
                   이름
                 </label>
               </th>
@@ -32,12 +33,12 @@ const Proflie = () => {
 
             <tr>
               <th>
-                <label htmlFor="user_birth" className={joinStyle.required}>
+                <label htmlFor="user_birth" className="required">
                   생년월일
                 </label>
               </th>
-              <td className={joinStyle.user_birth}>
-                <select className={joinStyle.user_year} required id="user_birth">
+              <td className="user_birth">
+                <select className="user_year" required id="user_birth">
                   <option disabled defaultValue>
                     년
                   </option>
@@ -142,7 +143,7 @@ const Proflie = () => {
                   <option value="1921">1921</option>
                   <option value="1920">1920</option>
                 </select>
-                <select className={joinStyle.user_month} required>
+                <select className="user_month" required>
                   <option disabled defaultValue>
                     월
                   </option>
@@ -159,7 +160,7 @@ const Proflie = () => {
                   <option value="11">11</option>
                   <option value="12">12</option>
                 </select>
-                <select className={joinStyle.user_day} required>
+                <select className="user_day" required>
                   <option disabled defaultValue>
                     일
                   </option>
@@ -199,7 +200,7 @@ const Proflie = () => {
             </tr>
             <tr>
               <th>
-                <label htmlFor="user_num" className={joinStyle.required}>
+                <label htmlFor="user_num" className="required">
                   핸드폰 번호
                 </label>
               </th>
@@ -222,9 +223,9 @@ const Proflie = () => {
                   type="email"
                   name="user_email"
                   id="user_email"
-                  className={joinStyle.user_email}
+                  className="user_email"
                 />
-                <select className={joinStyle.domain_list} required>
+                <select className="domain_list" required>
                   <option disabled value="" defaultValue>
                     선택
                   </option>
@@ -239,7 +240,8 @@ const Proflie = () => {
           </tbody>
         </table>
       </figure>
-      <input type="submit" value="Next" />
+      <Link to="/join/details/*"><input type="submit" value="Next" /></Link>
+
     </form>
   );
 };

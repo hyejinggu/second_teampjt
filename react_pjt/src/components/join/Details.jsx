@@ -39,7 +39,8 @@
 
 
 import React, { useState } from 'react';
-import joinStyle from '../../css/join/join.module.css';
+import { Link } from 'react-router-dom';
+import '../../css/join/join.css';
 
 const Details = () => {
     const [formData, setFormData] = useState({
@@ -133,7 +134,7 @@ const Details = () => {
                     <tbody>
                         <tr>
                             <th>
-                                <label htmlFor="user_id" className={joinStyle.required}>
+                                <label htmlFor="user_id" className="required">
                                     아이디
                                 </label>
                             </th>
@@ -150,7 +151,7 @@ const Details = () => {
                             {errors.user_id && <div className="error">{errors.user_id}</div>}
                         </tr>
                         <tr>
-                            <th><label htmlFor="user_password" className={joinStyle.required}>비밀번호</label></th>
+                            <th><label htmlFor="user_password" className="required">비밀번호</label></th>
                             <td>
                                 <input
                                     type="password"
@@ -164,7 +165,7 @@ const Details = () => {
                             {errors.user_password && <div className="error">{errors.user_password}</div>}
                         </tr>
                         <tr>
-                            <th><label htmlFor="user_password2" className={joinStyle.required}>비밀번호 확인</label></th>
+                            <th><label htmlFor="user_password2" className="required">비밀번호 확인</label></th>
                             <td>
                                 <input
                                     type="password"
@@ -180,7 +181,7 @@ const Details = () => {
                     </tbody>
                 </table>
             </figure>
-            <input type="submit" value="Next" />
+            <Link to="/join/information/*"><input type="submit" value="Next" /></Link>
         </form>
     );
 };

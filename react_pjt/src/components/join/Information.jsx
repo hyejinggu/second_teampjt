@@ -1,4 +1,5 @@
-import joinStyle from '../../css/join/join.module.css';
+import '../../css/join/join.css';
+import { Link } from 'react-router-dom';
 
 
 const Information = () => {
@@ -29,7 +30,7 @@ const Information = () => {
                             <th>
                                 <label htmlFor="ani_gender">반려동물 성별</label>
                             </th>
-                            <td className={joinStyle.ani_gender}>
+                            <td className="ani_gender">
                                 <input type="radio" name="ani_gender" id="male" />
                                 <label htmlFor="male">남아</label>
                                 <input type="radio" name="ani_gender" id="female" />
@@ -40,7 +41,7 @@ const Information = () => {
                             <th>
                                 <label htmlFor="ani_character">반려동물 특성</label>
                             </th>
-                            <td className={joinStyle.ani_character}>
+                            <td className="ani_character">
                                 <textarea name="ani_character" id="ani_character" cols="84" rows="3"></textarea>
                             </td>
                         </tr>
@@ -49,7 +50,8 @@ const Information = () => {
 
                     </table>
                 </figure>
-                <input type="submit" value="Next" />
+                <Link to="/join/agree/*"><input type="submit" value="Next" /></Link>
+
             </form>
         </div>
     )
