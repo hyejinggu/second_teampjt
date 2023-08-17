@@ -6,6 +6,8 @@ import { useLocation } from "react-router-dom";
 const Payment = () => {
     const location = useLocation();
     const selectedItem = location.state.selectedItem;
+    const quantity = location.state.quantity;
+
 
     // ======== 가격 계산 및 형식 변환 함수 시작 ========
     const formatter = new Intl.NumberFormat("ko-KR", {
@@ -22,6 +24,12 @@ const Payment = () => {
         return formatter.format(salePr);
     };
 
+    const totalPrice = () => {
+        const originalPr = selectedItem.normalPr;
+        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+        const totalpr = salePr * quantity
+        return formatter.format(totalpr);
+    };
 
     return (
         <div>
@@ -109,28 +117,44 @@ const Payment = () => {
                 <h2 className={styles.title}>주문상품</h2>
                 <div className={styles.desc}>
                     <table>
-                        <tr>
-                            <td>
-                                <div className={styles.thumb}>
-                                    <img src={selectedItem.image[1]} alt="상품이미지" />
-                                </div>
-                            </td>
-                            <td>
-                                <h3 className={styles.name}>{selectedItem.name}</h3>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>
-                                        <span className={styles.sale_info}>{selectedItem.saleInfo}%</span>
-                                        <span className={styles.normal_pr}>{selectedItem.normalPr}원</span>
-                                        <span className={styles.present_pr}>{presentPr()}원</span>
-                                    </li>
-                                    <li>
-                                        <span className={styles.free_delivery}>3000원(50,000원 이상 구매시 무료)</span>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>상품/옵션 정보</th>
+                                <th>수량</th>
+                                <th>상품금액</th>
+                                <th>합계금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div className={styles.thumb}>
+                                        <img src={selectedItem.image[1]} alt="상품이미지" />
+                                    </div>
+                                    <h3 className={styles.name}>{selectedItem.name}</h3>
+                                    {/* <span>{selectedItem.colors} / </span>
+                                    <span>{selectedItem.sizes}</span> */}
+                                </td>
+                                <td>
+                                    <span className={styles.quantity}>수량 : {quantity}개</span>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <span className={styles.sale_info}>{selectedItem.saleInfo}%</span>
+                                            <span className={styles.normal_pr}>{selectedItem.normalPr}원</span>
+                                            <span className={styles.present_pr}>{presentPr()}원</span>
+                                        </li>
+                                        <li>
+                                            <span className={styles.free_delivery}>3000원(50,000원 이상 구매시 무료)</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td className={styles.total}>
+                                    {totalPrice()}원
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <hr />

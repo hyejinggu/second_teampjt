@@ -142,17 +142,17 @@ div>a>.button:hover {
 .detail_wrap .info_area {
     display: grid;
     grid-template-columns: .5fr 1.5fr 3.5fr .5fr;
-    grid-template-rows: .5fr repeat(5, 1fr) repeat(3, .5fr);
+    grid-template-rows: .5fr repeat(6, .5fr) repeat(3, .5fr);
     grid-template-areas:
         ". . . ."
         ". a b ."
         ". c d ."
         ". e f ."
-        ". g h."
+        ". g h ."
         ". i j ."
-        /* ". . . ." */
-        ". k k ."
-        ". l l ."
+        ". k l ."
+        ". m m ."
+        ". n n ."
         ". . . .";
 }
 
@@ -218,6 +218,14 @@ div>a>.button:hover {
     grid-area: l;
 }
 
+.info_area div:nth-child(13) {
+    grid-area: m;
+}
+
+.info_area div:nth-child(14) {
+    grid-area: n;
+}
+
 .sale_info {
     color: red;
     font-weight: bold;
@@ -239,6 +247,33 @@ div>a>.button:hover {
 
 .info_area input {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+select[id="option"] {
+    /* margin: 3em auto; */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.info_area a {
+    width: 100%;
+}
+
+.info_area input[type="button"] {
+    width: 100%;
+    /* margin: 1em auto; */
+    padding: 10px 0;
+    border: 1px solid #ffa900;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #ffa900;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 /*========================================= 상품상세정보 =========================================*/
@@ -300,29 +335,6 @@ div>a>.button:hover {
 .purchase_info .purchase_right div,
 .purchase_info .purchase_left div {
     padding: 1em;
-}
-
-select[id="option"] {
-    margin: 3em auto;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-
-.info_area input[type="button"] {
-    width: 100%;
-    margin: 1em 0;
-    padding: 10px 0;
-    border: 1px solid #ffa900;
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: #ffa900;
-    cursor: pointer;
-    box-sizing: border-box;
-    text-align: center;
 }
 
 /*========================================= 상품사용후기 =========================================*/

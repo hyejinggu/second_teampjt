@@ -137,16 +137,58 @@
 }
 
 /*====================================================================== 주문상품 ====================================================================== */
-
-.thumb>img {
-    width: 120px;
+/*thead*/
+.main table thead {
+    height: 50px;
+    line-height: 46px;
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid #ffa900;
 }
 
-.desc {
-    padding: 10px;
+.main table thead tr {
+    display: flex;
+}
+
+.main table thead tr th,
+.main table tbody tr td {
+    width: 25%;
+}
+
+/*tbody*/
+
+.main table tbody {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.main table tbody tr {
+    display: block;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.main table tbody tr:last-child {
+    border: none;
+}
+
+.main table tbody tr td {
+    width: 20%;
+    line-height: 100px;
     text-align: center;
 }
 
+.main table tbody tr td img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+
+.main table tbody tr td:nth-child(3) {
+    line-height: 40px;
+}
 
 .sale_info {
     color: red;
@@ -159,7 +201,9 @@
     text-decoration: line-through;
 }
 
-.present_pr {
+.present_pr,
+.total,
+.quantity {
     font-weight: bold;
 }
 

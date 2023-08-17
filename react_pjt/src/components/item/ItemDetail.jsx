@@ -11,6 +11,14 @@ const ItemDetail = () => {
     const location = useLocation();
     const selectedItem = location.state.selectedItem;
 
+    // 수량 설정
+    const [quantity, setQuantity] = useState(1); // 초기 수량 설정
+
+    const handleQuantityChange = (event) => {
+        setQuantity(parseInt(event.target.value)); // 수량 변경 시 상태 업데이트
+    };
+
+
     // ======== 가격 계산 및 형식 변환 함수 시작 ========
     const formatter = new Intl.NumberFormat("ko-KR", {
         //   style: "currency",
@@ -33,7 +41,7 @@ const ItemDetail = () => {
 
     return (
         <div className={styles.detail_wrap}>
-            <div>
+            <form>
                 <div className={styles.top_area}>
                     <section className={styles.img_area}>
                         {/* 메인 이미지 */}
@@ -89,12 +97,29 @@ const ItemDetail = () => {
                                 ))}
                             </select>
                         </div>
+                        {/* 수량 */}
+                        <div>수량</div>
+                        <div>
+                            <select
+                                id="option"
+                                name="quantityOption"
+                                value={quantity}
+                                onChange={handleQuantityChange} // 수량 변경 시 처리
+                            >
+                                {Array.from({ length: 10 }, (_, index) => index + 1).map((count) => (
+                                    <option key={count} value={count}>
+                                        {count}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
                         {/* 구매 버튼 */}
                         <div>
                             <Link
-                                to='/payment'
+                                to="/payment"
                                 state={{
-                                    selectedItem: selectedItem, // item 객체를 그대로 전달합니다.
+                                    selectedItem: selectedItem,
+                                    quantity: quantity,
                                 }}
                             >
                                 <input
@@ -120,12 +145,14 @@ const ItemDetail = () => {
                             </Link>
                         </div>
                     </section>
+
+
                 </div>
                 <ItemDetailSection1 selectedItem={selectedItem} />
                 <ItemDetailSection2 selectedItem={selectedItem} />
                 <ItemDetailSection3 selectedItem={selectedItem} />
                 <ItemDetailSection4 selectedItem={selectedItem} />
-            </div>
+            </form>
         </div>
     );
 };
