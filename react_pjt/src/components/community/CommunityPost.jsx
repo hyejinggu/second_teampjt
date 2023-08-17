@@ -1,12 +1,12 @@
 // import styles from "../../css/subpage/community_lounge.module.css";
 
-export default function CommunityPost({ loungePostArray }) {
+export default function CommunityPost({ addedPostArray }) {
   const date = new Date();
   return (
     <tbody>
-      {loungePostArray.map((post, index) => (
+      {addedPostArray.map((post, index) => (
         <tr>
-          <td>{loungePostArray.length - index}</td>
+          <td>{addedPostArray.length - index}</td>
           <td>
             <img src={post.image} />
           </td>

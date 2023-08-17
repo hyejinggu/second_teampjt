@@ -13,7 +13,7 @@ import { CreatePostContext } from "./Community";
 const date = new Date();
 
 export default function Lounge() {
-  const { loungePostArray } = useContext(CreatePostContext);
+  const { addedPostArray } = useContext(CreatePostContext);
 
   const arrayReducer = (state, action) => {
     switch (action.type) {
@@ -27,23 +27,23 @@ export default function Lounge() {
           (a, b) => b.recommended + b.views - (a.recommended + a.views)
         );
       case "notice":
-        return loungePostArray;
+        return addedPostArray;
 
       // 글 검색 case
       case "postTitle":
         return inputValue === ""
           ? state
-          : loungePostArray.filter((it) => it.title.includes(inputValue));
+          : addedPostArray.filter((it) => it.title.includes(inputValue));
       case "postContent":
         return inputValue === ""
           ? state
-          : loungePostArray.filter((it) => it.content.includes(inputValue));
+          : addedPostArray.filter((it) => it.content.includes(inputValue));
       case "postUserId":
         return inputValue === ""
           ? state
-          : loungePostArray.filter((it) => it.userid.includes(inputValue));
+          : addedPostArray.filter((it) => it.userid.includes(inputValue));
       default:
-        return loungePostArray;
+        return addedPostArray;
     }
   };
 
@@ -52,7 +52,7 @@ export default function Lounge() {
   const [inputValue, setInputValue] = useState("");
 
   // 글 추가, 정렬을 위해 useReducer 설정
-  const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
+  const [array, dispatch] = useReducer(arrayReducer, addedPostArray);
 
   // page 이동
   const [page, setPage] = useState(1);
@@ -96,7 +96,7 @@ export default function Lounge() {
                 <th>조회수</th>
               </tr>
             </thead>
-            <CommunityPost loungePostArray={displayedItemInfo} />
+            <CommunityPost addedPostArray={displayedItemInfo} />
           </table>
 
           {/* 검색 및 글쓰기 */}

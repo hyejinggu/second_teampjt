@@ -15,7 +15,7 @@ const ItemList = () => {
         "/images/subpage/item1_1.jpg",
         "/images/subpage/item1_2.jpg",
         "/images/subpage/item1_3.jpg",
-        "/images/subpage/item1_4.jpg"
+        "/images/subpage/item1_4.jpg",
       ],
       infoimage: [
         "/images/subpage/order1.jpg",
@@ -628,7 +628,7 @@ const ItemList = () => {
   const startIndex = (page - 1) * itemsPerPage;
   const displayedItemInfo = array.slice(startIndex, startIndex + itemsPerPage);
 
-  // ======== 가격 계산 및 형식 변환 함수 시작 ========
+  // ======== 가격 계산 및 형식 변환 함수 ========
   const formatter = new Intl.NumberFormat("ko-KR", {
     //   style: "currency",
     //   currency: "USD", // 통화 코드를 원하는 통화로 변경

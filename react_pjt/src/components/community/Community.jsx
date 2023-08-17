@@ -2,10 +2,10 @@ import Lounge from "./Lounge";
 import Event from "./Event";
 import Neighborhood from "./Neighborhood";
 import CreatePost from "./CreatePost";
-import React, { useReducer, useState, useMemo, useContext } from "react";
-import styles from "../../css/subpage/community_lounge.module.css";
-// import React, { useReducer, useState, useContext } from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import styles from "../../css/subpage/community_lounge.module.css";
+
+import { Routes, Route } from "react-router-dom";
 
 export const CreatePostContext = React.createContext();
 const date = new Date();
@@ -117,37 +117,44 @@ const loungePostArray = [
     views: 87,
   },
 ];
+
 const Community = () => {
-  const onCreate = (postTitle, postContent) => {
-    dispatch({
-      type: "create",
-      newPost: {
+  const [addedPostArray, setPostArray] = useState(loungePostArray);
+  // 로컬 스토리지에서 내용을 가져와서 배열에 추가하는 함수
+  const addPostFromLocalStorage = () => {
+    const storedTitle = localStorage.getItem("title");
+    const storedContent = localStorage.getItem("content");
+
+    if (storedTitle && storedContent) {
+      const newPost = {
         image:
-          "https://bff-images.bemypet.kr/media/medias/all/405-20230618_200323.jpg",
-        title: postTitle,
-        content: postContent,
-        userid: "aaa",
-        date: date.toLocaleDateString(),
+          "https://bff-images.bemypet.kr/media/medias/all/758-image_picker3081517976164242868.jpg",
+        title: storedTitle,
+        content: storedContent,
+        userid: "사용자 ID",
+        date: new Date().toLocaleDateString(),
         recommended: 0,
         views: 0,
-      },
-    });
-  };
-  const arrayReducer = (state, action) => {
-    switch (action.type) {
-      // 글 작성 case
-      case "create":
-        return [action.newPost, ...state];
-      default:
-        return loungePostArray;
+      };
+
+      // 기존 배열 앞에 새로운 게시물을 추가합니다.
+      setPostArray((prevArray) => [newPost, ...prevArray]);
+
+      // 로컬 스토리지의 내용 삭제
+      localStorage.removeItem("title");
+      localStorage.removeItem("content");
     }
   };
 
-  const [array, dispatch] = useReducer(arrayReducer, loungePostArray);
+  useEffect(() => {
+    addPostFromLocalStorage();
+  }, []);
 
   return (
     <div>
-      <CreatePostContext.Provider value={{ onCreate, loungePostArray }}>
+      <CreatePostContext.Provider
+        value={{ addedPostArray, addPostFromLocalStorage }}
+      >
         <Routes>
           <Route path="/*" element={<Lounge />} />
           <Route path="/lounge/*" element={<Lounge />} />

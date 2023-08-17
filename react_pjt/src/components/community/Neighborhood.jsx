@@ -1,17 +1,34 @@
+/* eslint-disable no-undef */ // 'kakao' is a global variable from Kakao Maps SDK
+
 import styles from "../../css/subpage/community_neighbor.module.css";
-import CommunityTitle from "./CommunityTitle";
+// import CommunityTitle from "./CommunityTitle";
 import SideBar from "./SideBar";
-import { Link, Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
 
 export default function Neighborhood() {
-  // let container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
-  // let options = {
-  //   //지도를 생성할 때 필요한 기본 옵션
-  //   center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-  //   level: 3, //지도의 레벨(확대, 축소 정도)
-  // };
+  useEffect(() => {
+    const container = document.getElementById(styles.map); // 맵 요소의 정확한 클래스 이름을 사용하세요
+    const options = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3,
+      mapTypeId: kakao.maps.MapTypeId.ROADMAP, // 지도종류
+    };
 
-  // let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    const map = new kakao.maps.Map(container, options);
+
+    // 지도 타입 변경 컨트롤을 생성한다
+    var mapTypeControl = new kakao.maps.MapTypeControl();
+
+    // 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+    // 지도에 확대 축소 컨트롤을 생성한다
+    var zoomControl = new kakao.maps.ZoomControl();
+
+    // 지도의 우측에 확대 축소 컨트롤을 추가한다
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+  }, []); // 빈 의존성 배열은 초기 렌더링 후에 효과가 실행되도록 합니다.
 
   return (
     <div className={styles.neighborhood_container}>
