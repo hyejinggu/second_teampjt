@@ -44,7 +44,6 @@ main {
   top: 250px;
   left: 30px;
   width: 70px;
-  z-index: 10;
 }
 
 .slide_banner img:last-child {

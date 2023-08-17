@@ -2,10 +2,10 @@ import styles from "../../css/subpage/create_post.module.css";
 import React, { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CreatePostContext } from "./Community";
+import Modal from "../common/Modal";
 
 const CreatePost = () => {
   const { addPostFromLocalStorage } = useContext(CreatePostContext);
-  const navigate = useNavigate();
 
   // const [image, setImage] = useState(null);
   const titleRef = useRef(null);
@@ -13,6 +13,7 @@ const CreatePost = () => {
 
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,14 +25,22 @@ const CreatePost = () => {
       localStorage.setItem("title", postTitle);
       localStorage.setItem("content", postContent);
       addPostFromLocalStorage();
-      navigate("/community/lounge/*");
-      // setPostTitle("");
-      // setPostContent("");
+      setIsModalOpen(true);
     }
   };
 
   return (
     <div className={styles.createpost_wrap}>
+      <div>
+        {isModalOpen && (
+          <Modal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            modalContent={"글 작성이 완료되었습니다."}
+            modalAfterPath={"/community/lounge/*"}
+          />
+        )}
+      </div>
       <h2>글쓰기</h2>
       <div className={styles.form_wrap}>
         <form onSubmit={handleSubmit}>
