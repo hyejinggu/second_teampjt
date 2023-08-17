@@ -10,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .modal_wrap {
@@ -22,14 +21,12 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-rows: 2fr 1fr;
-  z-index: 1;
 }
 
 .modal_content {
   color: #000;
   font-size: 1.3em;
   align-self: center;
-  z-index: 1;
 }
 .modal_btn {
   width: 100px;
@@ -39,5 +36,4 @@
   border-radius: 10px;
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
   justify-self: center;
-  z-index: 1;
 }

@@ -19,9 +19,10 @@ main {
   height: 100%;
 }
 
-.slide_container {
-  display: flex;
-  overflow: hidden;
+.slide_banner:hover .pre_arrow,
+.slide_banner:hover .next_arrow {
+  opacity: 1;
+  transition: 0.7s;
 }
 
 .banner_image {
@@ -30,7 +31,7 @@ main {
   object-fit: cover;
   border-radius: 30px;
   position: absolute;
-  transform: translateX(-50%);
+  left: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
@@ -39,18 +40,29 @@ main {
   opacity: 1;
 }
 
-.slide_banner img:first-child {
+.pre_arrow,
+.next_arrow {
   position: absolute;
   top: 250px;
-  left: 30px;
+  width: 70px;
+  height: 100px;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: flex;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.pre_arrow img,
+.next_arrow img {
   width: 70px;
 }
 
-.slide_banner img:last-child {
-  position: absolute;
-  top: 250px;
-  right: 30px;
-  width: 70px;
+.pre_arrow {
+  left: 0;
+}
+
+.next_arrow {
+  right: 0;
 }
 
 /* ===== 상단 슬라이드 배너 영역 끝 ===== */

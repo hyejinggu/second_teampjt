@@ -28,7 +28,8 @@ const Payment = () => {
         const originalPr = selectedItem.normalPr;
         const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
         const totalpr = salePr * quantity
-        return formatter.format(totalpr);
+        const totalWithDelivery = totalpr >= 50000 ? totalpr : totalpr + 3000;
+        return formatter.format(totalWithDelivery);
     };
 
     return (
@@ -151,7 +152,8 @@ const Payment = () => {
                                     </ul>
                                 </td>
                                 <td className={styles.total}>
-                                    {totalPrice()}원
+                                    <span>{totalPrice()}원</span>
+                                    <span>(배송비 포함금액)</span>
                                 </td>
                             </tr>
                         </tbody>
