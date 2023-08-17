@@ -20,7 +20,7 @@ const ItemList = () => {
       infoimage: [
         "/images/subpage/order1.jpg",
         "/images/subpage/order2.jpg",
-        "/images/subpage/order3.jpg"
+        "/images/subpage/order3.jpg",
       ],
       color: ["#1dcc03", "#ffeb0c"],
       clicked: 1300,
@@ -628,21 +628,6 @@ const ItemList = () => {
   const startIndex = (page - 1) * itemsPerPage;
   const displayedItemInfo = array.slice(startIndex, startIndex + itemsPerPage);
 
-  // ======== 가격 계산 및 형식 변환 함수 ========
-  const formatter = new Intl.NumberFormat("ko-KR", {
-    //   style: "currency",
-    //   currency: "USD", // 통화 코드를 원하는 통화로 변경
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
-
-  const presentPr = (item) => {
-    const originalPr = item.normalPr;
-    const salePr = originalPr - originalPr * (item.saleInfo / 100);
-    return formatter.format(salePr);
-  };
-  const normalPr = (item) => formatter.format(item.normalPr);
-
   // return 시작
   return (
     <div className={styles.container}>
@@ -661,11 +646,7 @@ const ItemList = () => {
       </div>
 
       <div className={styles.item_wrap}>
-        <ItemInfo
-          selectedIteminfo={displayedItemInfo}
-          presentPr={presentPr}
-          normalPr={normalPr}
-        />
+        <ItemInfo selectedIteminfo={displayedItemInfo} />
       </div>
       <PageNation setPage={setPage} />
     </div>
