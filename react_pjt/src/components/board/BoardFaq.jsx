@@ -1,4 +1,4 @@
-import "../../css/board/boardFaq.css";
+import "../../css/board/board.css";
 const BoardFaq = () => {
     <main>
         <div id="board">

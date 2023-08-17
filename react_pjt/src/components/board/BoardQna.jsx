@@ -1,4 +1,4 @@
-import "../../css/board/boardQna.css";
+import "../../css/board/board.css";
 const BoardQna = () => {
     
 <main>
