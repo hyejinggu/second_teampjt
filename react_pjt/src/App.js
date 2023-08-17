@@ -25,9 +25,13 @@ import Neighborhood from "./components/community/Neighborhood";
 import Event from "./components/community/Event";
 import Community from "./components/community/Community";
 
-//로그인
+// 로그인
 import FindId from "./components/login/FindId";
 import FindPw from "./components/login/FindPw";
+
+// 게시판
+import BoardFaq from "./components/board/BoardFaq";
+import BoardQna from "./components/board/BoardQna";
 
 import styles from "./css/common/common.module.css";
 function App() {
@@ -58,7 +62,10 @@ function App() {
         {/* 로그인 */}
         <Route path="/findid/*" element={<FindId />} />
         <Route path="/findpw/*" element={<FindPw />} />
-        {/* <li><NavLink to='/main/*'>로그인</NavLink></li> */}
+
+        {/* 게시판 */}
+        <Route path="/boardfaq/*" element={<BoardFaq />} />
+        <Route path="/boardqna/*" element={<BoardQna />} />
 
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/details/*" element={<Details />} />
