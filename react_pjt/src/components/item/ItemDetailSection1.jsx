@@ -33,7 +33,7 @@ const ItemDetailSection1 = () => {
                     to="section4"
                     offset={0}
                 >
-                    상품Q
+                    상품Q&A
                 </ScrollLink>
             </nav>
             <div>

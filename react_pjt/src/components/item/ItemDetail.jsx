@@ -134,7 +134,7 @@ const ItemDetail = () => {
                             <Link
                                 to="/cart"
                                 state={{
-                                    selectedItem: selectedItem, // item 객체를 그대로 전달합니다.
+                                    selectedItem: selectedItem,
                                 }}
                             >
                                 <input

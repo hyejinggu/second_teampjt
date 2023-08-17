@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
-const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity, presentPr }) => {
+const CartItem = ({ onIncrease, onDecrease, totalPrice, count }) => {
     const location = useLocation();
     const selectedItem = location.state.selectedItem;
 
@@ -16,13 +16,13 @@ const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity, presentPr }) =
             </td>
             <td>
                 <button onClick={onDecrease}>-</button>
-                <span className="total">{quantity}</span>
+                <span className="total">{count}</span>
                 <button onClick={onIncrease}>+</button>
             </td>
             <td className="price">
                 <span className="sale_info">{selectedItem.saleInfo}%</span>
                 <del>{selectedItem.normalPr.toLocaleString()}원</del>
-                <span className="sale_price">{presentPr().toLocaleString()}원</span>
+                <span className="sale_price">{selectedItem.normalPr.toLocaleString()}원</span>
             </td>
             <td className="total">{totalPrice().toLocaleString()}원</td>
             {/* <td>
