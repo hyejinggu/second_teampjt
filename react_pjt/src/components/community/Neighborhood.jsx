@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */ // 'kakao' is a global variable from Kakao Maps SDK
 
 import styles from "../../css/subpage/community_neighbor.module.css";
-import CommunityTitle from "./CommunityTitle";
+// import CommunityTitle from "./CommunityTitle";
 import SideBar from "./SideBar";
-import { Link, Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React, { useEffect } from "react";
 
 export default function Neighborhood() {
