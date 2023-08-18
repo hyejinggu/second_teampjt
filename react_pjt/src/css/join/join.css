@@ -27,10 +27,6 @@
   text-align: left;
 }
 
-.right_contents * {
-  /* text-align: left; */
-}
-
 .active {
   color: #ffa900;
   font-weight: bold;

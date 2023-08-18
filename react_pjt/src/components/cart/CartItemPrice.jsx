@@ -7,7 +7,7 @@ const CartItemPrice = ({ presentPr, normalPr, totalPrice, quantity, formatter, s
         const originalPr = selectedItem.normalPr;
         const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
         const totalpr = salePr * quantity
-        return totalpr >= 50000 ? 0 : 3000;
+        return totalpr >= 30000 ? 0 : 3000;
     }
 
     // totalPrice = totalPrice.toLocaleString();
