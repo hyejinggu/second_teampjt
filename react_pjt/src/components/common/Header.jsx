@@ -1,10 +1,45 @@
 import styles from "../../css/common/common.module.css";
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Modal from "../common/Modal";
 
 const Header = () => {
+  // const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [login, setLogin] = useState("로그인");
+  const [join, setJoin] = useState("회원가입");
+
+  // useEffect를 사용하여 로컬 스토리지에 저장된 값이 변경될 때마다 상태 업데이트
+  useEffect(() => {
+    const storedId = localStorage.getItem("id");
+    const storedPw = localStorage.getItem("pw");
+    if (storedId && storedPw) {
+      setLogin("로그아웃");
+      setJoin("내 계정");
+    }
+  }, []);
+
+  const handleLoginState = () => {
+    if (login === "로그아웃") {
+      localStorage.removeItem("id");
+      localStorage.removeItem("pw");
+      setLogin("로그인");
+      setJoin("회원가입");
+      setIsModalOpen(true);
+    }
+  };
+
   return (
     <header>
+      <div>
+        {isModalOpen && (
+          <Modal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            modalContent={"로그아웃 되었습니다."}
+          />
+        )}
+      </div>
       <div className={styles.menu_list}>
         <Link to="/main">
           <img
@@ -21,15 +56,15 @@ const Header = () => {
         />
 
         <ul>
-          <li>
-            <Link to="/login">
-              <img src={"/images/header/login_img.png"} alt="" /> 로그인
+          <li onClick={handleLoginState}>
+            <Link to={login === "로그아웃" ? "/main" : "/login"}>
+              <img src={"/images/header/login_img.png"} alt="" /> {login}
             </Link>
           </li>
           <li>
-            <Link to="/join/profile">
+            <Link to={login === "로그아웃" ? "main" : "/join/profile"}>
               <img src={"/images/header/join_img.png"} alt="" />
-              회원가입
+              {join}
             </Link>
           </li>
           <li>

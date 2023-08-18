@@ -33,19 +33,19 @@ const ItemDetailSection1 = () => {
                     to="section4"
                     offset={0}
                 >
-                    상품Q
+                    상품Q&A
                 </ScrollLink>
             </nav>
             <div>
                 <img src="/images/subpage/order.jpg" alt="주문마감시간" />
 
-                {/* {selectedItem.images.map((imageUrl, index) => (
-                                <img
-                                    key={index}
-                                    src={imageUrl}
-                                    alt={`이미지 ${index}`}
-                                />
-                            ))} */}
+                {selectedItem.infoimage.map((imageUrl, index) => (
+                    <img
+                        key={index}
+                        src={imageUrl}
+                        alt={`이미지 ${index}`}
+                    />
+                ))}
 
                 <img src="/images/subpage/wash.jpg" alt="세탁방법" />
                 <RouterLink

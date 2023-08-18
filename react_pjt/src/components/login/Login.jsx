@@ -28,7 +28,7 @@ const Login = () => {
             <Link to='/findid'><span>아이디찾기</span></Link>
             <b> | </b>
             <Link to='/findpw'><span>비밀번호찾기</span></Link>
-            {/* <li><NavLink to='/main/'>로그인</NavLink></li> */}
+            {/* <Link to='/main'><span>로그인</span></Link> */}
           </div>
 
         </div>

@@ -44,8 +44,6 @@ const Slide = () => {
   return (
     <div className={styles.banner_wrap}>
       <div className={styles.slide_banner}>
-        <img onClick={preSlide} src={"/images/main/arrow_left.svg"} />
-        {/* <div className={styles.slide_container"> */}
         {slideImages.map((image, index) => (
           <img
             key={index}
@@ -57,8 +55,12 @@ const Slide = () => {
             alt={`slide ${index}`}
           />
         ))}
-        {/* </div> */}
-        <img onClick={nextSlide} src={"/images/main/arrow_right.svg"} />
+        <div className={styles.pre_arrow}>
+          <img onClick={preSlide} src={"/images/main/arrow_left.svg"} />
+        </div>
+        <div className={styles.next_arrow}>
+          <img onClick={nextSlide} src={"/images/main/arrow_right.svg"} />
+        </div>
       </div>
     </div>
   );

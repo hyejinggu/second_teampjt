@@ -1,40 +1,46 @@
 import styles from "../../css/subpage/create_post.module.css";
 import React, { useState, useRef, useContext } from "react";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CreatePostContext } from "./Community";
-import { Link, useNavigate } from "react-router-dom";
+import Modal from "../common/Modal";
 
 const CreatePost = () => {
-  const { onCreate } = useContext(CreatePostContext);
-  const navigate = useNavigate();
+  const { addPostFromLocalStorage } = useContext(CreatePostContext);
 
   // const [image, setImage] = useState(null);
   const titleRef = useRef(null);
+  const contentRef = useRef(null);
 
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!postTitle) {
-      titleRef.current.innerText = "제목 입력";
+      titleRef.current.focus();
     } else if (!postContent) {
-      console.log("내용 입력");
+      contentRef.current.focus();
     } else {
-      onCreate(postTitle, postContent);
-      navigate("/community/lounge/*");
+      localStorage.setItem("title", postTitle);
+      localStorage.setItem("content", postContent);
+      addPostFromLocalStorage();
+      setIsModalOpen(true);
     }
-    setPostTitle("");
-    setPostContent("");
   };
 
-  // const handleImageChange = (e) => {
-  //   const selectedImage = e.target.files[0];
-  //   setImage(selectedImage);
-  // };
-
   return (
-    <div>
+    <div className={styles.createpost_wrap}>
+      <div>
+        {isModalOpen && (
+          <Modal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            modalContent={"글 작성이 완료되었습니다."}
+            modalAfterPath={"/community/lounge/*"}
+          />
+        )}
+      </div>
       <h2>글쓰기</h2>
       <div className={styles.form_wrap}>
         <form onSubmit={handleSubmit}>
@@ -52,8 +58,11 @@ const CreatePost = () => {
               id="title"
               value={postTitle}
               onChange={(e) => setPostTitle(e.target.value)}
+              ref={titleRef}
             />
-            <div className={styles.title_alert} ref={titleRef}></div>
+            <div className={styles.empty_alert}>
+              {postTitle ? "" : "제목을 입력하세요"}
+            </div>
           </div>
 
           {/* 내용 영역 */}
@@ -63,7 +72,11 @@ const CreatePost = () => {
               id="content"
               value={postContent}
               onChange={(e) => setPostContent(e.target.value)}
+              ref={contentRef}
             />
+            <div className={styles.empty_alert}>
+              {postContent ? "" : "내용을 입력하세요"}
+            </div>
           </div>
 
           {/* 이미지 영역 */}
@@ -77,7 +90,7 @@ const CreatePost = () => {
             />
           </div>
 
-          <div>
+          <div className={styles.button_wrap}>
             <button type="submit" onClick={handleSubmit}>
               작성 완료
             </button>

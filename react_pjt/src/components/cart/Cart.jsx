@@ -11,19 +11,19 @@ export default function Cart() {
   const location = useLocation();
   const selectedItem = location.state.selectedItem;
 
-  const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
   // 수량 관리
   const onIncrease = (e) => {
-    setCount(count + 1);
+    setQuantity(quantity + 1);
     e.preventDefault();
   };
 
 
   // 수량이 0 미만으로 갈때
   const onDecrease = (e) => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
       e.preventDefault();
     } else {
       alert('최소 주문수량은 1개 입니다.');
@@ -32,9 +32,25 @@ export default function Cart() {
     }
   };
 
+   // ======== 가격 계산 및 형식 변환 함수 시작 ========
+   const formatter = new Intl.NumberFormat("ko-KR", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+
+  // 할인율 계산
+  const presentPr = () => {
+    const originalPr = selectedItem.normalPr;
+    const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+    return formatter.format(salePr);
+  };
+
   // 수량에 맞춰 가격 계산
   const totalPrice = () => {
-    return selectedItem.normalPr * count;
+    const originalPr = selectedItem.normalPr;
+    const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+    const totalpr = salePr * quantity
+    return formatter.format(totalpr);
   };
 
   return (
@@ -57,14 +73,28 @@ export default function Cart() {
               </tr>
             </thead>
             <tbody>
-              <CartItem onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
+            <CartItem
+                onIncrease={onIncrease}
+                onDecrease={onDecrease}
+                totalPrice={totalPrice}
+                presentPr={presentPr}
+                quantity={quantity}
+              />
+              {/* <CartItem onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} /> */}
             </tbody>
           </table>
 
-          <CartItemPrice onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} />
+          <CartItemPrice
+            totalPrice={totalPrice}
+            quantity={quantity}
+            formatter={formatter}
+            selectedItem={selectedItem}
+          />
+          {/* <CartItemPrice onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} /> */}
 
           <Link to="/payment" state={{
-            selectedItem: selectedItem, // item 객체를 그대로 전달합니다.
+            selectedItem: selectedItem,
+            quantity: quantity, // item 객체를 그대로 전달합니다.
           }}><input type="button" value="구매하기" className="order" /></Link>
 
         </form>
