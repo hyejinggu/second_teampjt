@@ -5,9 +5,9 @@ const MainEvent = () => {
   return (
     <div className={styles.community_wrap}>
       <div className={styles.community_event}>
-        <a href="#" className={styles.event_img}>
-          <img src={"images/main/event_sample.PNG"} alt="" />
-        </a>
+        <div href="#" className={styles.event_img}>
+          <img src={"/images/main/event_sample.PNG"} alt="" />
+        </div>
         <p className={styles.event_title}>🐕ANF 6Free+ 심플팩 100원!🐕</p>
         <span>
           반려동물을 이해해온 68년, 이해하니까 더 무해하게, ANF 멜로망스
@@ -17,14 +17,12 @@ const MainEvent = () => {
         <ul>
           <li>
             <p>
-              <a href="#">
-                <img src={"/images/cart/exImg.jpg"} alt="" />
-              </a>
+              <img src={"/images/main/bestseller3.jpeg"} alt="" />
               [100원] ANF 식스프리 플러스 강아지 사료 샘플키트 기호성 테스트
               <br />
               <span>
                 98% <strong>100원</strong>
-              </span>
+              </span><br />
               <span>평점 4.9 · 리뷰 408</span>
             </p>
           </li>
@@ -33,13 +31,13 @@ const MainEvent = () => {
           <li>
             <p>
               <a href="#">
-                <img src={"/images/cart/exImg.jpg"} alt="" />
+                <img src={"/images/main/bestseller3.jpeg"} alt="" />
               </a>
               [100원] ANF 식스프리 플러스 강아지 사료 샘플키트 기호성 테스트
-              <br />
               <span>
                 98% <strong>100원</strong>
               </span>
+              <br />
               <span>평점 4.9 · 리뷰 408</span>
             </p>
           </li>
@@ -77,6 +75,8 @@ const MainEvent = () => {
               <span>
                 10% <strong>54,000원</strong>
               </span>
+              <br />
+
               <span>평점 4.9 · 리뷰 8</span>
             </p>
           </li>

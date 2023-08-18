@@ -180,7 +180,7 @@ main {
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
 }
 
-.user_review_wrap:hover .user_review1 img {
+.user_review_wrap .user_review1 img {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -283,7 +283,7 @@ main {
   align-self: start;
 }
 
-.promote:hover h2 {
+.promote h2 {
   animation-name: blink;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -352,6 +352,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 33%;
 }
 
@@ -359,6 +360,7 @@ main {
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .community_wrap .community_event .event_title {
@@ -375,6 +377,7 @@ main {
   padding: 0 calc((100% - 65%) / 2);
   font-size: 14px;
   white-space: break-spaces;
+  margin-bottom: 20px;
 }
 
 .community_wrap .community_event .event_account {
@@ -392,7 +395,7 @@ main {
 }
 
 .community_wrap .community_event ul {
-  margin: 10px calc((100% - 70%) / 2);
+  margin: 0px calc((100% - 70%) / 2);
 }
 
 .community_wrap .community_event ul>li {
@@ -424,6 +427,10 @@ main {
   line-height: 20px;
   font-weight: bold;
   border-bottom: 1px solid #c8c8c8;
+}
+
+.community_wrap .community_event ul>li p span {
+  padding: 0;
 }
 
 .community_wrap .community_event ul>li p span:first-of-type {
