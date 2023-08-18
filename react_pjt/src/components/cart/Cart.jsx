@@ -32,25 +32,12 @@ export default function Cart() {
     }
   };
 
-  // ======== 가격 계산 및 형식 변환 함수 시작 ========
-  const formatter = new Intl.NumberFormat("ko-KR", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
-
-  // 할인율 계산
-  const presentPr = () => {
-    const originalPr = selectedItem.normalPr;
-    const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
-    return formatter.format(salePr);
-  };
-
   // 수량에 맞춰 가격 계산
   const totalPrice = () => {
     const originalPr = selectedItem.normalPr;
     const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
     const totalpr = salePr * quantity
-    return formatter.format(totalpr);
+    return totalpr;
   };
 
   return (
@@ -76,7 +63,6 @@ export default function Cart() {
                 onIncrease={onIncrease}
                 onDecrease={onDecrease}
                 totalPrice={totalPrice}
-                presentPr={presentPr}
                 quantity={quantity}
               />
               {/* <CartItem onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} /> */}
@@ -86,7 +72,6 @@ export default function Cart() {
           <CartItemPrice
             totalPrice={totalPrice}
             quantity={quantity}
-            formatter={formatter}
             selectedItem={selectedItem}
           />
           {/* <CartItemPrice onIncrease={onIncrease} onDecrease={onDecrease} totalPrice={totalPrice} count={count} /> */}

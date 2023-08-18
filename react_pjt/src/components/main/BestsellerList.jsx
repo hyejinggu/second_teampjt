@@ -8,16 +8,21 @@ const BestsellerList = ({ selectedIteminfo, presentPr, normalPr }) => {
       {selectedIteminfo.map((item, index) => (
         <li key={index}>
           <Link
-          to="/itemdetail"
-          state={{ selectedItem: selectedIteminfo[index]}}
+            to="/itemdetail"
+            state={{ selectedItem: selectedIteminfo[index] }}
           >
             <div className={styles.item_info_wrap}>
               <a href="#">
                 <img src={item.image[0]} alt={`상품 ${index + 1}`} />
                 <h3>{item.name}</h3>
                 <span className={styles.sale_info}>{item.saleInfo}%</span>
-                <span className={styles.normal_pr}>{normalPr(item)}원</span>
-                <span className={styles.present_pr}>{presentPr(item)}원</span>
+                <span className={styles.normal_pr}>{item.normalPr.toLocaleString("ko")}원</span>
+                <span className={styles.present_pr}>
+                  {(
+                    item.normalPr -
+                    (item.normalPr * item.saleInfo) / 100
+                  ).toLocaleString("ko")}원
+                </span>
               </a>
             </div>
           </Link>

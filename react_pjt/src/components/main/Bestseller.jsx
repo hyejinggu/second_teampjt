@@ -126,21 +126,6 @@ const Bestseller = () => {
     }
   }, iteminfo);
 
-  const formatter = new Intl.NumberFormat("ko-KR", {
-    //   style: "currency",
-    //   currency: "USD", // 통화 코드를 원하는 통화로 변경
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
-
-  // 세일 퍼센티지와 기존 가격으로 할인 가격을 계산하고 가격 형식으로 바꾸어줌.
-  const presentPr = (item) => {
-    const originalPr = item.normalPr;
-    const salePr = originalPr - originalPr * (item.saleInfo / 100);
-    return formatter.format(salePr);
-  };
-  const normalPr = (item) => formatter.format(item.normalPr);
-
   // 각 링크를 클릭할 때 실행되는 함수
   const handleLinkClick = (event, newiteminfo) => {
     event.preventDefault();
@@ -166,9 +151,6 @@ const Bestseller = () => {
       </div>
       <BestsellerList
         selectedIteminfo={displayedItemInfo}
-        // selectedItems
-        presentPr={presentPr}
-        normalPr={normalPr}
       />
     </div>
   );
