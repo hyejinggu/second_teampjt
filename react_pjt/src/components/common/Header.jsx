@@ -15,7 +15,7 @@ const Header = () => {
     const storedPw = localStorage.getItem("pw");
     if (storedId && storedPw) {
       setLogin("로그아웃");
-      setJoin("내 계정");
+      setJoin("마이페이지");
     }
   });
 

@@ -60,7 +60,35 @@ const Bestseller = () => {
     },
   ]);
 
-  const snackiteminfo = [];
+  const snackiteminfo = [
+    {
+      name: "(간식) 진짜 연어",
+      saleInfo: 30,
+      normalPr: 39900,
+      image: ["/images/main/bestseller1.jpeg", "/images/main/bestseller1.jpeg"],
+      infoimage: [],
+      color: ["#1dcc03", "#ffeb0c"],
+    },
+    {
+      name: "(수입) 멍멍 사료",
+      saleInfo: 20,
+      normalPr: 399000,
+      image: ["/images/main/bestseller2.png", "/images/main/bestseller2.png"],
+    },
+    {
+      name: "하루 유산균",
+      saleInfo: 10,
+      normalPr: 40000,
+      image: ["/images/main/bestseller3.jpeg", "/images/main/bestseller3.jpeg"],
+    },
+    {
+      name: "아침애 사료(다이어트)",
+      saleInfo: 30,
+      normalPr: 29900,
+      image: ["/images/main/bestseller4.png", "/images/main/bestseller4.png"],
+
+    },
+  ];
 
   const toyiteminfo = [
     {
