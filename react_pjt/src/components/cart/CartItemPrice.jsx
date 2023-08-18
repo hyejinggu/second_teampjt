@@ -7,14 +7,14 @@ const CartItemPrice = ({ presentPr, normalPr, totalPrice, quantity, formatter, s
         const originalPr = selectedItem.normalPr;
         const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
         const totalpr = salePr * quantity
-        return totalpr >= 50000 ? 0 : 3000;
+        return totalpr >= 30000 ? 0 : 3000;
     }
 
     const totalWithDelivery = () => {
         const originalPr = selectedItem.normalPr;
         const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
         const totalpr = salePr * quantity
-        const totalWithDelivery = totalpr >= 50000 ? totalpr : totalpr + 3000;
+        const totalWithDelivery = totalpr >= 30000 ? totalpr : totalpr + 3000;
         return formatter.format(totalWithDelivery);
     }
 
