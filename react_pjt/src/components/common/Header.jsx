@@ -9,7 +9,6 @@ const Header = () => {
   const [login, setLogin] = useState("로그인");
   const [join, setJoin] = useState("회원가입");
 
-  // useEffect를 사용하여 로컬 스토리지에 저장된 값이 변경될 때마다 상태 업데이트
   useEffect(() => {
     const storedId = localStorage.getItem("id");
     const storedPw = localStorage.getItem("pw");
@@ -17,7 +16,7 @@ const Header = () => {
       setLogin("로그아웃");
       setJoin("내 계정");
     }
-  }, []);
+  });
 
   const handleLoginState = () => {
     if (login === "로그아웃") {
@@ -116,6 +115,6 @@ const Header = () => {
     </header>
   );
 };
-export default React.memo(Header);
+export default Header;
 
 // {'/header/cart_img.png'}
