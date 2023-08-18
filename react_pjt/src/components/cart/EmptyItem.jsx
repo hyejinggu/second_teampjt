@@ -1,5 +1,4 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
-import CartItemPrice from "./CartItemPrice";
+import '../../css/cart/cart.css'
 const EmptyItem = () => {
     return (
         <>
@@ -9,7 +8,7 @@ const EmptyItem = () => {
                     <table>
 
                         <tbody style={{ 'display': 'flex' }}>
-                            <td style={{ 'line-height': '100px', "text-align": "center", "width": "100%" }}>상품이 없습니다.</td>
+                            <td className="emptyItem">상품이 없습니다.</td>
                         </tbody>
                     </table>
 

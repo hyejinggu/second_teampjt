@@ -16,6 +16,7 @@ import Details from "./components/join/Details";
 import Information from "./components/join/Information";
 import Profile from "./components/join/Profile";
 import Payment from "./components/payment/Payment";
+import MyPage from "./components/common/MyPage";
 
 // 커뮤니티 링크 페이지 import
 import CreatePost from "./components/community/CreatePost";
@@ -65,6 +66,7 @@ function App() {
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
         <Route path="/emptyItem/*" element={<EmptyItem />} />
+        <Route path="/myPage/*" element={<MyPage />} />
 
         {/* 로그인 */}
         <Route path="/findid/*" element={<FindId />} />
