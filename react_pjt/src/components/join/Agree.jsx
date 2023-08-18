@@ -1,9 +1,11 @@
 import '../../css/join/join.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Agree = () => {
+    const navigate = useNavigate();
     const [allAgreed, setAllAgreed] = useState(false); // 상태 변수 설정
 
     const handleAgreeAllChange = (event) => {
@@ -20,6 +22,8 @@ const Agree = () => {
         if (!allAgreed) {
             alert('(필수)모든 약관에 동의해주세요.');
             event.preventDefault(); // 폼 제출 방지
+        } else {
+            navigate('/join/profile');
         }
     };
 
@@ -343,7 +347,7 @@ const Agree = () => {
                     </tr>
 
                 </table>
-                <input type="submit" value="회원가입" onClick={btnChecked} />
+                <input type="submit" value="Next" onClick={btnChecked} />
             </figure>
         </form >
     )

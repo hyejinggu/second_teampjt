@@ -62,7 +62,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to={login === "로그아웃" ? "main" : "/join/profile"}>
+            <Link to={login === "로그아웃" ? "main" : "/join/Agree"}>
               <img src={"/images/header/join_img.png"} alt="" />
               {join}
             </Link>

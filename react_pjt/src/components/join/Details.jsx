@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../css/join/join.css';
+import Modal from "../common/Modal";
+
+
 
 const Details = () => {
 
     // ================================================================================
     const navigate = useNavigate();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [formData, setFormData] = useState({
         user_id: '',
@@ -38,8 +42,12 @@ const Details = () => {
         e.preventDefault();
         // 유효성 검사 실행
         if (validateForm()) {
-            // 유효성 검사 통과 시 다음 단계로 진행
-            navigate('/join/information/*');
+            localStorage.setItem("id", formData.user_id);
+            localStorage.setItem("pw", formData.user_password);
+            setIsModalOpen(true);
+
+
+
         } else {
             alert('필수정보를 입력해주세요.');
         }
@@ -148,7 +156,15 @@ const Details = () => {
                     </tbody>
                 </table>
             </figure>
-            <input type="submit" value="Next" onClick={handleSubmit} />
+            <input type="submit" value="회원가입" onClick={handleSubmit} />
+            {isModalOpen && (
+                <Modal
+                    isModalOpen={isModalOpen}
+                    setIsModalOpen={setIsModalOpen}
+                    modalContent="회원가입이 완료되었습니다."
+                    modalAfterPath={'/main/*'}
+                />
+            )}
         </form>
     );
 };

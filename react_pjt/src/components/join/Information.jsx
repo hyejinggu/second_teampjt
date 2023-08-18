@@ -50,7 +50,7 @@ const Information = () => {
 
                     </table>
                 </figure>
-                <Link to="/join/agree/*"><input type="submit" value="Next" /></Link>
+                <Link to="/join/details/*"><input type="submit" value="Next" /></Link>
 
             </form>
         </div>

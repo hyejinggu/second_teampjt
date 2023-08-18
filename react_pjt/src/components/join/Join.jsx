@@ -21,17 +21,17 @@ const Join = () => {
 
                 <div className="right_contents">
                     <ul>
-                        <li><NavLink to='/join/profile'>Proflie</NavLink></li>
-                        <li><NavLink to='/join/details'>Details</NavLink></li>
-                        <li><NavLink to='/join/information'>Information</NavLink></li>
                         <li><NavLink to='/join/agree'>Agree</NavLink></li>
+                        <li><NavLink to='/join/profile'>Proflie</NavLink></li>
+                        <li><NavLink to='/join/information'>Information</NavLink></li>
+                        <li><NavLink to='/join/details'>Details</NavLink></li>
                     </ul>
 
                     <Routes>
-                        <Route path="/profile/*" element={<Profile />} />
-                        <Route path="/details/*" element={<Details />} />
                         <Route path="/agree/*" element={<Agree />} />
+                        <Route path="/profile/*" element={<Profile />} />
                         <Route path="/information/*" element={<Information />} />
+                        <Route path="/details/*" element={<Details />} />
                     </Routes>
                 </div >
 

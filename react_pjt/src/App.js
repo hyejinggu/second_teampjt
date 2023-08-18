@@ -74,9 +74,9 @@ function App() {
         <Route path="/boardfaq/*" element={<BoardFaq />} />
         <Route path="/boardqna/*" element={<BoardQna />} />
 
+        <Route path="/agree/*" element={<Agree />} />
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/details/*" element={<Details />} />
-        <Route path="/agree/*" element={<Agree />} />
         <Route path="/information/*" element={<Information />} />
 
         <Route path="/itemdetail" element={<ItemDetail />} />

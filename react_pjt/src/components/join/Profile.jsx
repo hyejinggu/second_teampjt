@@ -37,7 +37,7 @@ const Profile = () => {
     // 유효성 검사 실행
     if (validateForm()) {
       // 유효성 검사 통과 시 다음 단계로 진행
-      navigate('/join/details');
+      navigate('/join/information');
     } else {
       alert('필수정보를 입력해주세요.');
     }

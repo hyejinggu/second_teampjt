@@ -28,7 +28,7 @@
 }
 
 .right_contents * {
-  text-align: left;
+  /* text-align: left; */
 }
 
 .active {
