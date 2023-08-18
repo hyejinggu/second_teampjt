@@ -7,7 +7,20 @@ function ItemInfo({ selectedIteminfo }) {
     <div>
       <ul>
         {selectedIteminfo.map((item, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            onClick={() => {
+              localStorage.getItem("recentItem")
+                ? localStorage.setItem(
+                    "recentItem",
+                    JSON.stringify([
+                      item,
+                      ...JSON.parse(localStorage.getItem("recentItem")),
+                    ])
+                  )
+                : localStorage.setItem("recentItem", JSON.stringify([item]));
+            }}
+          >
             <Link
               to="/itemdetail"
               state={{ selectedItem: selectedIteminfo[index] }}
