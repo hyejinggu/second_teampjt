@@ -4,7 +4,7 @@
   position: sticky;
   bottom: 300px;
   margin: 0;
-  right: 10px;
+  float: right;
 }
 
 .recent_item_container ul {

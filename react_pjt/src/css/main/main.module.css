@@ -21,6 +21,7 @@ main {
 
 .slide_banner:hover .pre_arrow,
 .slide_banner:hover .next_arrow {
+  cursor: pointer;
   opacity: 1;
   transition: 0.7s;
 }
@@ -145,6 +146,7 @@ main {
 .present_pr {
   font-weight: bold;
 }
+
 /* ===== 베스트 셀러 영역 끝 ===== */
 
 /* ===== 사용자 리뷰 영역 시작 ===== */
@@ -211,12 +213,11 @@ main {
 /* 알림받기 배너 홍보 */
 .notice_banner {
   height: 400px;
-  background: url(https://shop-phinf.pstatic.net/20220630_96/1656562559901gCvqO_JPEG/C5A9B1E2BAAFC8AFsubtop_product.jpg)
-    0/100% no-repeat;
+  background: url(https://shop-phinf.pstatic.net/20220630_96/1656562559901gCvqO_JPEG/C5A9B1E2BAAFC8AFsubtop_product.jpg) 0/100% no-repeat;
   position: relative;
 }
 
-.notice_banner > p,
+.notice_banner>p,
 .interested_ppl {
   position: absolute;
   color: #fff;
@@ -224,7 +225,7 @@ main {
   text-align: center;
 }
 
-.notice_banner > p {
+.notice_banner>p {
   font-size: 2.7em;
   left: 0;
   top: 25%;
@@ -299,7 +300,7 @@ main {
   }
 }
 
-.promote > div {
+.promote>div {
   justify-self: center;
 }
 
@@ -393,7 +394,7 @@ main {
   margin: 10px calc((100% - 70%) / 2);
 }
 
-.community_wrap .community_event ul > li {
+.community_wrap .community_event ul>li {
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -402,7 +403,7 @@ main {
   margin-top: 20px;
 }
 
-.community_wrap .community_event ul > li img {
+.community_wrap .community_event ul>li img {
   width: 60px;
   height: 60px;
   display: inline-block;
@@ -410,7 +411,7 @@ main {
   margin-right: 20px;
 }
 
-.community_wrap .community_event ul > li p {
+.community_wrap .community_event ul>li p {
   /* margin: 0 calc((100% - 70%)/2); */
   padding-bottom: 20px;
   width: 100%;
@@ -424,17 +425,17 @@ main {
   border-bottom: 1px solid #c8c8c8;
 }
 
-.community_wrap .community_event ul > li p span:first-of-type {
+.community_wrap .community_event ul>li p span:first-of-type {
   color: red;
   font-weight: bold;
   font-size: 12px;
 }
 
-.community_wrap .community_event ul > li p strong {
+.community_wrap .community_event ul>li p strong {
   color: #000;
 }
 
-.community_wrap .community_event ul > li p span:nth-last-child(1) {
+.community_wrap .community_event ul>li p span:nth-last-child(1) {
   font-size: 12px;
   color: gray;
 }
