@@ -1,11 +1,12 @@
 import ItemInfo from "./ItemInfo";
+import RecentSeenItem from "./RecentSeenItem";
 import styles from "../../css/subpage/Itemlist.module.css";
 import PageNation from "./PageNation";
 import { useReducer, useState } from "react";
 
 const ItemList = () => {
   // ======== 상품 목록 배열 ========
-  let iteminfo = [
+  const iteminfo = [
     {
       name: "알록달록 로프 장난감",
       saleInfo: 10,
@@ -648,6 +649,7 @@ const ItemList = () => {
       <div className={styles.item_wrap}>
         <ItemInfo selectedIteminfo={displayedItemInfo} />
       </div>
+      <RecentSeenItem />
       <PageNation setPage={setPage} />
     </div>
   );
