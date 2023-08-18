@@ -1,48 +1,10 @@
-// import joinStyle from '../../css/join/join.module.css';
-
-
-// const Details = () => {
-
-
-
-//     return (
-//         <form action="#" method="post">
-//             <figure>
-
-//                 <table>
-//                     <tr>
-//                         <th><label htmlFor="user_id" className={joinStyle.required}>아이디</label></th>
-//                         <td><input type="text" name="user_id" id="user_id" placeholder="아이디 입력(6~20자)" /></td>
-//                     </tr>
-
-//                     <tr>
-//                         <th><label htmlFor="user_password" className={joinStyle.required}>비밀번호</label></th>
-//                         <td><input type="password" name="user_password" id="user_password"
-//                             placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8~20자)" />
-//                         </td>
-//                     </tr>
-
-//                     <tr>
-//                         <th><label htmlFor="user_password2" className={joinStyle.required}>비밀번호 확인</label></th>
-//                         <td><input type="password" name="user_password2" id="user_password2"
-//                             placeholder="비밀번호 재입력" /></td>
-//                     </tr>
-
-//                 </table>
-//             </figure>
-//             <input type="submit" value="Next" />
-//         </form>
-//     )
-// }
-
-// export default Details;
-
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../css/join/join.css';
 
 const Details = () => {
+
+    // ================================================================================
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -56,6 +18,8 @@ const Details = () => {
         user_password: '',
         user_password2: '',
     });
+
+    // ================================================================================
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -67,6 +31,23 @@ const Details = () => {
         validateField(name, value);
     };
 
+
+
+    // ================================================================================
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // 유효성 검사 실행
+        if (validateForm()) {
+            // 유효성 검사 통과 시 다음 단계로 진행
+            navigate('/join/information/*');
+        } else {
+            alert('유효성 검사 실패');
+        }
+    };
+
+
+
+    // ================================================================================
     const validateField = (fieldName, value) => {
         const newErrors = { ...errors };
 
@@ -87,17 +68,9 @@ const Details = () => {
         setErrors(newErrors);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // 유효성 검사 실행
-        if (validateForm()) {
-            // 유효성 검사 통과 시 다음 단계로 진행
-            navigate('/join/information/*');
-        } else {
-            alert('유효성 검사 실패');
-        }
-    };
 
+
+    // ================================================================================
     const validateForm = () => {
         const newErrors = { ...errors };
 
@@ -117,6 +90,8 @@ const Details = () => {
         );
     };
 
+
+    // ================================================================================
     return (
         <form action="#" method="post" onSubmit={handleSubmit}>
             <figure>
