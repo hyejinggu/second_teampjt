@@ -6,6 +6,7 @@ import ItemDetailSection1 from "./ItemDetailSection1"
 import ItemDetailSection2 from "./ItemDetailSection2";
 import ItemDetailSection3 from "./ItemDetailSection3";
 import ItemDetailSection4 from "./ItemDetailSection4";
+import RecentSeenItem from "./RecentSeenItem";
 
 const ItemDetail = () => {
     const location = useLocation();
@@ -16,21 +17,6 @@ const ItemDetail = () => {
 
     const handleQuantityChange = (event) => {
         setQuantity(parseInt(event.target.value)); // 수량 변경 시 상태 업데이트
-    };
-
-
-    // ======== 가격 계산 및 형식 변환 함수 시작 ========
-    const formatter = new Intl.NumberFormat("ko-KR", {
-        //   style: "currency",
-        //   currency: "USD", // 통화 코드를 원하는 통화로 변경
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2,
-    });
-
-    const presentPr = () => {
-        const originalPr = selectedItem.normalPr;
-        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
-        return formatter.format(salePr);
     };
 
     const [mainImage, setMainImage] = useState(selectedItem.image[1]); // 초기 메인 이미지
@@ -69,8 +55,13 @@ const ItemDetail = () => {
                         <div>판매가</div>
                         <div>
                             <span className={styles.sale_info}>{selectedItem.saleInfo}%</span>
-                            <span className={styles.normal_pr}>{selectedItem.normalPr}원</span>
-                            <span className={styles.present_pr}>{presentPr()}원</span>
+                            <span className={styles.normal_pr}>{selectedItem.normalPr.toLocaleString("ko")}원</span>
+                            <span className={styles.present_pr}>
+                                {(
+                                    selectedItem.normalPr -
+                                    (selectedItem.normalPr * selectedItem.saleInfo) / 100
+                                ).toLocaleString("ko")}원
+                            </span>
                         </div>
                         {/* 배송비 */}
                         <div>배송비</div>
@@ -153,6 +144,7 @@ const ItemDetail = () => {
                 <ItemDetailSection3 selectedItem={selectedItem} />
                 <ItemDetailSection4 selectedItem={selectedItem} />
             </form>
+            <RecentSeenItem />
         </div>
     );
 };
