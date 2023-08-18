@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 
 const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity }) => {
@@ -9,9 +9,7 @@ const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity }) => {
     return (
         <tr>
             <td>
-                <a href="../../subpage/html/subpage2.html">
-                    <img src={selectedItem.image[1]} alt="이미지" />
-                </a>
+                <img src={selectedItem.image[1]} alt="이미지" />
                 <span className="text-ellipsis">{selectedItem.name}</span>
             </td>
             <td>

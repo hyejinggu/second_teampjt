@@ -2,12 +2,20 @@ import React from "react";
 import styles from '../../css/payment/payment.module.css';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import Modal from "../common/Modal";
 
 const Payment = () => {
     const location = useLocation();
     const selectedItem = location.state.selectedItem;
     const quantity = location.state.quantity;
 
+    // modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
 
     // ======== 가격 계산 및 형식 변환 함수 시작 ========
     const formatter = new Intl.NumberFormat("ko-KR", {
@@ -454,11 +462,16 @@ const Payment = () => {
                     >
                         <input type="button" value="할인 상품 더 보기" />
                     </Link>
-                    <Link
-                        to="/main"
-                    >
-                        <input type="submit" value="구매하기" />
-                    </Link>
+
+                    <input type="submit" value="구매하기" onClick={openModal} />
+                    {isModalOpen && (
+                        <Modal
+                            isModalOpen={isModalOpen}
+                            setIsModalOpen={setIsModalOpen}
+                            modalContent="상품 구매가 완료되었습니다."
+                            modalAfterPath={'/main/*'}
+                        />
+                    )}
                 </div>
             </form>
         </div>

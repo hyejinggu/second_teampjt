@@ -370,7 +370,7 @@ main {
   text-align: center;
 }
 
-.community_wrap .community_event span {
+.community_wrap .community_event .event_info {
   text-align: justify;
   word-break: break-all;
   width: 65%;
