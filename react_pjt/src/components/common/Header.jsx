@@ -1,9 +1,10 @@
 import styles from "../../css/common/common.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Modal from "../common/Modal";
 
 const Header = () => {
+  const location = useLocation();
   // const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [login, setLogin] = useState("로그인");
@@ -67,10 +68,17 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/cart">
-              <img src={"/images/header/cart_img.png"} alt="" />
-              장바구니
-            </Link>
+            {location.pathname !== "/itemdetail" ? (
+              <Link to="/emptyItem">
+                <img src="/images/header/cart_img.png" alt="" />
+                장바구니
+              </Link>
+            ) : (
+              <Link to="/cart">
+                <img src="/images/header/cart_img.png" alt="" />
+                장바구니
+              </Link>
+            )}
           </li>
           <li>
             <Link to="/board">

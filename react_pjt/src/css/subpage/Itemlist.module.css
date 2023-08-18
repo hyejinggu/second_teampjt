@@ -1,8 +1,9 @@
 .container * {
   text-align: center;
 }
+
 .title {
-  margin: 50px 0;
+  margin: 0 0 50px 0;
   text-align: center;
   font-size: 26px;
   font-weight: bold;

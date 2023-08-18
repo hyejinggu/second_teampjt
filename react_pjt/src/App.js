@@ -7,12 +7,10 @@ import Main from "./components/common/Main";
 import { Route, Routes, Link } from "react-router-dom";
 import Login from "./components/login/Login";
 import Join from "./components/join/Join";
-import Cart from "./components/cart/Cart";
 import Board from "./components/board/Board";
 import ItemList from "./components/item/ItemList";
 import Lounge from "./components/community/Lounge";
 import ItemDetail from "./components/item/ItemDetail";
-import CartItem from "./components/cart/CartItem";
 import Agree from "./components/join/Agree";
 import Details from "./components/join/Details";
 import Information from "./components/join/Information";
@@ -32,6 +30,14 @@ import FindPw from "./components/login/FindPw";
 // 게시판
 import BoardFaq from "./components/board/BoardFaq";
 import BoardQna from "./components/board/BoardQna";
+
+
+// 장바구니
+import EmptyItem from "./components/cart/EmptyItem";
+import Cart from "./components/cart/Cart";
+import CartItem from "./components/cart/CartItem";
+
+
 
 import styles from "./css/common/common.module.css";
 function App() {
@@ -58,6 +64,7 @@ function App() {
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
+        <Route path="/emptyItem/*" element={<EmptyItem />} />
 
         {/* 로그인 */}
         <Route path="/findid/*" element={<FindId />} />

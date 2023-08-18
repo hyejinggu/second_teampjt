@@ -32,8 +32,8 @@ export default function Cart() {
     }
   };
 
-   // ======== 가격 계산 및 형식 변환 함수 시작 ========
-   const formatter = new Intl.NumberFormat("ko-KR", {
+  // ======== 가격 계산 및 형식 변환 함수 시작 ========
+  const formatter = new Intl.NumberFormat("ko-KR", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
   });
@@ -60,7 +60,6 @@ export default function Cart() {
         <form action="#" method="post">
           <table>
 
-
             <thead>
               <tr>
                 <th>상품/옵션 정보</th>
@@ -73,7 +72,7 @@ export default function Cart() {
               </tr>
             </thead>
             <tbody>
-            <CartItem
+              <CartItem
                 onIncrease={onIncrease}
                 onDecrease={onDecrease}
                 totalPrice={totalPrice}
