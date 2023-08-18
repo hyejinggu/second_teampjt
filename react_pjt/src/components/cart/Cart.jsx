@@ -11,7 +11,7 @@ export default function Cart() {
   const location = useLocation();
   const selectedItem = location.state.selectedItem;
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   // 수량 관리
   const onIncrease = (e) => {

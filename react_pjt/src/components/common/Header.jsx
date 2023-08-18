@@ -15,7 +15,7 @@ const Header = () => {
     const storedPw = localStorage.getItem("pw");
     if (storedId && storedPw) {
       setLogin("로그아웃");
-      setJoin("내 계정");
+      setJoin("마이페이지");
     }
   });
 
@@ -62,7 +62,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to={login === "로그아웃" ? "main" : "/join/Agree"}>
+            <Link to={login === "로그아웃" ? "/myPage/*" : "/join/Agree"}>
               <img src={"/images/header/join_img.png"} alt="" />
               {join}
             </Link>

@@ -41,6 +41,12 @@
 
 /*========================================================================*/
 /*tbody*/
+.cart .emptyItem {
+    line-height: 100px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
 
 .cart table tbody {
     display: block;
