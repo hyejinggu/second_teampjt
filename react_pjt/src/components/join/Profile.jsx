@@ -1,14 +1,92 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../../css/join/join.css';
 
-const Proflie = () => {
+const Profile = () => {
+  const navigate = useNavigate();
+
   const [formValue, setFormValue] = useState({
     user_name: '',
+    user_birth: '',
+    user_month: '',
+    user_day: '',
+    user_num: '',
+    user_email: ''
   });
 
+  const [errors, setErrors] = useState({
+    user_name: '',
+    user_birth: '',
+    user_num: '',
+    user_email: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValue({
+      ...formValue,
+      [name]: value,
+    });
+
+    // 유효성 검사 실행
+    validateField(name, value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // 유효성 검사 실행
+    if (validateForm()) {
+      // 유효성 검사 통과 시 다음 단계로 진행
+      navigate('/join/details');
+    } else {
+      alert('필수정보를 입력해주세요.');
+    }
+  };
+
+  const validateField = (fieldName, value) => {
+    const newErrors = { ...errors };
+
+    switch (fieldName) {
+      case 'user_name':
+        newErrors.user_name = !value ? '성함을 입력해주세요.' : '';
+        break;
+
+      case 'user_num':
+        newErrors.user_num = !value ? '핸드폰 번호를 입력해주세요.' : (value.length < 10 || value.length > 11) ? '휴대폰 번호를 정확히 입력해주세요.' : '';
+        break;
+
+      case 'user_email':
+        newErrors.user_email = !value ? '이메일을 입력해주세요.' : '';
+        break;
+
+      default:
+        break;
+    }
+
+    setErrors(newErrors);
+  };
+
+  const validateForm = () => {
+    const newErrors = { ...errors };
+
+    validateField('user_name', formValue.user_name);
+    validateField('user_num', formValue.user_num);
+    validateField('user_email', formValue.user_email);
+
+    setErrors(newErrors);
+
+    return (
+      formValue.user_name !== '' &&
+      formValue.user_num !== '' &&
+      formValue.user_email !== '' &&
+      Object.values(newErrors).every((error) => error === '')
+    );
+  };
+
+  // ================================================================================
+
   return (
-    <form action="#" method="post">
+    <form action="#" method="post" onSubmit={handleSubmit}>
       <figure>
 
         <table>
@@ -22,13 +100,16 @@ const Proflie = () => {
               <td>
                 <input
                   type="text"
-                  name="user_name"
+                  name="user_name" // Add "name" attribute
                   id="user_name"
                   placeholder="이름을 입력해주세요"
-                  required="required"
-                  minLength={3}
+                  required
+                  value={formValue.user_name} // Add "value" attribute
+                  onChange={handleChange} // Add "onChange" attribute
                 />
               </td>
+              {errors.user_name && <div className="error">{errors.user_name}</div>}
+
             </tr>
 
             <tr>
@@ -210,9 +291,12 @@ const Proflie = () => {
                   name="user_num"
                   id="user_num"
                   placeholder="- 없이 입력해주세요"
-                  minLength={9}
+                  value={formValue.user_num}
+                  onChange={handleChange}
                 />
               </td>
+              {errors.user_num && <div className="error">{errors.user_num}</div>}
+
             </tr>
             <tr>
               <th>
@@ -224,8 +308,10 @@ const Proflie = () => {
                   name="user_email"
                   id="user_email"
                   className="user_email"
+                  value={formValue.user_email}
+                  onChange={handleChange}
                 />
-                <select className="domain_list" required>
+                <select className="domain_list">
                   <option disabled value="" defaultValue>
                     선택
                   </option>
@@ -236,14 +322,16 @@ const Proflie = () => {
                   <option value="custom">직접 입력</option>
                 </select>
               </td>
+              {errors.user_email && <div className="error">{errors.user_email}</div>}
+
             </tr>
           </tbody>
         </table>
       </figure>
-      <Link to="/join/details/*"><input type="submit" value="Next" /></Link>
+      <input type="submit" value="Next" onClick={handleSubmit} />
 
     </form>
   );
 };
 
-export default Proflie;
+export default Profile;

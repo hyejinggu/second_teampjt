@@ -41,7 +41,7 @@ const Details = () => {
             // 유효성 검사 통과 시 다음 단계로 진행
             navigate('/join/information/*');
         } else {
-            alert('유효성 검사 실패');
+            alert('필수정보를 입력해주세요.');
         }
     };
 
@@ -119,6 +119,7 @@ const Details = () => {
                             <th><label htmlFor="user_password" className="required">비밀번호</label></th>
                             <td>
                                 <input
+                                    required
                                     type="password"
                                     name="user_password"
                                     id="user_password"
@@ -133,6 +134,7 @@ const Details = () => {
                             <th><label htmlFor="user_password2" className="required">비밀번호 확인</label></th>
                             <td>
                                 <input
+                                    required
                                     type="password"
                                     name="user_password2"
                                     id="user_password2"

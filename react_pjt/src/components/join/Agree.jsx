@@ -1,15 +1,35 @@
 import '../../css/join/join.css';
+import { useState } from 'react';
 
 
 
 const Agree = () => {
+    const [allAgreed, setAllAgreed] = useState(false); // 상태 변수 설정
+
+    const handleAgreeAllChange = (event) => {
+        setAllAgreed(event.target.checked); // 체크 여부를 상태에 반영
+    };
+
+    const handleSubmit = (event) => {
+        if (!allAgreed) {
+            alert('(필수)모든 약관에 동의해주세요.'); // 체크가 해제되었을 때 경고창 띄우기
+            event.preventDefault(); // 폼 제출 방지
+        }
+    };
+    const btnChecked = (event) => {
+        if (!allAgreed) {
+            alert('(필수)모든 약관에 동의해주세요.');
+            event.preventDefault(); // 폼 제출 방지
+        }
+    };
+
 
     return (
 
-        <form action="#" method="post">
+        <form action="#" method="post" onSubmit={handleSubmit}>
             <figure>
 
-                <table>
+                <table style={{ 'margin': '0' }}>
                     <tr>
                         <td className="agree_text">
                             제1조(목적)
@@ -283,7 +303,13 @@ const Agree = () => {
                             1. 이 약관은 년 월 일부터 적용됩니다.
                         </td>
                         <th className="agree_all">
-                            <input type="checkbox" id="agree_all" name="agree_all" />
+                            <input
+                                type="checkbox"
+                                id="agree_all"
+                                name="agree_all"
+                                checked={allAgreed} // 상태에 따라 체크 여부 반영
+                                onChange={handleAgreeAllChange} // 체크 변경 시 이벤트 핸들러
+                            />
                             <label htmlFor="agree_all" className="required">(필수)모든 약관을 확인하였으며 전체 동의합니다.</label>
                         </th>
 
@@ -317,9 +343,9 @@ const Agree = () => {
                     </tr>
 
                 </table>
+                <input type="submit" value="회원가입" onClick={btnChecked} />
             </figure>
-            <input type="submit" value="회원가입" />
-        </form>
+        </form >
     )
 }
 
