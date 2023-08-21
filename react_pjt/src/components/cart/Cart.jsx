@@ -15,11 +15,6 @@ export default function Cart() {
     setCartItems(storedCart);
   }, []);
 
-  // const location = useLocation();
-  // const selectedItem = location.state.selectedItem;
-
-  // const [quantity, setQuantity] = useState(1);
-
 
   const handleDelete = (index, itemName) => {
     const confirmDelete = window.confirm(`<${itemName}> 상품을 삭제하시겠습니까?`);
@@ -103,20 +98,18 @@ export default function Cart() {
                   <th> </th>
                 </tr>
               </thead>
-              <tbody>
 
-                {cartItems.map((item, index) => (
-                  <CartItem
-                    key={index}
-                    selectedItem={item.selectedItem}
-                    quantity={item.quantity}
-                    onIncrease={(event) => handleIncrease(index, event)}
-                    onDecrease={(event) => handleDecrease(index, event)}
-                    totalPrice={() => calculateTotalPrice(item)}
-                    handleDelete={() => handleDelete(index, item.selectedItem.name)} // 삭제 핸들러 전달
-                  />
-                ))}
-              </tbody>
+              {cartItems.map((item, index) => (
+                <CartItem
+                  key={index}
+                  selectedItem={item.selectedItem}
+                  quantity={item.quantity}
+                  onIncrease={(event) => handleIncrease(index, event)}
+                  onDecrease={(event) => handleDecrease(index, event)}
+                  totalPrice={() => calculateTotalPrice(item)}
+                  handleDelete={() => handleDelete(index, item.selectedItem.name)} // 삭제 핸들러 전달
+                />
+              ))}
             </table>
 
             <CartItemPrice
