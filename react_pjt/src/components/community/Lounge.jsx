@@ -13,7 +13,7 @@ import { CreatePostContext } from "./Community";
 const date = new Date();
 
 export default function Lounge() {
-  const { addedPostArray } = useContext(CreatePostContext);
+  const { addedPostArray, loungePostArray2 } = useContext(CreatePostContext);
 
   const arrayReducer = (state, action) => {
     switch (action.type) {
@@ -45,6 +45,11 @@ export default function Lounge() {
       default:
         return addedPostArray;
     }
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: selectedValue }); // 글 목록 정렬
   };
 
   // 글 검색을 위해 select, input value에 useState 설정
@@ -102,7 +107,7 @@ export default function Lounge() {
           {/* 검색 및 글쓰기 */}
           <div className={styles.search_and_post}>
             <div className={styles.search_bar}>
-              <form>
+              <form onSubmit={onSubmit}>
                 <select
                   onChange={(e) => setSelectedValue(e.target.value)}
                   name="search_condition"
@@ -116,6 +121,11 @@ export default function Lounge() {
                   onChange={(e) => setInputValue(e.target.value)}
                   type="text"
                   placeholder="검색"
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13) {
+                      onSubmit(e);
+                    }
+                  }}
                 />
               </form>
               <span onClick={() => dispatch({ type: selectedValue })}>🔍</span>
@@ -130,12 +140,6 @@ export default function Lounge() {
 
       {/* 페이지 이동 */}
       <PageNation setPage={setPage} />
-
-      {/*       <CreatePostContext.Provider value={{ onCreate }}>
-        <Routes>
-          <Route path="/createpost/" element={<CreatePost />} />
-        </Routes>
-      </CreatePostContext.Provider> */}
     </div>
   );
 }

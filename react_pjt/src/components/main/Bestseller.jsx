@@ -164,18 +164,18 @@ const Bestseller = () => {
     <div className={styles.bestseller_wrap}>
       <h1>베스트 셀러 상품</h1>
       <div className={styles.bestseller_list}>
-        <a href="#" onClick={(event) => handleLinkClick(event, snackiteminfo)}>
+        <div onClick={(event) => handleLinkClick(event, snackiteminfo)}>
           <h2>간식, 사료</h2>
-        </a>
-        <a href="#" onClick={(event) => handleLinkClick(event, toyiteminfo)}>
+        </div>
+        <div onClick={(event) => handleLinkClick(event, toyiteminfo)}>
           <h2>장난감</h2>
-        </a>
-        <a href="#" onClick={(event) => handleLinkClick(event, livingiteminfo)}>
+        </div>
+        <div onClick={(event) => handleLinkClick(event, livingiteminfo)}>
           <h2>리빙, 패션</h2>
-        </a>
-        <a href="#" onClick={(event) => handleLinkClick(event, careiteminfo)}>
+        </div>
+        <div onClick={(event) => handleLinkClick(event, careiteminfo)}>
           <h2>산책, 케어</h2>
-        </a>
+        </div>
       </div>
       <BestsellerList
         selectedIteminfo={displayedItemInfo}
