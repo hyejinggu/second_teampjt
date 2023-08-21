@@ -139,10 +139,6 @@ const Community = () => {
 
       // 기존 배열 앞에 새로운 게시물을 추가합니다.
       setPostArray((prevArray) => [newPost, ...prevArray]);
-
-      // 로컬 스토리지의 내용 삭제
-      localStorage.removeItem("title");
-      localStorage.removeItem("content");
     }
   };
 

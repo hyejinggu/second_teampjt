@@ -643,7 +643,7 @@ const ItemList = () => {
           <li onClick={() => dispatch({ type: "low" })}>낮은가격순</li>
           <li onClick={() => dispatch({ type: "new" })}>신상품순</li>
         </ul>
-        <p>총 25개의 상품</p>
+        <p>총 {iteminfo.length}개의 상품</p>
       </div>
 
       <div className={styles.item_wrap}>
