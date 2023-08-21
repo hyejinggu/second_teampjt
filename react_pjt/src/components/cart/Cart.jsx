@@ -81,7 +81,7 @@ export default function Cart() {
 
   const delivery_price = () => {
     // const totalpr = salePr * quantity
-    return calculateTotalCartPrice() >= 30000 ? 0 : 3000;
+    return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
   }
 
   return (
