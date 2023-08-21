@@ -6,14 +6,11 @@ import React, { useEffect, useState, useMemo } from "react";
 import Swal from "sweetalert2";
 
 const getCurrentCoordinate = async () => {
-  console.log("getCurrentCoordinate 함수 실행!!!");
-  console.log("navigator.geolocation", navigator.geolocation);
   return new Promise((res, rej) => {
     // HTML5의 geolocaiton으로 사용할 수 있는지 확인합니다.
     if (navigator.geolocation) {
       // GeoLocation을 이용해서 접속 위치를 얻어옵니다.
       navigator.geolocation.getCurrentPosition(function (position) {
-        console.log(position);
         const lat = position.coords.latitude; // 위도
         const lon = position.coords.longitude; // 경도
 
@@ -60,21 +57,17 @@ const NeighborMap = () => {
 
       // 장소 검색 객체를 생성합니다
       var ps = new kakao.maps.services.Places();
-      console.log("ps:", ps);
 
       // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
       var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-      console.log("infowindow:", infowindow);
 
       // 키워드로 장소를 검색합니다
       searchPlaces();
 
       // 키워드 검색을 요청하는 함수입니다
       async function searchPlaces() {
-        console.log("searchPlaces 실행!!!");
         var keyword = searchValue;
         const currentCoordinate = await getCurrentCoordinate();
-        console.log(currentCoordinate);
         var options = {
           location: currentCoordinate,
           radius: 10000,
