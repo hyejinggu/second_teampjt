@@ -1,4 +1,4 @@
-.login {
+.findPw {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
@@ -13,38 +13,38 @@
     align-items: center;
 }
 
-.login .img_container {
+.findPw .img_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login .img_container img {
+.findPw .img_container img {
     width: 750px;
     height: 641px;
     box-sizing: border-box;
 }
 
-.login .login_container {
+.findPw .findPw_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login .login_container .login_box {
+.findPw .findPw_container .findPw_box {
     border-radius: 5px;
     line-height: 30px;
 }
 
-.login .login_container .login_box h2 {
+.findPw .findPw_container .findPw_box h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
 
-.login .login_container .login_box input[type="text"] {
+.findPw .findPw_container .findPw_box input[type="text"] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -53,7 +53,7 @@
     border: 1px solid #b0a1a1;
 }
 
-.login .login_container .login_box input[type="submit"] {
+.findPw .findPw_container .findPw_box input[type="submit"] {
     border: 1px solid #ffa900;
     cursor: pointer;
     background-color: #fff;
@@ -63,7 +63,7 @@
     margin-top: 20px;
 }
 
-.login .login_container .login_box input[type="submit"]:hover {
+.findPw .findPw_container .findPw_box input[type="submit"]:hover {
     transition: .5s;
     background-color: #ffe344;
 }
