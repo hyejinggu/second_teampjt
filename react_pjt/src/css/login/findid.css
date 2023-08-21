@@ -1,4 +1,4 @@
-.login {
+.findId {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
@@ -13,39 +13,45 @@
     align-items: center;
 }
 
-.login .img_container {
+.findId .img_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login .img_container img {
-    /* width: 750px;
-  height: 641px; */
+.findId .img_container img {
+    width: 750px;
+    height: 641px;
     box-sizing: border-box;
 }
 
-.login .login_container {
+.findId .findId_container {
     width: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login .login_container .login_box {
+.findId .findId_container .findId_box {
     border-radius: 5px;
     line-height: 30px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
 }
 
-.login .login_container .login_box h2 {
+.findId .findId_container .findId_box h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
+.form_wrap {
+    width: 60%;
+    justify-self: center;
+}
 
-.login .login_container .login_box input[type="text"],
-.login .login_container .login_box input[type="password"] {
+.findId_container .findId_box input[type="text"],
+.findId_container .findId_box input[type="phone"],
+.findId_container .findId_box input[type="email"] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -54,11 +60,12 @@
     border: 1px solid #b0a1a1;
 }
 
-.login .login_container .login_box input[type="password"] {
+
+.findId .findId_container .findId_box input[type="password"] {
     margin: 0;
 }
 
-.login .login_container .login_box input[type="submit"] {
+.findId .findId_container .findId_box input[type="submit"] {
     border: 1px solid #ffa900;
     cursor: pointer;
     background-color: #fff;
@@ -68,7 +75,7 @@
     margin-top: 20px;
 }
 
-.login .login_container .login_box input[type="submit"]:hover {
+.findId .findId_container .findId_box input[type="submit"]:hover {
     transition: .5s;
     background-color: #ffe344;
 }
