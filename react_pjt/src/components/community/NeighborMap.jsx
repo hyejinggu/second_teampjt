@@ -277,7 +277,7 @@ const NeighborMap = () => {
         id="map"
         style={{
           width: "1100px",
-          height: "600px",
+          height: "550px",
           position: "relative",
           overflow: "hidden",
           borderRadius: "10px",

@@ -39,7 +39,7 @@ const eventArray = [
   {
     eventImage:
       "https://pethroom.com/file_data/pepem1//2023/02/06/ea8d745cf462c64511f6cdec5c461884.jpg",
-    eventPeriod: 20230822,
+    eventPeriod: 20230820,
   },
   {
     eventImage:
