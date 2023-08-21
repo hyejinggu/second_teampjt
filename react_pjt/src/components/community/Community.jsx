@@ -11,6 +11,16 @@ export const CreatePostContext = React.createContext();
 const date = new Date();
 const loungePostArray1 = [
   {
+    image: ["/images/community/watchMyrooney2.jpg"],
+    title: "이 강아지를 아시나요?",
+    content:
+      "너무 귀여워서 다들 알았으면 해서요 ㅎㅎ 이름은 설루니에요",
+    userid: "ssh",
+    date: date.toLocaleDateString(),
+    recommended: 10000,
+    views: 10000,
+  },
+  {
     image: ["/images/community/watchMyrooney.jpg"],
     title: "이 강아지를 아시나요?",
     content:
