@@ -148,8 +148,8 @@ header nav {
   cursor: pointer;
 }
 
-.gnb_list>li a {
-  color: rgb(38, 39, 132);
+.gnb_list>li {
+  color: #333;
   font-weight: bold;
 }
 
@@ -159,7 +159,7 @@ header nav {
   margin-bottom: 5px;
 }
 
-.gnb_list>li:hover>a {
+.gnb_list>li:hover {
   font-size: 1.1em;
 }
 

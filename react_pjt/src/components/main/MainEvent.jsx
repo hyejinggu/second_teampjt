@@ -72,9 +72,7 @@ const MainEvent = () => {
           <ul>
             <li>
               <p>
-                <a href="#">
-                  <img src={"/images/main/bestseller2.png"} alt="" />
-                </a>
+                <img src={"/images/main/bestseller2.png"} alt="" />
                 이즈칸 독 퍼포먼스 퍼피 2.5kg 그레인프리 강아지 사료
                 <br />
                 <span>

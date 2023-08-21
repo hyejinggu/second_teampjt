@@ -29,6 +29,8 @@ const Header = () => {
     }
   };
 
+
+
   return (
     <header>
       <div>
@@ -72,13 +74,7 @@ const Header = () => {
               <img src="/images/header/cart_img.png" alt="" />
               장바구니
             </Link>
-            {/* {location.pathname !== "/itemdetail" ? (
-            ) : (
-              <Link to="/cart">
-                <img src="/images/header/cart_img.png" alt="" />
-                장바구니
-              </Link>
-            )} */}
+
           </li>
           <li>
             <Link to="/board">
@@ -90,10 +86,8 @@ const Header = () => {
       </div>
       <ul className={styles.gnb_list}>
         <li>
-          <a href="#">
-            <img src={"/images/header/food_img.png"} alt="" />
-            간식&#183;사료
-          </a>
+          <img src={"/images/header/food_img.png"} alt="" />
+          간식&#183;사료
         </li>
         <li>
           <Link to="/itemlist">
@@ -102,16 +96,12 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <a href="#">
-            <img src={"/images/header/living_img.png"} alt="" />
-            리빙&#183;패션
-          </a>
+          <img src={"/images/header/living_img.png"} alt="" />
+          리빙&#183;패션
         </li>
         <li>
-          <a href="#">
-            <img src={"/images/header/stroll_img.png"} alt="" />
-            산책&#183;케어
-          </a>
+          <img src={"/images/header/stroll_img.png"} alt="" />
+          산책&#183;케어
         </li>
         <li>
           <Link to="/community">
