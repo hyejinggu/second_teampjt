@@ -1,6 +1,6 @@
 function Footer() {
-  return (
-    <footer>
+    return (
+        <footer>
             <div className="footer_wrap">
                 <div className="ft_info1">
                     <h3>주문/배송 문의: 010-1254-9478</h3>
@@ -13,9 +13,7 @@ function Footer() {
                     </p>
                 </div>
                 <div className="ft_copy">
-                    <a href="#">
-                <img src={'/header/logo.png'} alt="로고" className="logo" />
-                    </a>
+                    <img src={'/header/logo.png'} alt="로고" className="logo" />
                     <p>&copy; 2023 웹사이트. All rights reserved.</p>
                 </div>
                 <div className="ft_info2">
@@ -26,14 +24,14 @@ function Footer() {
                         대표번호 : 02-899-7892 이메일 : gaenim@ysfnc.kr
                     </p>
                     <ul>
-                        <li><a href="">회사소개</a></li>
-                        <li><a href="">이용약관</a></li>
-                        <li><a href="">개인정보처리방침</a></li>
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
                     </ul>
                 </div>
             </div>
         </footer>
-  );
+    );
 }
 
 export default Footer;
