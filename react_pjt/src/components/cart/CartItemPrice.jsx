@@ -1,14 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-const CartItemPrice = ({ presentPr, normalPr, totalPrice, quantity, formatter, selectedItem }) => {
+const CartItemPrice = ({ totalPrice, delivery_price, quantity }) => {
 
-    const delivery_price = () => {
-        const originalPr = selectedItem.normalPr;
-        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
-        const totalpr = salePr * quantity
-        return totalpr >= 30000 ? 0 : 3000;
-    }
 
     // totalPrice = totalPrice.toLocaleString();
     return (

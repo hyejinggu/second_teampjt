@@ -2,9 +2,9 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 
-const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity }) => {
-    const location = useLocation();
-    const selectedItem = location.state.selectedItem;
+const CartItem = ({ onIncrease, onDecrease, totalPrice, selectedItem, quantity, handleDelete }) => {
+
+
 
     return (
         <tr>
@@ -28,6 +28,9 @@ const CartItem = ({ onIncrease, onDecrease, totalPrice, quantity }) => {
                 </span>
             </td>
             <td className="total">{totalPrice().toLocaleString()}원</td>
+            {/* <td>
+                <button onClick={handleDelete}>삭제</button>
+            </td> */}
             {/* <td>
                 <input type="button" value='X' />
             </td> */}

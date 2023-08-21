@@ -25,6 +25,16 @@ const ItemDetail = () => {
         setMainImage(imageUrl); // 클릭한 이미지를 메인 이미지로 설정
     };
 
+    const handleAddToCart = () => {
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+        const newItem = {
+            selectedItem: selectedItem,
+            quantity: quantity,
+        };
+        existingCart.push(newItem);
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+    };
+
     return (
         <div className={styles.detail_wrap}>
             <form>
@@ -124,14 +134,12 @@ const ItemDetail = () => {
                         <div>
                             <Link
                                 to="/cart"
-                                state={{
-                                    selectedItem: selectedItem,
-                                }}
                             >
                                 <input
                                     type="button"
                                     value="장바구니 담기"
                                     className={styles.button}
+                                    onClick={handleAddToCart} // 장바구니 버튼 클릭 시 처리
                                 />
                             </Link>
                         </div>
