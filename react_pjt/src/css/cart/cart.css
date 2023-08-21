@@ -42,10 +42,22 @@
 /*========================================================================*/
 /*tbody*/
 .cart .emptyItem {
-    line-height: 100px;
+    /* line-height: 100px; */
     text-align: center;
     width: 100%;
     font-weight: bold;
+    padding: 50px;
+}
+
+
+.cart .emptyItem p {
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+.cart .emptyItem span {
+    line-height: 30px;
+    color: #9b9b9b;
 }
 
 .cart table tbody {

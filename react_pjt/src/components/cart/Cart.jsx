@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 import CartItemPrice from "./CartItemPrice";
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import EmptyItem from "./EmptyItem";
 import "../../css/cart/cart.css";
 
 export default function Cart() {
@@ -27,17 +28,21 @@ export default function Cart() {
   };
 
   // 수량 관리
-  const handleIncrease = (index) => {
+  const handleIncrease = (index, event) => {
+
+    event.preventDefault();
     const updatedCart = [...cartItems];
     updatedCart[index].quantity += 1;
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart)); // 로컬 스토리지 업데이트
+
   };
 
 
   // 수량이 0 미만으로 갈때
 
-  const handleDecrease = (index) => {
+  const handleDecrease = (index, event) => {
+    event.preventDefault();
     if (cartItems[index].quantity > 0) {
       const updatedCart = [...cartItems];
       updatedCart[index].quantity -= 1;
@@ -71,52 +76,56 @@ export default function Cart() {
 
   const delivery_price = () => {
     // const totalpr = salePr * quantity
-    return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
+    return calculateTotalCartPrice() >= 30000 ? 0 : 3000;
   }
 
   return (
     <>
       <h2 className="title">장바구니</h2>
       <div className="cart">
-        <form action="#" method="post">
-          <table>
+        {cartItems.length === 0 ? (
+          <EmptyItem /> // cartItems가 비어있는 경우 EmptyCart 컴포넌트 렌더링
+        ) : (
+          <form action="#" method="post">
+            <table>
 
-            <thead>
-              <tr>
-                <th>상품/옵션 정보</th>
-                <th>수량</th>
-                <th>상품금액</th>
-                <th>합계금액</th>
-                <th> </th>
-              </tr>
-            </thead>
-            <tbody>
+              <thead>
+                <tr>
+                  <th>상품/옵션 정보</th>
+                  <th>수량</th>
+                  <th>상품금액</th>
+                  <th>합계금액</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
 
-              {cartItems.map((item, index) => (
-                <CartItem
-                  key={index}
-                  selectedItem={item.selectedItem}
-                  quantity={item.quantity}
-                  onIncrease={() => handleIncrease(index)}
-                  onDecrease={() => handleDecrease(index)}
-                  totalPrice={() => calculateTotalPrice(item)}
-                  handleDelete={() => handleDelete(index)} // 삭제 핸들러 전달
-                />
-              ))}
-            </tbody>
-          </table>
+                {cartItems.map((item, index) => (
+                  <CartItem
+                    key={index}
+                    selectedItem={item.selectedItem}
+                    quantity={item.quantity}
+                    onIncrease={(event) => handleIncrease(index, event)}
+                    onDecrease={(event) => handleDecrease(index, event)}
+                    totalPrice={() => calculateTotalPrice(item)}
+                    handleDelete={() => handleDelete(index)} // 삭제 핸들러 전달
+                  />
+                ))}
+              </tbody>
+            </table>
 
-          <CartItemPrice
-            totalPrice={calculateTotalCartPrice}
-            delivery_price={delivery_price}
-          />
+            <CartItemPrice
+              totalPrice={calculateTotalCartPrice}
+              delivery_price={delivery_price}
+            />
 
-          <Link to="/payment" state={{
-            // selectedItem: selectedItem,
-            // quantity: quantity, // item 객체를 그대로 전달합니다.
-          }}><input type="button" value="구매하기" className="order" /></Link>
+            <Link to="/payment" state={{
+              // selectedItem: selectedItem,
+              // quantity: quantity, // item 객체를 그대로 전달합니다.
+            }}><input type="button" value="구매하기" className="order" /></Link>
 
-        </form>
+          </form>
+        )}
       </div>
     </>
   );
