@@ -476,8 +476,10 @@ select[id="option"] {
 .section4 input[type="button"] {
     width: 80%;
     margin-bottom: 3em;
+    padding: 10px 0;
     background-color: #fff;
     border: 1px solid #ffa900;
+    border-radius: 10px;
     color: #ffa900;
 }
 

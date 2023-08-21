@@ -4,7 +4,7 @@ import styles from '../../css/payment/paymentItemPrice.module.css';
 const CartItemPrice = ({ totalPrice, delivery_price, quantity }) => {
     return (
         <div>
-            <p className={styles.total_product}>총 주문 상품 <span>{quantity}</span>개</p>
+            <p className={styles.total_product}>총 주문 상품</p>
             <div className={styles.total_price}>
                 <p>50,000원 이상 구매시 배송비 무료</p>
                 <div className={styles.firstB_price}>
