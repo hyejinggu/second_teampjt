@@ -17,13 +17,11 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.ft_copy}>
-          <a href="#">
-            <img
-              src={"/images/header/logo.png"}
-              alt="로고"
-              className={styles.logo}
-            />
-          </a>
+          <img
+            src={"/images/header/logo.png"}
+            alt="로고"
+            className={styles.logo}
+          />
           <p>&copy; 2023 웹사이트. All rights reserved.</p>
         </div>
         <div className={styles.ft_info2}>
@@ -37,13 +35,13 @@ const Footer = () => {
           </p>
           <ul>
             <li>
-              <a href="">회사소개</a>
+              회사소개
             </li>
             <li>
-              <a href="">이용약관</a>
+              이용약관
             </li>
             <li>
-              <a href="">개인정보처리방침</a>
+              개인정보처리방침
             </li>
           </ul>
         </div>

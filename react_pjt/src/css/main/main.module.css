@@ -88,6 +88,9 @@ main {
 
 .bestseller_list {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bestseller_list h2:hover {
