@@ -8,7 +8,7 @@ const PageNation = ({ setPage }) => {
 
   return (
     <div className={styles.page_shift}>
-      {[1, 2, 3].map((pageNumber) => (
+      {[1, 2, 3, 4, 5].map((pageNumber) => (
         <span
           key={pageNumber}
           className={pageNumber === clickedPage ? styles.clicked_page : ""}

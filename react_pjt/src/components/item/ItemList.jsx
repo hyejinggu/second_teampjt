@@ -607,9 +607,16 @@ const ItemList = () => {
     },
   ];
 
+  const [inputValue, setInputValue] = useState("");
   // ======== 상품 정렬을 위한 reducer 함수 시작 ========
   const arrayReducer = (state, action) => {
     switch (action.type) {
+      case "search":
+        setInputValue("");
+        return inputValue === ""
+          ? state
+          : iteminfo.filter((it) => it.name.includes(inputValue));
+
       case "popular":
         return [...state].sort((a, b) => b.clicked - a.clicked);
       case "low":
@@ -619,6 +626,11 @@ const ItemList = () => {
       case "new":
         return iteminfo;
     }
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault(); // 폼 제출 기본 동작 방지
+    dispatch({ type: "search" });
   };
 
   const [array, dispatch] = useReducer(arrayReducer, iteminfo);
@@ -648,6 +660,22 @@ const ItemList = () => {
 
       <div className={styles.item_wrap}>
         <ItemInfo selectedIteminfo={displayedItemInfo} />
+      </div>
+      <div className={styles.search_bar}>
+        <form onSubmit={onSubmit}>
+          <input
+            type="text"
+            placeholder="검색"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.keyCode === 13) {
+                onSubmit(e);
+              }
+            }}
+          />
+        </form>
+        <span onClick={onSubmit}>🔍</span>
       </div>
       <RecentSeenItem />
       <PageNation setPage={setPage} />

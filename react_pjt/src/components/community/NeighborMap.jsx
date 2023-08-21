@@ -3,6 +3,7 @@
 // import kakao from "kakao"; // Kakao Maps SDK 모듈을 임포트
 import styles from "../../css/subpage/community_neighbor_map.css";
 import React, { useEffect, useState, useMemo } from "react";
+import Swal from "sweetalert2";
 
 const getCurrentCoordinate = async () => {
   console.log("getCurrentCoordinate 함수 실행!!!");
@@ -27,7 +28,8 @@ const getCurrentCoordinate = async () => {
 
 const NeighborMap = () => {
   const [searchValue, setSearchValue] = useState("애견 미용");
-  const handleSearch = (e) => {
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
     setSearchValue(e.target.value);
   };
   useEffect(() => {
@@ -88,13 +90,12 @@ const NeighborMap = () => {
         if (status === kakao.maps.services.Status.OK) {
           // 정상적으로 검색이 완료됐으면
           // 검색 목록과 마커를 표출합니다
-          console.log(data);
           displayPlaces(data);
           // 페이지 번호를 표출합니다
           displayPagination(pagination);
-        } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-          Swal.fire("검색 결과가 존재하지 않습니다.");
-          return;
+          // } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+          //   Swal.fire("검색 결과가 존재하지 않습니다.");
+          //   return;
         } else if (status === kakao.maps.services.Status.ERROR) {
           Swal.fire("검색 결과 중 오류가 발생했습니다.");
           return;
@@ -275,15 +276,15 @@ const NeighborMap = () => {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [searchValue]);
 
   return (
     <div className="map_wrap">
       <div
         id="map"
         style={{
-          width: "1000px",
-          height: "500px",
+          width: "1100px",
+          height: "600px",
           position: "relative",
           overflow: "hidden",
           borderRadius: "10px",
@@ -295,12 +296,19 @@ const NeighborMap = () => {
         <div id="pagination"></div>
       </div>
       <div className="searchInput">
-        <input
-          type="text"
-          placeholder="검색어를 입력하세요."
-          value={searchValue}
-          onChange={handleSearch}
-        />
+        <form onSubmit={handleSearchSubmit}>
+          <input
+            type="text"
+            placeholder="검색어를 입력하세요."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.keyCode === 13 || e.key === "Enter") {
+                handleSearchSubmit(e);
+              }
+            }}
+          />
+        </form>
       </div>
     </div>
   );

@@ -118,3 +118,22 @@
 }
 
 /* ===== 상품 목록 영역 끝 ===== */
+
+.search_bar {
+  display: flex;
+}
+
+.search_bar input {
+  margin: 20px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+  border: 1px solid;
+}
+
+.search_bar span {
+  align-self: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+}

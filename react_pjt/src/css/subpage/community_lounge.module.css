@@ -166,8 +166,8 @@
 }
 
 .search_and_post select,
-input,
-button {
+.search_and_post input,
+.search_and_post button {
   padding: 7px 10px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
