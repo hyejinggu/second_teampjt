@@ -31,9 +31,9 @@ const CartItem = ({ onIncrease, onDecrease, totalPrice, selectedItem, quantity, 
             {/* <td>
                 <button onClick={handleDelete}>삭제</button>
             </td> */}
-            {/* <td>
-                <input type="button" value='X' />
-            </td> */}
+            <td>
+                <input type="button" onClick={handleDelete} value='X' />
+            </td>
         </tr>
     );
 };

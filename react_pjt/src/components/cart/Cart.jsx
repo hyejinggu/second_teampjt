@@ -68,11 +68,11 @@ export default function Cart() {
     return totalCartPrice;
   };
 
-  
+
   const delivery_price = () => {
     // const totalpr = salePr * quantity
     return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
-}
+  }
 
   return (
     <>
@@ -87,13 +87,11 @@ export default function Cart() {
                 <th>수량</th>
                 <th>상품금액</th>
                 <th>합계금액</th>
-                {/* <th>
-                  <input type="button" value="삭제 "/>
-                </th> */}
+                <th> </th>
               </tr>
             </thead>
             <tbody>
-              
+
               {cartItems.map((item, index) => (
                 <CartItem
                   key={index}

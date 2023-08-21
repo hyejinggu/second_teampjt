@@ -68,17 +68,17 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            {location.pathname !== "/itemdetail" ? (
-              <Link to="/emptyItem">
-                <img src="/images/header/cart_img.png" alt="" />
-                장바구니
-              </Link>
+            <Link to="/cart">
+              <img src="/images/header/cart_img.png" alt="" />
+              장바구니
+            </Link>
+            {/* {location.pathname !== "/itemdetail" ? (
             ) : (
               <Link to="/cart">
                 <img src="/images/header/cart_img.png" alt="" />
                 장바구니
               </Link>
-            )}
+            )} */}
           </li>
           <li>
             <Link to="/board">
