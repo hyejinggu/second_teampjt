@@ -124,8 +124,11 @@ export default function Cart() {
               delivery_price={delivery_price}
             />
 
-            <Link to="/payment" state={{
-            }}><input type="button" value="구매하기" className="order" /></Link>
+            <Link
+              to="/payment"
+            >
+              <input type="button" value="구매하기" className="order" />
+            </Link>
 
           </form>
         )}
