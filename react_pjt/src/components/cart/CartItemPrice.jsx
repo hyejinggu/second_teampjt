@@ -9,7 +9,7 @@ const CartItemPrice = ({ totalPrice, delivery_price, quantity }) => {
         <div>
             <p className='total_product'>총 주문 상품 <span>{quantity}</span>개</p>
             <div className="total_price">
-                <p>50,000원 이상 구매시 배송비 무료</p>
+                <p>30,000원 이상 구매시 배송비 무료</p>
                 <div className="firstB_price">
                     <span className="product_price">{totalPrice().toLocaleString()}원</span>
                     <span className="delivery_price">{delivery_price().toLocaleString()}원</span>

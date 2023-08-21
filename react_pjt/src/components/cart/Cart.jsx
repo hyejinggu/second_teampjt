@@ -20,11 +20,16 @@ export default function Cart() {
 
   // const [quantity, setQuantity] = useState(1);
 
-  const handleDelete = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1); // 해당 인덱스의 아이템 삭제
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // 로컬 스토리지 업데이트
+
+  const handleDelete = (index, itemName) => {
+    const confirmDelete = window.confirm(`<${itemName}> 상품을 삭제하시겠습니까?`);
+
+    if (confirmDelete) {
+      const updatedCart = [...cartItems];
+      updatedCart.splice(index, 1); // 해당 인덱스의 아이템 삭제
+      setCartItems(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart)); // 로컬 스토리지 업데이트
+    }
   };
 
   // 수량 관리
@@ -84,7 +89,7 @@ export default function Cart() {
       <h2 className="title">장바구니</h2>
       <div className="cart">
         {cartItems.length === 0 ? (
-          <EmptyItem /> // cartItems가 비어있는 경우 EmptyCart 컴포넌트 렌더링
+          <EmptyItem />
         ) : (
           <form action="#" method="post">
             <table>
@@ -108,7 +113,7 @@ export default function Cart() {
                     onIncrease={(event) => handleIncrease(index, event)}
                     onDecrease={(event) => handleDecrease(index, event)}
                     totalPrice={() => calculateTotalPrice(item)}
-                    handleDelete={() => handleDelete(index)} // 삭제 핸들러 전달
+                    handleDelete={() => handleDelete(index, item.selectedItem.name)} // 삭제 핸들러 전달
                   />
                 ))}
               </tbody>
@@ -120,8 +125,6 @@ export default function Cart() {
             />
 
             <Link to="/payment" state={{
-              // selectedItem: selectedItem,
-              // quantity: quantity, // item 객체를 그대로 전달합니다.
             }}><input type="button" value="구매하기" className="order" /></Link>
 
           </form>
