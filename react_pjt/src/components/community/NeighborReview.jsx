@@ -5,8 +5,8 @@ const NeiborReview = ({ neighborArray }) => {
     <div className={styles.review_wrap}>
       <ul>
         <div className={styles.review_title}>review</div>
-        {neighborArray.map((it) => (
-          <li>
+        {neighborArray.map((it, index) => (
+          <li key={index}>
             <p>{it.title}</p>
             <span>{it.content}</span>
             <span>{it.grade}</span>
