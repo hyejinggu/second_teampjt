@@ -117,7 +117,7 @@ const ItemDetail = () => {
                         {/* 구매 버튼 */}
                         <div>
                             <Link
-                                to="/payment"
+                                to="/payment2"
                                 state={{
                                     selectedItem: selectedItem,
                                     quantity: quantity,

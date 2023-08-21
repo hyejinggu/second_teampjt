@@ -2,18 +2,13 @@ import React from "react";
 import styles from '../../css/payment/payment.module.css';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "../common/Modal";
-import PaymentItem from "./PaymentItem"
-import PaymentItemPrice from "./PaymentItemPrice";
 
-const Payment = () => {
-    const [cartItems, setCartItems] = useState([]);
-
-    useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCartItems(storedCart);
-    }, []);
+const Payment2 = () => {
+    const location = useLocation();
+    const selectedItem = location.state.selectedItem;
+    const quantity = location.state.quantity;
 
     // modal
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,30 +17,28 @@ const Payment = () => {
         setIsModalOpen(true);
     };
 
-    const calculateTotalPrice = (item) => {
-        const originalPr = item.selectedItem.normalPr;
-        const salePr = originalPr - originalPr * (item.selectedItem.saleInfo / 100);
-        const totalpr = salePr * item.quantity;
-        return totalpr;
+    // ======== 가격 계산 및 형식 변환 함수 시작 ========
+    const formatter = new Intl.NumberFormat("ko-KR", {
+        //   style: "currency",
+        //   currency: "USD", // 통화 코드를 원하는 통화로 변경
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+    });
+
+
+    const presentPr = () => {
+        const originalPr = selectedItem.normalPr;
+        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+        return formatter.format(salePr);
     };
 
-    // 장바구니 가격 총합
-    const calculateTotalCartPrice = () => {
-        let totalCartPrice = 0;
-
-        for (const item of cartItems) {
-            const itemTotalPrice = calculateTotalPrice(item);
-            totalCartPrice += itemTotalPrice;
-        }
-
-        return totalCartPrice;
+    const totalPrice = () => {
+        const originalPr = selectedItem.normalPr;
+        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+        const totalpr = salePr * quantity
+        const totalWithDelivery = totalpr >= 50000 ? totalpr : totalpr + 3000;
+        return formatter.format(totalWithDelivery);
     };
-
-
-    const delivery_price = () => {
-        // const totalpr = salePr * quantity
-        return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
-    }
 
     return (
         <div>
@@ -142,20 +135,37 @@ const Payment = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {cartItems.map((item, index) => (
-                                <PaymentItem
-                                    key={index}
-                                    selectedItem={item.selectedItem}
-                                    quantity={item.quantity}
-                                    totalPrice={() => calculateTotalPrice(item)}
-                                />
-                            ))}
+                            <tr>
+                                <td>
+                                    <div className={styles.thumb}>
+                                        <img src={selectedItem.image[1]} alt="상품이미지" />
+                                    </div>
+                                    <h3 className={styles.name}>{selectedItem.name}</h3>
+                                    {/* <span>{selectedItem.colors} / </span>
+                                    <span>{selectedItem.sizes}</span> */}
+                                </td>
+                                <td>
+                                    <span className={styles.quantity}>수량 : {quantity}개</span>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <span className={styles.sale_info}>{selectedItem.saleInfo}%</span>
+                                            <span className={styles.normal_pr}>{selectedItem.normalPr}원</span>
+                                            <span className={styles.present_pr}>{presentPr()}원</span>
+                                        </li>
+                                        <li>
+                                            <span className={styles.free_delivery}>3000원(50,000원 이상 구매시 무료)</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td className={styles.total}>
+                                    <span>{totalPrice()}원</span>
+                                    <span>(배송비 포함금액)</span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <PaymentItemPrice
-                        totalPrice={calculateTotalCartPrice}
-                        delivery_price={delivery_price}
-                    />
                 </div>
                 <hr />
 
@@ -418,8 +428,7 @@ const Payment = () => {
                         </div>
 
                         <h2 className={styles.title}>개인 정보 처리 방침</h2>
-                        <p>
-                            1. - 목적 : 이용자 식별 및 본인여부 확인
+                        <p>1. - 목적 : 이용자 식별 및 본인여부 확인
                             - 항목 : 이름, 아이디, 비밀번호
                             - 보유 및 이용기간 : 회원탈퇴 후 5일까지
 
@@ -437,8 +446,7 @@ const Payment = () => {
 
                             5. - 목적 : 판매자와 구매자의 거래의 원활한 진행, 본인의사의확인, 고객 상담 및 불만처리, 상품과 경품 배송을 위한 배송지 확인 등
                             - 제공항목 : 구매자 이름, 전화번호, ID, 휴대폰번호, 이메일주소, 상품 구매정보, 상품 수취인 정보(이름, 주소, 전화번호)
-                            - 보유/이용기간 : 배송완료 후 한달
-                        </p>
+                            - 보유/이용기간 : 배송완료 후 한달</p>
 
                         <div className={styles.checkbox_wrapper}>
                             <label>
@@ -470,4 +478,4 @@ const Payment = () => {
     );
 }
 
-export default Payment;
+export default Payment2;
