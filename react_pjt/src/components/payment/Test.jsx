@@ -2,18 +2,13 @@ import React from "react";
 import styles from '../../css/payment/payment.module.css';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "../common/Modal";
-import PaymentItem from "./PaymentItem"
-import PaymentItemPrice from "./PaymentItemPrice";
 
 const Payment = () => {
-    const [cartItems, setCartItems] = useState([]);
-
-    useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCartItems(storedCart);
-    }, []);
+    const location = useLocation();
+    const selectedItem = location.state.selectedItem;
+    const quantity = location.state.quantity;
 
     // modal
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,30 +17,13 @@ const Payment = () => {
         setIsModalOpen(true);
     };
 
-    const calculateTotalPrice = (item) => {
-        const originalPr = item.selectedItem.normalPr;
-        const salePr = originalPr - originalPr * (item.selectedItem.saleInfo / 100);
-        const totalpr = salePr * item.quantity;
-        return totalpr;
+    const totalPrice = () => {
+        const originalPr = selectedItem.normalPr;
+        const salePr = originalPr - originalPr * (selectedItem.saleInfo / 100);
+        const totalpr = salePr * quantity
+        const totalWithDelivery = totalpr >= 50000 ? totalpr : totalpr + 3000;
+        return totalWithDelivery;
     };
-
-    // 장바구니 가격 총합
-    const calculateTotalCartPrice = () => {
-        let totalCartPrice = 0;
-
-        for (const item of cartItems) {
-            const itemTotalPrice = calculateTotalPrice(item);
-            totalCartPrice += itemTotalPrice;
-        }
-
-        return totalCartPrice;
-    };
-
-
-    const delivery_price = () => {
-        // const totalpr = salePr * quantity
-        return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
-    }
 
     return (
         <div>
@@ -142,20 +120,42 @@ const Payment = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {cartItems.map((item, index) => (
-                                <PaymentItem
-                                    key={index}
-                                    selectedItem={item.selectedItem}
-                                    quantity={item.quantity}
-                                    totalPrice={() => calculateTotalPrice(item)}
-                                />
-                            ))}
+                            <tr>
+                                <td>
+                                    <div className={styles.thumb}>
+                                        <img src={selectedItem.image[1]} alt="상품이미지" />
+                                    </div>
+                                    <h3 className={styles.name}>{selectedItem.name}</h3>
+                                    {/* <span>{selectedItem.colors} / </span>
+                                    <span>{selectedItem.sizes}</span> */}
+                                </td>
+                                <td>
+                                    <span className={styles.quantity}>수량 : {quantity}개</span>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <span className={styles.sale_info}>{selectedItem.saleInfo}%</span>
+                                            <span className={styles.normal_pr}>{selectedItem.normalPr.toLocaleString("ko")}원</span>
+                                            <span className={styles.present_pr}>
+                                                {(
+                                                    selectedItem.normalPr -
+                                                    (selectedItem.normalPr * selectedItem.saleInfo) / 100
+                                                ).toLocaleString("ko")}원
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span className={styles.free_delivery}>3000원(50,000원 이상 구매시 무료)</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td className={styles.total}>
+                                    <span>{totalPrice()}원</span>
+                                    <span>(배송비 포함금액)</span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <PaymentItemPrice
-                        totalPrice={calculateTotalCartPrice}
-                        delivery_price={delivery_price}
-                    />
                 </div>
                 <hr />
 
