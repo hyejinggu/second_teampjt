@@ -418,13 +418,13 @@ select[id="option"] {
     display: inline-block;
     width: 80%;
     height: 15px;
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
     border-radius: 8px;
     margin: 0 15px;
+    background-color: #ffa900;
 }
 
 .section3 .total_score .grades_2 ul>li:first-child span {
-    background-color: #ffa900;
 }
 
 .section3 .user_review .review_header {
@@ -447,14 +447,11 @@ select[id="option"] {
     margin-top: 20px;
     line-height: 50px;
     font-size: 18px;
-    /* border-top: 1px solid #c8c8c8; */
     font-weight: bold;
 }
-
-.section3 .user_review .grades_3::before {
-    content: "★★★★★";
+    
+.section3 .user_review .grades_3 span {
     color: #ffe344;
-    margin-right: 20px;
     font-size: 21px;
 
 }
@@ -462,10 +459,16 @@ select[id="option"] {
 .section3 .user_review .user_text_review {
     text-align: left;
     line-height: 30px;
-    border-bottom: 1px solid #c8c8c8;
     padding: 20px 0;
 }
 
+.user_info {
+    text-align: right;
+}
+
+.user_review li:nth-child(4) {
+    border-bottom: 1px solid #c8c8c8;
+}
 
 /*========================================= 상품 Q & A =========================================*/
 
