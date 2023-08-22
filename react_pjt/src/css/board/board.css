@@ -25,22 +25,37 @@
     border-collapse: collapse;
 }
 
-#board th,
+/* #board th, */
 #board td {
-    padding: 8px;
+    padding: 11px;
     text-align: left;
     border-bottom: 1px solid #ddd;
     text-align: center;
+    /*white-space: nowrap; /* 값이 고정되도록 */
+    white-space: normal;
+    overflow: hidden;
+    /* 값이 고정되도록 */
+    text-overflow: ellipsis;
+    /* 값이 고정되도록 */
 }
 
 #board th {
+    padding: 7px;
     background-color: #f2f2f2;
     border-bottom: 2px solid #ffa900;
 }
 
-#board tr:hover {
-    background-color: #f5f5f5;
+/* 세 번째 td 행의 길이를 60%로 조정 */
+#board td:nth-child(3) {
+    width: 50%;
+    text-align: left;
+    /* 왼쪽 정렬 추가 */
 }
+
+
+/* #board tr:hover {
+    background-color: #f5f5f5;
+} */
 
 #board input[type="submit"] {
     padding: 10px 20px;
@@ -77,16 +92,17 @@
 }
 
 
-#board .answer {
-    display: none;
-
+#board .answer span {
+    text-align: left;
+    display: block;
+    padding: 10px 8px;
+    white-space: normal;
 }
 
-#board .question_1:hover+.answer {
+/* #board .question_1:hover+.answer {
     display: table-row;
-}
+} */
 
-/*  */
 #board .box_wrap {
     display: flex;
     justify-content: space-evenly;

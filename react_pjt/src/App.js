@@ -74,8 +74,8 @@ function App() {
         <Route path="/findpw/*" element={<FindPw />} />
 
         {/* 게시판 */}
-        <Route path="/boardfaq/*" element={<BoardFaq />} />
-        <Route path="/boardqna/*" element={<BoardQna />} />
+        <Route path="/board/boardfaq/" element={<BoardFaq />} />
+        <Route path="/board/boardqna/" element={<BoardQna />} />
 
         <Route path="/agree/*" element={<Agree />} />
         <Route path="/profile/*" element={<Profile />} />
