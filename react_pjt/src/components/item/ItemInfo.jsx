@@ -45,6 +45,7 @@ function ItemInfo({ selectedIteminfo }) {
                 <div className={styles.color}>
                   {item.color.map((color, colorIdx) => (
                     <span
+                      key={colorIdx}
                       title={color}
                       style={{ backgroundColor: color }}
                     ></span>
@@ -55,10 +56,6 @@ function ItemInfo({ selectedIteminfo }) {
           </li>
         ))}
       </ul>
-
-      {/* <Routes>
-        <Route path="/itemdetail" element={<ItemDetail />} />
-      </Routes> */}
     </div>
   );
 }

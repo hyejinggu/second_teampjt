@@ -5,7 +5,7 @@ export default function CommunityPost({ addedPostArray }) {
   return (
     <tbody>
       {addedPostArray.map((post, index) => (
-        <tr>
+        <tr key={index}>
           <td>{addedPostArray.length - index}</td>
           <td>
             <img src={post.image} />
