@@ -59,7 +59,7 @@ const Payment = () => {
                     <table>
                         <tr>
                             <th>
-                                <label for="name">받는사람</label>
+                                <label htmlFor="name">받는사람</label>
                             </th>
                             <td colSpan="">
                                 <input type="text" id="name" name="name" required />
@@ -67,7 +67,7 @@ const Payment = () => {
                         </tr>
                         <tr>
                             <th>
-                                <label for="address">주소</label>
+                                <label htmlFor="address">주소</label>
                             </th>
                             <td colSpan="">
                                 <input type="text" id="address" name="address" required placeholder="도로명, 지번, 건물명 등을 입력하세요" />
@@ -76,7 +76,7 @@ const Payment = () => {
                         </tr>
                         <tr>
                             <th>
-                                <label for="phone">전화번호</label>
+                                <label htmlFor="phone">전화번호</label>
                             </th>
                             <td>
                                 <input type="tel" id="phone1" name="phone1" required pattern="[0-9]{3}" placeholder="010" />
@@ -87,7 +87,7 @@ const Payment = () => {
                         </tr>
                         <tr>
                             <th>
-                                <label for="email">이메일</label>
+                                <label htmlFor="email">이메일</label>
                             </th>
                             <td colSpan="">
                                 <input type="email" id="email" name="email" required />
@@ -95,7 +95,7 @@ const Payment = () => {
                         </tr>
                         <tr>
                             <th>
-                                <label for="payment-method">결제방법</label>
+                                <label htmlFor="payment-method">결제방법</label>
                             </th>
                             <td>
                                 <select id="payment-method" name="payment-method">
@@ -116,11 +116,11 @@ const Payment = () => {
                         <table>
                             <tr>
                                 <th>
-                                    <label for="password">비밀번호</label>
+                                    <label htmlFor="password">비밀번호</label>
                                 </th>
                                 <td>
                                     <input type="password" id="password" name="password" placeholder="6자~16자" required
-                                        minlength="6" maxlength="16" />
+                                        minLength="6" maxLength="16" />
                                 </td>
                             </tr>
                         </table>
