@@ -2,9 +2,10 @@ import "./App.css";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Main from "./components/common/Main";
+import ScrollTop from "./components/common/ScrollTop";
 
 // router
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import Join from "./components/join/Join";
 import Board from "./components/board/Board";
@@ -20,9 +21,6 @@ import Payment2 from "./components/payment/Payment2";
 import MyPage from "./components/common/MyPage";
 
 // 커뮤니티 링크 페이지 import
-import CreatePost from "./components/community/CreatePost";
-import Neighborhood from "./components/community/Neighborhood";
-import Event from "./components/community/Event";
 import Community from "./components/community/Community";
 
 // 로그인
@@ -33,18 +31,16 @@ import FindPw from "./components/login/FindPw";
 import BoardFaq from "./components/board/BoardFaq";
 import BoardQna from "./components/board/BoardQna";
 
-
 // 장바구니
 import EmptyItem from "./components/cart/EmptyItem";
 import Cart from "./components/cart/Cart";
 import CartItem from "./components/cart/CartItem";
 
-
-
 import styles from "./css/common/common.module.css";
 function App() {
   return (
     <div className="App" id={styles.wrap}>
+      <ScrollTop />
       <Header />
       <Routes>
         {/* header 링크 */}
@@ -59,10 +55,6 @@ function App() {
 
         {/* 커뮤니티 링크 */}
         <Route path="/community/*" element={<Community />} />
-        {/* <Route path="/lounge/*" element={<Lounge />} /> */}
-        {/* <Route path="/event/*" element={<Event />} /> */}
-        {/* <Route path="/neighborhood/*" element={<Neighborhood />} /> */}
-        {/* <Route path="/createpost/*" element={<CreatePost />} /> */}
 
         {/* 상세페이지, 장바구니, 결제 */}
         <Route path="/cartitem/*" element={<CartItem />} />
