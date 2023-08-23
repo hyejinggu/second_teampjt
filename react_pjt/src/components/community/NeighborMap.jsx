@@ -2,7 +2,7 @@
 
 // import kakao from "kakao"; // Kakao Maps SDK 모듈을 임포트
 import styles from "../../css/subpage/community_neighbor_map.css";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const getCurrentCoordinate = async () => {

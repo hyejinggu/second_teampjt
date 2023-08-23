@@ -2,13 +2,10 @@
 import styles from "../../css/subpage/community_lounge.module.css";
 import PageNation from "../item/PageNation";
 import CommunityPost from "./CommunityPost";
-import CreatePost from "./CreatePost";
 import SideBar from "./SideBar";
-import React, { useReducer, useState, useMemo, useContext } from "react";
-import { Link, Routes, Route, NavLink } from "react-router-dom";
+import React, { useReducer, useState, useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { CreatePostContext } from "./Community";
-
-// const date = new Date();
 
 const date = new Date();
 
@@ -65,6 +62,9 @@ export default function Lounge() {
   const [selectedValue, setSelectedValue] = useState("allPost");
   const [inputValue, setInputValue] = useState("");
 
+  // 사이드 바 선택
+  const [category, setCategory] = useState("자유 게시판");
+
   // 글 추가, 정렬을 위해 useReducer 설정
   const [array, dispatch] = useReducer(arrayReducer, addedPostArray);
 
@@ -94,7 +94,7 @@ export default function Lounge() {
         <p>총 50개의 글</p>
       </div>
       <div className={styles.content_wrap}>
-        <SideBar content="lounge" />
+        <SideBar content="lounge" setCategory={setCategory} />
 
         {/* 글 목록 시작 */}
         <div className={styles.post_wrap}>

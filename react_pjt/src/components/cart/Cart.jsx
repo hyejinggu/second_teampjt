@@ -1,13 +1,11 @@
-
 import CartItem from "./CartItem";
 import CartItemPrice from "./CartItemPrice";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EmptyItem from "./EmptyItem";
 import "../../css/cart/cart.css";
 
 export default function Cart() {
-
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -15,9 +13,10 @@ export default function Cart() {
     setCartItems(storedCart);
   }, []);
 
-
   const handleDelete = (index, itemName) => {
-    const confirmDelete = window.confirm(`<${itemName}> 상품을 삭제하시겠습니까?`);
+    const confirmDelete = window.confirm(
+      `<${itemName}> 상품을 삭제하시겠습니까?`
+    );
 
     if (confirmDelete) {
       const updatedCart = [...cartItems];
@@ -29,15 +28,12 @@ export default function Cart() {
 
   // 수량 관리
   const handleIncrease = (index, event) => {
-
     event.preventDefault();
     const updatedCart = [...cartItems];
     updatedCart[index].quantity += 1;
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart)); // 로컬 스토리지 업데이트
-
   };
-
 
   // 수량이 0 미만으로 갈때
 
@@ -73,11 +69,10 @@ export default function Cart() {
     return totalCartPrice;
   };
 
-
   const delivery_price = () => {
     // const totalpr = salePr * quantity
     return calculateTotalCartPrice() >= 50000 ? 0 : 3000;
-  }
+  };
 
   return (
     <>
@@ -88,7 +83,6 @@ export default function Cart() {
         ) : (
           <form action="#" method="post">
             <table>
-
               <thead>
                 <tr>
                   <th>상품/옵션 정보</th>
@@ -107,7 +101,9 @@ export default function Cart() {
                   onIncrease={(event) => handleIncrease(index, event)}
                   onDecrease={(event) => handleDecrease(index, event)}
                   totalPrice={() => calculateTotalPrice(item)}
-                  handleDelete={() => handleDelete(index, item.selectedItem.name)} // 삭제 핸들러 전달
+                  handleDelete={() =>
+                    handleDelete(index, item.selectedItem.name)
+                  } // 삭제 핸들러 전달
                 />
               ))}
             </table>
@@ -117,12 +113,9 @@ export default function Cart() {
               delivery_price={delivery_price}
             />
 
-            <Link
-              to="/payment"
-            >
+            <Link to="/payment">
               <input type="button" value="구매하기" className="order" />
             </Link>
-
           </form>
         )}
       </div>

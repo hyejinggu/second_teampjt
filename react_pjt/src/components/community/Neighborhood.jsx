@@ -4,7 +4,7 @@
 import styles from "../../css/subpage/community_neighbor.module.css";
 import SideBar from "./SideBar";
 import { NavLink } from "react-router-dom";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import NeiborReview from "./NeighborReview";
 import NeighborMap from "./NeighborMap";
 
