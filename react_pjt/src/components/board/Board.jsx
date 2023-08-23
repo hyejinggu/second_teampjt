@@ -233,13 +233,13 @@ const Board = () => {
 
         <div className="page_shift">
           <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
+          {/* <a href="#">2</a>
+          <a href="#">3</a> */}
         </div>
 
-        <div className="button">
+        {/* <div className="button">
           <input type="submit" value="글쓰기" />
-        </div>
+        </div> */}
       </div>
     </main>
   );

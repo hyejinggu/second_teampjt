@@ -1,4 +1,4 @@
-.findPw {
+.nonmbordercheck {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
@@ -13,38 +13,45 @@
     align-items: center;
 }
 
-.findPw .img_container {
+.nonmbordercheck .img_container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.findPw .img_container img {
+.nonmbordercheck .img_container img {
     width: 700px;
     height: 550px;
     box-sizing: border-box;
 }
 
-.findPw .findPw_container {
+.nonmbordercheck .nonmbordercheck_container {
     width: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.findPw .findPw_container .findPw_box {
+.nonmbordercheck .nonmbordercheck_container .nonmbordercheck_box {
     border-radius: 5px;
     line-height: 30px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
 }
 
-.findPw .findPw_container .findPw_box h2 {
+.nonmbordercheck .nonmbordercheck_container .nonmbordercheck_box h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
+.form_wrap {
+    width: 60%;
+    justify-self: center;
+}
 
-.findPw .findPw_container .findPw_box input[type="text"] {
+.nonmbordercheck_container .nonmbordercheck_box input[type="text"],
+.nonmbordercheck_container .nonmbordercheck_box input[type="number"],
+.nonmbordercheck_container .nonmbordercheck_box input[type="password"] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -53,7 +60,12 @@
     border: 1px solid #b0a1a1;
 }
 
-.findPw .findPw_container .findPw_box input[type="submit"] {
+
+.nonmbordercheck .nonmbordercheck_container .nonmbordercheck_box input[type="password"] {
+    margin: 0;
+}
+
+.nonmbordercheck .nonmbordercheck_container .nonmbordercheck_box input[type="submit"] {
     border: 1px solid #ffa900;
     cursor: pointer;
     background-color: #fff;
@@ -63,7 +75,7 @@
     margin-top: 20px;
 }
 
-.findPw .findPw_container .findPw_box input[type="submit"]:hover {
+.nonmbordercheck .nonmbordercheck_container .nonmbordercheck_box input[type="submit"]:hover {
     transition: .5s;
     background-color: #ffe344;
 }

@@ -25,6 +25,7 @@ import Community from "./components/community/Community";
 // 로그인
 import FindId from "./components/login/FindId";
 import FindPw from "./components/login/FindPw";
+import Nonmbordercheck from "./components/login/Nonmbordercheck";
 
 // 게시판
 import BoardFaq from "./components/board/BoardFaq";
@@ -63,6 +64,8 @@ function App() {
         {/* 로그인 */}
         <Route path="/findid/*" element={<FindId />} />
         <Route path="/findpw/*" element={<FindPw />} />
+        <Route path="/findpw/*" element={<FindPw />} />
+        <Route path="/nonmbordercheck/*" element={<Nonmbordercheck />} />
 
         {/* 게시판 */}
         <Route path="/board/boardfaq/" element={<BoardFaq />} />

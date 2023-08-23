@@ -2,6 +2,7 @@ import "../../css/login/login.css";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import React from "react"; // 추가: React를 import
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Login = () => {
   const [username, setUsername] = useState(""); // 입력한 아이디
   const [password, setPassword] = useState(""); // 입력한 비밀번호
   const [errorMessage, setErrorMessage] = useState(""); // 오류 메시지
+  const [isChecked, setIsChecked] = useState(false); // 추가: 체크박스 상태 저장
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,6 +26,12 @@ const Login = () => {
       setErrorMessage("비밀번호가 일치하지 않습니다.");
     }
   };
+
+  // 추가: 체크박스 클릭 핸들러
+  const handleCheckboxClick = () => {
+    setIsChecked(!isChecked); // 상태 토글
+  };
+
   return (
     <main className="login">
       <div className="img_container">
@@ -53,8 +61,14 @@ const Login = () => {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <div className="saveId">
-            <input type="checkbox" name="idsave" value="idsave" />
-            <label for="idsave" name="idsave" id="idsave">
+            <input type="checkbox" name="idsave" id="idsaveCheckbox" value="idsave"
+              checked={isChecked} // 체크박스 상태 반영
+              onClick={handleCheckboxClick} // 체크박스 클릭 핸들러 연결
+            />
+            <label htmlfor="idsaveCheckbox" // 'for' 대신 'htmlFor' 사용
+              id="idsaveLabel"
+              onClick={handleCheckboxClick} // 레이블 클릭 핸들러 연결
+            >
               아이디 저장
             </label>
           </div>
@@ -69,6 +83,13 @@ const Login = () => {
             </Link>
             {/* <Link to='/main'><span>로그인</span></Link> */}
           </div>
+
+          <div className="nonmbodercheck">
+            <Link to="/nonmbordercheck/*">
+              <span>비회원 주문조회</span>
+            </Link>
+          </div>
+
         </div>
       </div>
     </main>
