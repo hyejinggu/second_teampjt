@@ -13,8 +13,7 @@ const loungePostArray1 = [
   {
     image: ["/images/community/watchMyrooney2.jpg"],
     title: "이 강아지를 아시나요?",
-    content:
-      "너무 귀여워서 다들 알았으면 해서요 ㅎㅎ 이름은 설루니에요",
+    content: "너무 귀여워서 다들 알았으면 해서요 ㅎㅎ 이름은 설루니에요",
     userid: "ssh",
     date: date.toLocaleDateString(),
     recommended: 10000,
@@ -23,8 +22,7 @@ const loungePostArray1 = [
   {
     image: ["/images/community/watchMyrooney.jpg"],
     title: "이 강아지를 아시나요?",
-    content:
-      "너무 귀여워서 다들 알았으면 해서요 ㅎㅎ 이름은 설루니에요",
+    content: "너무 귀여워서 다들 알았으면 해서요 ㅎㅎ 이름은 설루니에요",
     userid: "ssh",
     date: date.toLocaleDateString(),
     recommended: 999,
@@ -137,30 +135,6 @@ const loungePostArray1 = [
     views: 87,
   },
 ];
-const loungePostArray2 = [
-  {
-    image:
-      "https://bff-images.bemypet.kr/media/medias/all/273-KakaoTalk_20230617_061331272_01.jpg",
-    title: "이 생명체는 누구일까요!",
-    content:
-      "뭣 좀 하려고 컴퓨터 앞에 앉아있음 꼭 밑에서 등돌리고 저러고 누워있는데 뒷모습 털쪘다요❤️ 너구린가 댕댕인가 착각들 정도",
-    userid: "eee",
-    date: date.toLocaleDateString(),
-    recommended: 21,
-    views: 65,
-  },
-  {
-    image:
-      "https://bff-images.bemypet.kr/media/medias/all/535-20230528_165840.jpg",
-    title: "대형견 산책시 뛰고 또 뛰고~~",
-    content:
-      "풍산개 수컷입니다. 아침 산책시간만 되면 흥분지수가 업입니다. 견사 문 열자마자(지가 열려고 난리 치죠)",
-    userid: "fff",
-    date: date.toLocaleDateString(),
-    recommended: 23,
-    views: 57,
-  },
-];
 
 const Community = () => {
   const [addedPostArray, setPostArray] = useState(loungePostArray1);
@@ -193,7 +167,7 @@ const Community = () => {
   return (
     <div>
       <CreatePostContext.Provider
-        value={{ addedPostArray, addPostFromLocalStorage, loungePostArray2 }}
+        value={{ addedPostArray, addPostFromLocalStorage }}
       >
         <Routes>
           <Route path="/*" element={<Lounge />} />

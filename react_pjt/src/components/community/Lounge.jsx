@@ -13,7 +13,7 @@ import { CreatePostContext } from "./Community";
 const date = new Date();
 
 export default function Lounge() {
-  const { addedPostArray, loungePostArray2 } = useContext(CreatePostContext);
+  const { addedPostArray } = useContext(CreatePostContext);
 
   const arrayReducer = (state, action) => {
     switch (action.type) {
@@ -30,6 +30,15 @@ export default function Lounge() {
         return addedPostArray;
 
       // 글 검색 case
+      case "allPost":
+        return inputValue === ""
+          ? state
+          : addedPostArray.filter(
+              (it) =>
+                it.title.includes(inputValue) ||
+                it.content.includes(inputValue) ||
+                it.userid.includes(inputValue)
+            );
       case "postTitle":
         return inputValue === ""
           ? state
@@ -53,7 +62,7 @@ export default function Lounge() {
   };
 
   // 글 검색을 위해 select, input value에 useState 설정
-  const [selectedValue, setSelectedValue] = useState("postTitle");
+  const [selectedValue, setSelectedValue] = useState("allPost");
   const [inputValue, setInputValue] = useState("");
 
   // 글 추가, 정렬을 위해 useReducer 설정
@@ -113,6 +122,7 @@ export default function Lounge() {
                   name="search_condition"
                   id="search_condition"
                 >
+                  <option value="allPost">전체</option>
                   <option value="postTitle">제목</option>
                   <option value="postContent">내용</option>
                   <option value="postUserId">작성자</option>
