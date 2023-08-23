@@ -115,10 +115,6 @@ div>a>.button:hover {
     grid-area: b;
 }
 
-.img_area>div {
-    /* padding: 1em; */
-}
-
 .main_img>img {
     width: 500px;
     height: 500px;
@@ -239,10 +235,6 @@ div>a>.button:hover {
 
 .present_pr {
     font-weight: bold;
-}
-
-.info_area div {
-    /* padding: 1em; */
 }
 
 .info_area input {
@@ -379,7 +371,6 @@ select[id="option"] {
     height: 150px;
     box-sizing: border-box;
     display: inline-block;
-    float: left;
     padding: 20px;
 }
 
@@ -422,9 +413,6 @@ select[id="option"] {
     border-radius: 8px;
     margin: 0 15px;
     background-color: #ffa900;
-}
-
-.section3 .total_score .grades_2 ul>li:first-child span {
 }
 
 .section3 .user_review .review_header {
