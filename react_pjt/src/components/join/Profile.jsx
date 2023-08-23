@@ -1,24 +1,24 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import '../../css/join/join.css';
+import { useNavigate } from "react-router-dom";
+import "../../css/join/join.css";
 
 const Profile = () => {
   const navigate = useNavigate();
 
   const [formValue, setFormValue] = useState({
-    user_name: '',
-    user_birth: '',
-    user_month: '',
-    user_day: '',
-    user_num: '',
-    user_email: ''
+    user_name: "",
+    user_birth: "",
+    user_month: "",
+    user_day: "",
+    user_num: "",
+    user_email: "",
   });
 
   const [errors, setErrors] = useState({
-    user_name: '',
-    user_birth: '',
-    user_num: '',
-    user_email: ''
+    user_name: "",
+    user_birth: "",
+    user_num: "",
+    user_email: "",
   });
 
   const handleChange = (e) => {
@@ -37,9 +37,9 @@ const Profile = () => {
     // 유효성 검사 실행
     if (validateForm()) {
       // 유효성 검사 통과 시 다음 단계로 진행
-      navigate('/join/information');
+      navigate("/join/information");
     } else {
-      alert('필수정보를 입력해주세요.');
+      alert("필수정보를 입력해주세요.");
     }
   };
 
@@ -47,16 +47,20 @@ const Profile = () => {
     const newErrors = { ...errors };
 
     switch (fieldName) {
-      case 'user_name':
-        newErrors.user_name = !value ? '성함을 입력해주세요.' : '';
+      case "user_name":
+        newErrors.user_name = !value ? "성함을 입력해주세요." : "";
         break;
 
-      case 'user_num':
-        newErrors.user_num = !value ? '핸드폰 번호를 입력해주세요.' : (value.length < 10 || value.length > 11) ? '휴대폰 번호를 정확히 입력해주세요.' : '';
+      case "user_num":
+        newErrors.user_num = !value
+          ? "핸드폰 번호를 입력해주세요."
+          : value.length < 10 || value.length > 11
+          ? "휴대폰 번호를 정확히 입력해주세요."
+          : "";
         break;
 
-      case 'user_email':
-        newErrors.user_email = !value ? '이메일을 입력해주세요.' : '';
+      case "user_email":
+        newErrors.user_email = !value ? "이메일을 입력해주세요." : "";
         break;
 
       default:
@@ -69,17 +73,17 @@ const Profile = () => {
   const validateForm = () => {
     const newErrors = { ...errors };
 
-    validateField('user_name', formValue.user_name);
-    validateField('user_num', formValue.user_num);
-    validateField('user_email', formValue.user_email);
+    validateField("user_name", formValue.user_name);
+    validateField("user_num", formValue.user_num);
+    validateField("user_email", formValue.user_email);
 
     setErrors(newErrors);
 
     return (
-      formValue.user_name !== '' &&
-      formValue.user_num !== '' &&
-      formValue.user_email !== '' &&
-      Object.values(newErrors).every((error) => error === '')
+      formValue.user_name !== "" &&
+      formValue.user_num !== "" &&
+      formValue.user_email !== "" &&
+      Object.values(newErrors).every((error) => error === "")
     );
   };
 
@@ -88,7 +92,6 @@ const Profile = () => {
   return (
     <form action="#" method="post" onSubmit={handleSubmit}>
       <figure>
-
         <table>
           <tbody>
             <tr>
@@ -108,8 +111,9 @@ const Profile = () => {
                   onChange={handleChange} // Add "onChange" attribute
                 />
               </td>
-              {errors.user_name && <div className="error">{errors.user_name}</div>}
-
+              {errors.user_name && (
+                <div className="error">{errors.user_name}</div>
+              )}
             </tr>
 
             <tr>
@@ -295,8 +299,9 @@ const Profile = () => {
                   onChange={handleChange}
                 />
               </td>
-              {errors.user_num && <div className="error">{errors.user_num}</div>}
-
+              {errors.user_num && (
+                <div className="error">{errors.user_num}</div>
+              )}
             </tr>
             <tr>
               <th>
@@ -322,14 +327,14 @@ const Profile = () => {
                   <option value="custom">직접 입력</option>
                 </select>
               </td>
-              {errors.user_email && <div className="error">{errors.user_email}</div>}
-
+              {errors.user_email && (
+                <div className="error">{errors.user_email}</div>
+              )}
             </tr>
           </tbody>
         </table>
       </figure>
       <input type="submit" value="Next" onClick={handleSubmit} />
-
     </form>
   );
 };

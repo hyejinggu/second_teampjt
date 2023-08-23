@@ -10,7 +10,6 @@ import Login from "./components/login/Login";
 import Join from "./components/join/Join";
 import Board from "./components/board/Board";
 import ItemList from "./components/item/ItemList";
-import Lounge from "./components/community/Lounge";
 import ItemDetail from "./components/item/ItemDetail";
 import Agree from "./components/join/Agree";
 import Details from "./components/join/Details";

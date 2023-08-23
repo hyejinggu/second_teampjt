@@ -1,5 +1,3 @@
-// import styles from "../../css/subpage/community_lounge.module.css";
-
 export default function CommunityPost({ addedPostArray }) {
   const date = new Date();
   return (

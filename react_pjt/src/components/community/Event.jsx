@@ -1,5 +1,4 @@
 import styles from "../../css/subpage/community_event.module.css";
-import CommunityTitle from "./CommunityTitle";
 import { NavLink } from "react-router-dom";
 
 export default function Event() {

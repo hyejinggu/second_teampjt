@@ -1,7 +1,6 @@
 import styles from "../../css/common/modal.module.css";
 
 import PropTypes from "prop-types";
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Modal = ({

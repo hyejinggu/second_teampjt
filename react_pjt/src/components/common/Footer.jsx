@@ -34,15 +34,9 @@ const Footer = () => {
             대표번호 : 02-899-7892 이메일 : gaenim@ysfnc.kr
           </p>
           <ul>
-            <li>
-              회사소개
-            </li>
-            <li>
-              이용약관
-            </li>
-            <li>
-              개인정보처리방침
-            </li>
+            <li>회사소개</li>
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
           </ul>
         </div>
       </div>

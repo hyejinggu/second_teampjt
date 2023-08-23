@@ -1,6 +1,5 @@
 import styles from "../../css/subpage/create_post.module.css";
 import React, { useState, useRef, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { CreatePostContext } from "./Community";
 import Modal from "../common/Modal";
 

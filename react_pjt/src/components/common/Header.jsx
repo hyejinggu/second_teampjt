@@ -1,5 +1,5 @@
 import styles from "../../css/common/common.module.css";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Modal from "../common/Modal";
 
@@ -28,8 +28,6 @@ const Header = () => {
       setIsModalOpen(true);
     }
   };
-
-
 
   return (
     <header>
@@ -74,7 +72,6 @@ const Header = () => {
               <img src="/images/header/cart_img.png" alt="" />
               장바구니
             </Link>
-
           </li>
           <li>
             <Link to="/board">

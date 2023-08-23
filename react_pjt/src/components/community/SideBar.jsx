@@ -1,5 +1,5 @@
 import styles from "../../css/subpage/community_lounge.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function SideBar({ content, setCategory }) {
   const loungeSide = ["자유 게시판", "고민 상담소", "지식 공유", "친구 찾기"];
