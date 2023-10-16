@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 const Modal = ({
   isModalOpen,
-  modalContent,
   setIsModalOpen,
+  modalContent,
   modalAfterPath,
 }) => {
   const navigate = useNavigate();
 
-  if (!isModalOpen) return null;
+  // if (!isModalOpen) return null;
   const closeModal = () => {
     setIsModalOpen(false);
     navigate(modalAfterPath);
@@ -32,7 +32,7 @@ const Modal = ({
 // 모달을 사용하게 위해 props로 전달해 주어야 하는 것.
 Modal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func.isRequired,
+  setIsModalOpen: PropTypes.func.isRequired,
   modalContent: PropTypes.string.isRequired,
   modalAfterPath: PropTypes.string,
 };
